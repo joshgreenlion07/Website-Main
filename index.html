@@ -1,0 +1,1269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Green Lion Landscape: custom landscaping, design and water features in Modesto and the Central Valley.">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} [hidden]{display:none!important}</style>
+<title>Green Lion Landscape App</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Tinos and Arimo are the Google Fonts releases of the Liberation Serif / Liberation Sans designs named in the 2026 brand guide -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap">
+<style>
+/* Layout: app shell on a light beige page. Water features open the page, Lisa's article follows, then the learning feed.
+   Phones get a one-screen app: fixed header, scrolling content, fixed bottom tab bar. Desktop gets the full signature
+   logo and a top nav. Neutral surfaces dominate, green marks key cues only (Green Lion Brand Guide 2026). */
+:root {
+  /* Brand Guide 2026 palette */
+  --charcoal: #202321; --warm: #F5F2EA; --leaf: #7DC00F; --lime: #AFE414; --deep: #244A1C; --stone: #B6AEA1; --white: #FFFFFF;
+  /* Light theme only: lighter beige page, white app chrome, Deep green accent blocks */
+  --bg: #FBF8F1; --surface: #FFFFFF; --surface-2: #F2EDE2; --ink: #202321; --ink-2: #5B5F58; --line: #E3DCCE;
+  --accent-text: #244A1C; --rule: #7DC00F;
+  --btn: #244A1C; --btn-ink: #F5F2EA; --btn-hover: #2E5C24;
+  /* "band" = section surfaces. Light by default; .deep blocks override these */
+  --band: #F5F2EA; --band-2: #ECE6D9; --band-ink: #202321; --band-muted: #5B5F58; --band-line: #E3DCCE; --band-outline: rgba(32, 35, 33, .28); --band-accent: #244A1C;
+  --ok: #2F6B12; --ok-bg: #E4EFD3; --warn: #7A4E00; --warn-bg: #F5E8CB; --danger: #A12A1E; --danger-bg: #F6DFDA;
+  --shadow: 0 1px 2px rgba(32, 35, 33, .06), 0 10px 28px rgba(32, 35, 33, .10);
+  /* Type: Liberation Serif (display) / Liberation Sans (body) */
+  --serif: "Tinos", "Liberation Serif", Georgia, serif;
+  --sans: "Arimo", "Liberation Sans", Arial, sans-serif;
+  --t-label: .75rem; --t-sm: .875rem; --t-body: 1rem; --t-sub: 1.375rem; --t-h2: clamp(1.75rem, 4.2vw, 2.4rem); --t-display: clamp(2.5rem, 7.4vw, 3.9rem);
+  --r-sm: 4px; --r-md: 8px; --r-lg: 12px;
+  --tabbar-h: 68px;
+  color-scheme: light;
+}
+html { background: var(--surface); }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: var(--t-body); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 60; background: var(--warm); }
+img { max-width: 100%; display: block; }
+a { color: var(--accent-text); }
+button, input, select, textarea { font: inherit; color: inherit; }
+:focus-visible { outline: 3px solid var(--leaf); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 400; line-height: 1.1; text-wrap: balance; letter-spacing: -.005em; }
+h3 { font-weight: 700; line-height: 1.2; }
+h4 { margin: 0; font-family: var(--sans); font-weight: 700; line-height: 1.3; }
+p { margin: 0; }
+em.accent { font-style: italic; color: var(--deep); }
+.wrap { width: 100%; max-width: 1200px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-family: var(--sans); font-size: var(--t-label); font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-text); display: flex; align-items: center; gap: .65rem; }
+.eyebrow::before { content: ""; width: 28px; height: 2px; background: var(--rule); flex: none; }
+.on-dark .eyebrow, .eyebrow.on-dark { color: var(--band-accent); }
+.muted { color: var(--ink-2); }
+.note { font-size: var(--t-label); color: var(--ink-2); }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Buttons: deep green on light surfaces, leaf green with charcoal text on dark (guide contrast pairs) */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: .5rem; min-height: 46px; padding: 0 1.15rem; border-radius: var(--r-sm); border: 1px solid transparent; font-family: var(--sans); font-weight: 700; font-size: var(--t-sm); text-decoration: none; cursor: pointer; white-space: nowrap; transition: background-color .15s ease, transform .15s ease; }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.btn-primary { background: var(--btn); color: var(--btn-ink); }
+.btn-primary:hover { background: var(--btn-hover); }
+.btn-leaf { background: var(--leaf); color: var(--charcoal); }
+.btn-leaf:hover { background: var(--lime); }
+.btn-ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+.btn-ghost:hover { background: var(--surface-2); }
+.btn-on-dark { background: transparent; border-color: var(--band-outline); color: var(--band-ink); }
+.btn-on-dark:hover { background: rgba(127, 127, 127, .1); }
+.btn-sm { min-height: 40px; padding: 0 .9rem; font-size: var(--t-label); }
+.chip { display: inline-flex; align-items: center; gap: .35rem; min-height: 40px; padding: 0 .85rem; border-radius: var(--r-sm); border: 1px solid var(--line); background: var(--surface); color: var(--ink); font-size: var(--t-sm); font-weight: 700; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--btn); border-color: var(--btn); color: var(--btn-ink); }
+.pill { display: inline-flex; align-items: center; padding: .15rem .55rem; border-radius: 3px; font-size: var(--t-label); font-weight: 700; letter-spacing: .04em; }
+.pill-soon { background: var(--charcoal); color: var(--lime); }
+.pill-draft { background: var(--warn-bg); color: var(--warn); }
+.copy-btn { border: 0; background: transparent; color: inherit; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-size: var(--t-label); font-weight: 700; padding: 6px; min-height: 32px; }
+
+/* Info bar + header (logo always on a solid Charcoal panel) */
+.infobar { background: var(--surface-2); color: var(--ink-2); font-size: var(--t-label); letter-spacing: .08em; text-transform: uppercase; border-bottom: 1px solid var(--band-line); }
+.infobar .wrap { display: flex; justify-content: space-between; gap: 1rem; padding-block: .45rem; flex-wrap: wrap; }
+@media (max-width: 599px) { .infobar .lic { display: none; } }
+.infobar b { color: var(--ink); font-weight: 700; letter-spacing: .04em; font-variant-numeric: tabular-nums; }
+.topbar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; background: var(--warm); color: var(--ink); border-bottom: 2px solid var(--leaf); }
+.topbar .wrap { display: flex; align-items: center; gap: 1rem; min-height: 64px; }
+.brandlink { display: flex; align-items: center; margin-right: auto; padding-block: 6px; }
+.brandlink .emblem { width: 64px; height: auto; }
+.brandlink .signature { display: none; width: 360px; height: auto; }
+.topnav { display: none; gap: .15rem; align-items: center; }
+.topnav a { white-space: nowrap; text-decoration: none; color: var(--ink-2); font-weight: 700; font-size: var(--t-sm); padding: .55rem .8rem; border-radius: var(--r-sm); display: inline-flex; align-items: center; gap: .45rem; }
+.topnav a:hover { color: var(--ink); }
+.topnav a[aria-current="page"] { color: var(--ink); box-shadow: inset 0 -2px 0 var(--leaf); border-radius: 0; }
+.topnav a.inspire-link { color: var(--charcoal); background: var(--leaf); }
+.topnav a.inspire-link[aria-current="page"] { box-shadow: none; border-radius: var(--r-sm); background: var(--lime); }
+.head-actions { display: flex; gap: .5rem; align-items: center; }
+.call-btn { display: inline-flex; }
+.head-book { display: none; }
+@media (min-width: 1200px) {
+  .topbar { position: static; }
+  .topbar .wrap { min-height: 0; padding-block: 29px; }  /* clear space X = 8% of a 360px signature */
+  .brandlink { padding-block: 0; }
+  .brandlink .emblem { display: none; }
+  .brandlink .signature { display: block; }
+  .topnav { display: flex; }
+  .head-actions .call-btn { display: none; }
+  .head-book { display: inline-flex; }
+}
+@media (min-width: 1200px) and (max-width: 1279px) { .head-book { display: none; } }
+
+/* Bottom tab bar (phones) */
+.tabbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; background: var(--surface); border-top: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(32, 35, 33, .06); padding-bottom: env(safe-area-inset-bottom, 0px); padding-left: max(8px, env(safe-area-inset-left, 0px)); padding-right: max(8px, env(safe-area-inset-right, 0px)); }
+.tabbar ul { list-style: none; margin: 0 auto; padding: 0; display: grid; grid-template-columns: repeat(5, 1fr); max-width: 560px; height: var(--tabbar-h); align-items: end; }
+.tabbar a { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; height: 100%; text-decoration: none; color: var(--ink-2); font-size: .6875rem; font-weight: 700; min-width: 44px; }
+.tabbar a svg { width: 24px; height: 24px; }
+.tabbar a[aria-current="page"] { color: var(--deep); }
+.tabbar .tab-inspire { position: relative; justify-content: flex-end; padding-bottom: 8px; color: var(--ink); }
+.tabbar .tab-inspire .orb { width: 58px; height: 58px; border-radius: 50%; margin-top: -26px; margin-bottom: 2px; background: var(--leaf); color: var(--charcoal); display: grid; place-items: center; border: 4px solid var(--surface); box-shadow: 0 4px 12px rgba(125, 192, 15, .35); }
+.tabbar .tab-inspire .orb svg { width: 26px; height: 26px; }
+.tabbar .tab-inspire .soon-dot { position: absolute; top: -30px; left: calc(50% + 14px); background: var(--charcoal); color: var(--lime); font-size: .5625rem; font-weight: 700; letter-spacing: .06em; padding: 2px 6px; border-radius: 3px; text-transform: uppercase; }
+@media (min-width: 1200px) { .tabbar { display: none; } }
+
+/* Views */
+.view { display: none; }
+.view.active { display: block; animation: rise .3s ease both; }
+@keyframes rise { from { opacity: .5; transform: translateY(5px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .view.active { animation: none; } html { scroll-behavior: auto; } }
+.section { padding-block: 2.5rem; }
+.section-head { display: flex; align-items: end; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+.section-head > div { display: grid; gap: .5rem; }
+.section-head h2 { font-size: var(--t-h2); }
+.section-head p { max-width: 60ch; }
+
+/* HOME hero */
+.hero { background: var(--band); color: var(--band-ink); padding-block: 1.75rem 2.25rem; overflow: hidden; }
+.hero h1 { font-size: var(--t-display); max-width: 15ch; margin-top: .75rem; }
+.hero .lede { color: var(--band-muted); max-width: 52ch; margin-top: .75rem; font-size: 1.0625rem; }
+.carousel { position: relative; margin-top: 1.5rem; }
+.track { display: grid; grid-auto-flow: column; grid-auto-columns: 88%; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; overscroll-behavior-x: contain; position: relative; }
+.track::-webkit-scrollbar { display: none; }
+.wf-card { position: relative; scroll-snap-align: start; border-radius: var(--r-md); overflow: hidden; margin: 0; aspect-ratio: 4 / 5; background: var(--band-2); max-width: 100%; }
+.wf-card img { width: 100%; height: 100%; object-fit: cover; }
+.wf-card figcaption { position: absolute; inset: auto 0 0 0; padding: 4.5rem 1.1rem 1.1rem; background: linear-gradient(to top, rgba(32, 35, 33, .95), rgba(32, 35, 33, .6) 55%, transparent); display: grid; gap: .3rem; color: #F5F2EA; }
+.wf-card .type { font-size: var(--t-label); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #AFE414; }
+.wf-card h3 { font-size: 1.6rem; font-weight: 400; }
+.wf-card p { font-size: var(--t-sm); color: #D9D4C8; max-width: 46ch; }
+.wf-card .meta { font-size: var(--t-label); color: #B6AEA1; font-weight: 700; display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
+.carousel-ui { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: 1rem; }
+.dots { display: flex; gap: 6px; flex-wrap: wrap; }
+.dots button { width: 10px; height: 4px; border-radius: 2px; border: 0; padding: 0; background: rgba(32, 35, 33, .2); cursor: pointer; transition: width .2s; }
+.dots button[aria-current="true"] { width: 28px; background: var(--deep); }
+.arrows { display: none; gap: .5rem; }
+.arrows button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--band-outline); background: var(--surface); color: var(--ink); cursor: pointer; display: grid; place-items: center; }
+.arrows svg { width: 20px; height: 20px; }
+.hero-cta { margin-top: 1.5rem; display: grid; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid var(--band-line); }
+.hero-cta h2 { font-size: clamp(1.5rem, 4vw, 2rem); }
+.hero-cta p { color: var(--band-muted); }
+.hero-cta .actions { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; }
+.phone-line { display: inline-flex; align-items: center; gap: .35rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+@media (min-width: 720px) { .track { grid-auto-columns: 62%; } .wf-card { aspect-ratio: 16 / 11; } }
+@media (min-width: 1200px) { .hero-cta { grid-template-columns: 1fr auto; align-items: center; } }
+@media (min-width: 960px) { .hero { padding-block: 2.5rem 3rem; } .track { grid-auto-columns: 58%; } .arrows { display: flex; } }
+
+/* Get Inspired banner: leaf green with charcoal text (7.11:1), quiet water-contour motif kept to the right */
+.inspire-banner { margin-top: 1.5rem; position: relative; overflow: hidden; border-radius: var(--r-lg); background: var(--leaf); color: var(--charcoal); padding: 1.35rem; display: grid; gap: .85rem; text-decoration: none; }
+.inspire-banner > * { position: relative; }
+.inspire-banner .contour { position: absolute; right: -40px; top: -10px; width: 300px; height: 220px; opacity: .22; pointer-events: none; }
+.inspire-banner .row { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.inspire-banner .kicker { font-size: var(--t-label); font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+.inspire-banner h2 { font-size: clamp(2rem, 6vw, 2.75rem); }
+.inspire-banner p { max-width: 50ch; }
+.inspire-banner .fake-input { display: flex; align-items: center; gap: .6rem; background: rgba(245, 242, 234, .9); color: #3F433F; border-radius: var(--r-sm); padding: .75rem 1rem; font-size: var(--t-sm); min-width: 0; max-width: 560px; }
+.inspire-banner .fake-input span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; min-width: 0; }
+.inspire-banner .fake-input svg { flex: none; width: 18px; height: 18px; }
+
+/* Lisa's featured article band (deep green) */
+.lisa-band { background: var(--deep); color: var(--warm); border-radius: var(--r-lg); overflow: hidden; display: grid; margin-top: 2.5rem; }
+.lisa-band .img { aspect-ratio: 4 / 3; max-width: 100%; }
+.lisa-band .img img { width: 100%; height: 100%; object-fit: cover; }
+.lisa-band .body { padding: 1.25rem; display: grid; gap: .75rem; align-content: center; }
+.lisa-band .eyebrow { color: var(--lime); }
+.lisa-band .eyebrow::before { background: var(--lime); }
+.lisa-band h2 { font-size: var(--t-h2); }
+.lisa-band p { color: #D7DECF; max-width: 54ch; }
+.lisa-band .byline { font-size: var(--t-sm); font-weight: 700; color: var(--warm); display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+@media (min-width: 820px) { .lisa-band { grid-template-columns: 1.1fr 1fr; } .lisa-band .img { aspect-ratio: auto; min-height: 340px; } .lisa-band .body { padding: 2rem; } }
+
+/* Journal */
+.journal-grid { display: grid; gap: 1.5rem; }
+.journal-grid > * { min-width: 0; }
+@media (min-width: 960px) { .journal-grid { grid-template-columns: minmax(0, 1fr) 320px; align-items: start; } .rail { position: sticky; top: 24px; } }
+.article-hero { border-radius: var(--r-md); overflow: hidden; aspect-ratio: 16 / 10; max-width: 100%; }
+.article-hero img { width: 100%; height: 100%; object-fit: cover; }
+.byline-row { display: flex; gap: .75rem; align-items: center; flex-wrap: wrap; font-size: var(--t-label); color: var(--ink-2); font-weight: 700; margin-top: 1rem; text-transform: uppercase; letter-spacing: .08em; }
+.byline-row .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--stone); }
+.article-title { font-size: clamp(1.9rem, 5vw, 2.6rem); margin-top: .5rem; }
+.prose { max-width: 66ch; display: grid; gap: .9rem; margin-top: .9rem; }
+.module { margin-top: 1.75rem; padding: 1.2rem; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); }
+.module-head { display: flex; align-items: center; justify-content: space-between; gap: .75rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.module-head > div { display: grid; gap: .35rem; }
+.module-head h3 { font-size: var(--t-sub); }
+
+/* Frost check */
+.temp-readout { display: flex; align-items: baseline; gap: .7rem; flex-wrap: wrap; }
+.temp-readout output { font-family: var(--serif); font-size: 3.25rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.temp-readout span { color: var(--ink-2); font-size: var(--t-sm); font-weight: 700; }
+input[type="range"] { width: 100%; accent-color: var(--deep); height: 32px; }
+.scale { display: flex; justify-content: space-between; font-size: var(--t-label); color: var(--ink-2); font-variant-numeric: tabular-nums; }
+.frost-list { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: .5rem; }
+.frost-list li { display: grid; grid-template-columns: 46px minmax(0, 1fr) auto; gap: .75rem; align-items: center; padding: .55rem; border-radius: var(--r-md); background: var(--surface-2); }
+.frost-list img, .frost-list .ph { width: 46px; height: 46px; object-fit: cover; border-radius: 6px; }
+.frost-list .ph { background: var(--line); display: grid; place-items: center; color: var(--ink-2); font-weight: 700; font-size: var(--t-label); }
+.frost-list b { display: block; font-size: var(--t-sm); }
+.frost-list small { color: var(--ink-2); font-size: var(--t-label); display: block; }
+.status { font-size: var(--t-label); font-weight: 700; padding: .3rem .6rem; border-radius: 3px; white-space: nowrap; }
+.s-ok { background: var(--ok-bg); color: var(--ok); }
+.s-warn { background: var(--warn-bg); color: var(--warn); }
+.s-bad { background: var(--danger-bg); color: var(--danger); }
+
+/* Plant cards */
+.hscroll { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(240px, 72%); gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+@media (min-width: 720px) { .hscroll { grid-auto-columns: minmax(250px, 40%); } }
+.plant-card { scroll-snap-align: start; border-radius: var(--r-md); overflow: hidden; background: var(--surface-2); display: grid; grid-template-rows: auto 1fr; }
+.plant-card .img { aspect-ratio: 4 / 3; overflow: hidden; max-width: 100%; }
+.plant-card img { width: 100%; height: 100%; object-fit: cover; }
+.plant-card .body { padding: .9rem; display: grid; gap: .45rem; align-content: start; }
+.plant-card h4 { font-family: var(--serif); font-size: 1.2rem; }
+.plant-card .latin { font-size: var(--t-label); color: var(--ink-2); font-style: italic; }
+.plant-card ul { margin: 0; padding-left: 1.05rem; display: grid; gap: .25rem; font-size: var(--t-sm); }
+
+/* Segmented control */
+.seg { display: inline-flex; flex-wrap: wrap; gap: 4px; padding: 4px; border-radius: var(--r-md); background: var(--surface-2); }
+.seg button { border: 0; background: transparent; padding: .5rem .85rem; border-radius: var(--r-sm); font-weight: 700; font-size: var(--t-label); cursor: pointer; color: var(--ink-2); min-height: 36px; }
+.seg button[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+.water-out { margin-top: 1rem; display: grid; gap: .75rem; }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: .5rem; }
+.stat { background: var(--surface-2); border-radius: var(--r-md); padding: .7rem .8rem; border-top: 2px solid var(--rule); }
+.stat small { display: block; font-size: var(--t-label); color: var(--ink-2); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.stat b { font-size: var(--t-body); font-variant-numeric: tabular-nums; }
+
+/* Checklist */
+.progress { height: 6px; border-radius: 3px; background: var(--surface-2); overflow: hidden; }
+.progress i { display: block; height: 100%; background: var(--leaf); width: 0; transition: width .3s ease; }
+.checklist { list-style: none; padding: 0; margin: .9rem 0 0; display: grid; gap: .25rem; }
+.checklist label { display: grid; grid-template-columns: 24px minmax(0, 1fr); gap: .7rem; align-items: start; padding: .6rem .4rem; border-radius: 6px; cursor: pointer; }
+.checklist label:hover { background: var(--surface-2); }
+.checklist input { width: 20px; height: 20px; accent-color: var(--deep); margin-top: 2px; }
+.checklist .when { display: block; font-size: var(--t-label); color: var(--ink-2); font-weight: 700; }
+.checklist input:checked + span { color: var(--ink-2); text-decoration: line-through; text-decoration-color: var(--stone); }
+
+/* Built-by band */
+.built-band { margin-top: 1.75rem; border-radius: var(--r-lg); overflow: hidden; background: var(--band); color: var(--band-ink); display: grid; }
+.built-band img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; max-width: 100%; }
+.built-band .cap { padding: 1.1rem 1.15rem 1.2rem; display: grid; gap: .6rem; }
+.built-band .eyebrow { color: var(--band-accent); }
+.built-band h3 { font-size: var(--t-sub); font-weight: 400; }
+.built-band p { color: var(--band-muted); font-size: var(--t-sm); }
+.built-band .actions { display: flex; gap: .5rem; flex-wrap: wrap; }
+@media (min-width: 720px) { .built-band { grid-template-columns: 1.3fr 1fr; align-items: center; } .built-band img { height: 100%; aspect-ratio: auto; min-height: 260px; } }
+
+/* Rail */
+.rail { display: grid; gap: 1rem; }
+.rail-card { border-radius: var(--r-lg); padding: 1.15rem; background: var(--surface); border: 1px solid var(--line); display: grid; gap: .7rem; }
+.rail-card h3 { font-size: 1.3rem; }
+.rail-card.dark { background: var(--band); color: var(--band-ink); border-color: transparent; }
+.rail-card.dark p { color: var(--band-muted); }
+
+/* Post, project and service cards */
+.post-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); }
+.post-card { border: 1px solid var(--line); background: var(--surface); border-radius: var(--r-lg); overflow: hidden; text-align: left; padding: 0; cursor: pointer; display: grid; grid-template-rows: auto 1fr; color: var(--ink); }
+.post-card .img { aspect-ratio: 16 / 10; overflow: hidden; max-width: 100%; }
+.post-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.post-card:hover img { transform: scale(1.03); }
+.post-card .body { padding: 1rem; display: grid; gap: .45rem; align-content: start; }
+.post-card h3 { font-size: 1.3rem; }
+.post-card p { font-size: var(--t-sm); color: var(--ink-2); }
+.tag { font-size: var(--t-label); font-weight: 700; color: var(--accent-text); text-transform: uppercase; letter-spacing: .1em; }
+.proj-scroll { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(250px, 78%); gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; }
+@media (min-width: 720px) { .proj-scroll { grid-auto-columns: minmax(260px, 31%); } }
+.proj-card { scroll-snap-align: start; border: 0; padding: 0; background: transparent; text-align: left; cursor: pointer; display: grid; gap: .5rem; color: var(--ink); }
+.proj-card .img { aspect-ratio: 4 / 5; border-radius: var(--r-md); overflow: hidden; max-width: 100%; }
+.proj-card img { width: 100%; height: 100%; object-fit: cover; }
+.proj-card b { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; }
+.proj-card small { color: var(--ink-2); font-size: var(--t-label); font-weight: 700; }
+.svc-strip { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); }
+.svc-tile { position: relative; border-radius: var(--r-md); overflow: hidden; aspect-ratio: 4 / 3; max-width: 100%; text-decoration: none; display: block; }
+.svc-tile img { width: 100%; height: 100%; object-fit: cover; }
+.svc-tile > span { position: absolute; inset: auto 0 0 0; background: var(--deep); color: #F5F2EA; padding: .7rem .9rem; font-weight: 700; display: flex; justify-content: space-between; align-items: center; font-size: var(--t-sm); }
+
+/* Consultation band + footer */
+.consult-band { background: var(--band); color: var(--band-ink); }
+.consult-band .wrap { padding-block: 2.5rem; display: grid; gap: 1rem; }
+.consult-band h2 { font-size: var(--t-h2); }
+.consult-band p { color: var(--band-muted); max-width: 56ch; }
+.consult-band .actions { display: flex; gap: .6rem; flex-wrap: wrap; align-items: center; }
+@media (min-width: 1200px) { .consult-band .wrap { grid-template-columns: 1fr auto; align-items: center; } }
+.footer { background: var(--band); color: var(--ink-2); border-top: 2px solid var(--leaf); padding-block: 2.25rem calc(var(--tabbar-h) + 32px + env(safe-area-inset-bottom, 0px)); }
+@media (min-width: 960px) { .footer { padding-bottom: 2.25rem; } }
+.footer .grid { display: grid; gap: 1.5rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); align-items: start; }
+.footer .logo-cell img { width: min(100%, 360px); height: auto; }
+.footer h4 { color: var(--ink); font-size: var(--t-sm); margin-bottom: .45rem; }
+.footer p, .footer li { font-size: var(--t-sm); }
+.footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .3rem; }
+.footer a { color: var(--accent-text); }
+.footer .legal { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--band-line); font-size: var(--t-label); letter-spacing: .06em; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; text-transform: uppercase; }
+.brandline { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); }
+
+/* SERVICES */
+.page-head { padding-block: 2rem 1rem; display: grid; gap: .7rem; }
+.page-head h1 { font-size: clamp(2.2rem, 6vw, 3.25rem); }
+.page-head p { max-width: 62ch; color: var(--ink-2); }
+.steps { list-style: none; padding: 0; margin: 0; display: grid; gap: .6rem; counter-reset: step; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); }
+.steps li { counter-increment: step; background: var(--surface); border: 1px solid var(--line); border-top: 2px solid var(--rule); border-radius: var(--r-md); padding: 1rem; display: grid; gap: .35rem; }
+.steps li::before { content: counter(step, decimal-leading-zero); font-family: var(--serif); font-size: 1.5rem; color: var(--accent-text); }
+.steps b { font-size: var(--t-body); }
+.steps span { font-size: var(--t-sm); color: var(--ink-2); }
+.svc-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); }
+.svc { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; display: grid; grid-template-rows: auto 1fr; scroll-margin-top: 90px; }
+.svc .img { aspect-ratio: 3 / 2; overflow: hidden; max-width: 100%; background: var(--surface-2); }
+.svc .img img { width: 100%; height: 100%; object-fit: cover; }
+.svc .img svg { width: 100%; height: 100%; }
+.svc .body { padding: 1.05rem; display: grid; gap: .6rem; align-content: start; }
+.svc h3 { font-size: 1.35rem; }
+.svc p { font-size: var(--t-sm); color: var(--ink-2); }
+.svc ul, .feat-list { margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: .35rem; }
+.svc li, .feat-list li { font-size: var(--t-label); font-weight: 700; background: var(--surface-2); padding: .3rem .55rem; border-radius: 3px; }
+.svc .actions { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .2rem; }
+.pkg-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.pkg { border-radius: var(--r-lg); padding: 1.2rem; border: 1px solid var(--line); background: var(--surface); display: grid; gap: .6rem; align-content: start; }
+.pkg h3 { font-size: 1.5rem; }
+.pkg.feature { background: var(--band); color: var(--band-ink); border-color: transparent; }
+.pkg.feature .eyebrow { color: var(--lime); }
+.pkg.feature li { color: var(--band-muted); }
+.pkg ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .25rem; font-size: var(--t-sm); }
+
+/* INSPIRE */
+.inspire-hero { background: var(--band); color: var(--band-ink); padding-block: 2rem 2.25rem; }
+.inspire-hero h1 { font-size: clamp(2.4rem, 7vw, 3.6rem); margin-top: .6rem; }
+.inspire-hero p { color: var(--band-muted); max-width: 56ch; margin-top: .6rem; }
+.inspire-hero .row { display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
+.prompt-box { margin-top: 1.4rem; background: var(--surface); color: var(--ink); border-radius: var(--r-lg); padding: 1rem; display: grid; gap: .8rem; box-shadow: var(--shadow); }
+.prompt-box label { font-weight: 700; font-size: var(--t-sm); }
+.prompt-box textarea { width: 100%; min-height: 104px; resize: vertical; border: 1px solid var(--line); border-radius: var(--r-md); padding: .8rem; background: var(--bg); line-height: 1.5; }
+.idea-chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.prompt-actions { display: flex; justify-content: space-between; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.result-grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr)); }
+.result { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; display: grid; grid-template-rows: auto 1fr; }
+.result .pair { display: grid; grid-template-columns: 2fr 1fr; gap: 2px; aspect-ratio: 16 / 10; max-width: 100%; }
+.result .pair img { width: 100%; height: 100%; object-fit: cover; }
+.result .body { padding: 1rem; display: grid; gap: .55rem; align-content: start; }
+.result h3 { font-size: 1.35rem; }
+.match-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
+.match-tags span { font-size: var(--t-label); font-weight: 700; padding: .25rem .55rem; border-radius: 3px; background: var(--ok-bg); color: var(--ok); }
+.coming { border: 1px dashed var(--line); border-radius: var(--r-lg); padding: 1.1rem; display: grid; gap: .5rem; background: var(--surface); }
+
+/* BOOK */
+.book-grid { display: grid; gap: 1.25rem; padding-bottom: 2.5rem; }
+.book-grid > * { min-width: 0; }
+@media (min-width: 960px) { .book-grid { grid-template-columns: minmax(0, 1fr) 340px; align-items: start; } }
+.form-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 1.15rem; display: grid; gap: 1.5rem; }
+fieldset { border: 0; margin: 0; padding: 0; display: grid; gap: .7rem; min-width: 0; }
+legend { font-family: var(--serif); font-weight: 700; font-size: 1.35rem; padding: 0; margin-bottom: .2rem; display: flex; gap: .6rem; align-items: center; }
+legend .n { font-family: var(--sans); width: 28px; height: 28px; border-radius: 50%; background: var(--btn); color: var(--btn-ink); display: inline-grid; place-items: center; font-size: var(--t-label); }
+.days { display: grid; grid-auto-flow: column; grid-auto-columns: 74px; gap: 8px; overflow-x: auto; padding-bottom: 4px; }
+.day { border: 1px solid var(--line); background: var(--bg); border-radius: var(--r-md); padding: .55rem .3rem; text-align: center; cursor: pointer; display: grid; gap: 2px; }
+.day small { font-size: .6875rem; color: var(--ink-2); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; }
+.day b { font-family: var(--serif); font-size: 1.6rem; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.day[aria-pressed="true"] { background: var(--btn); border-color: var(--btn); color: var(--btn-ink); }
+.day[aria-pressed="true"] small { color: inherit; }
+.slots { display: flex; flex-wrap: wrap; gap: .4rem; }
+.slot[disabled] { opacity: .45; cursor: not-allowed; text-decoration: line-through; }
+.fields { display: grid; gap: .8rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); }
+.field { display: grid; gap: .3rem; }
+.field label { font-size: var(--t-sm); font-weight: 700; }
+.field input, .field select, .field textarea { width: 100%; min-height: 46px; border: 1px solid var(--line); border-radius: var(--r-sm); padding: .6rem .75rem; background: var(--bg); }
+.field textarea { min-height: 96px; resize: vertical; }
+.err { color: var(--danger); font-size: var(--t-label); font-weight: 700; }
+.thumbs { display: flex; gap: .4rem; flex-wrap: wrap; }
+.thumbs img { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; }
+.summary-card { background: var(--band); color: var(--band-ink); border-radius: var(--r-lg); padding: 1.15rem; display: grid; gap: .75rem; }
+.summary-card dl { margin: 0; display: grid; gap: .55rem; }
+.summary-card dt { font-size: var(--t-label); color: var(--band-muted); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.summary-card dd { margin: 0; font-weight: 700; }
+.receipt { background: var(--ok-bg); color: var(--ink); border-radius: var(--r-lg); padding: 1.15rem; display: grid; gap: .6rem; border: 1px solid var(--line); }
+.receipt h3 { color: var(--ok); font-size: 1.4rem; }
+
+/* MY PROJECT (portal) */
+.login-wrap { display: grid; gap: 1.25rem; padding-block: 2rem 2.5rem; }
+@media (min-width: 900px) { .login-wrap { grid-template-columns: 1fr 1fr; align-items: center; } }
+.login-art { border-radius: var(--r-lg); overflow: hidden; position: relative; aspect-ratio: 4 / 3; max-width: 100%; }
+.login-art img { width: 100%; height: 100%; object-fit: cover; }
+.login-art .cap { position: absolute; inset: auto 0 0 0; padding: 3rem 1rem 1rem; background: linear-gradient(to top, rgba(32, 35, 33, .94), transparent); color: #F5F2EA; display: grid; gap: .35rem; }
+.login-art .cap ul { margin: 0; padding-left: 1.1rem; font-size: var(--t-sm); color: #D9D4C8; }
+.login-card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 1.3rem; display: grid; gap: .9rem; }
+.login-card h1 { font-size: 2rem; }
+.divider { display: flex; align-items: center; gap: .6rem; color: var(--ink-2); font-size: var(--t-label); font-weight: 700; }
+.divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.portal-head { position: relative; border-radius: var(--r-lg); overflow: hidden; margin-top: 1.25rem; background: var(--band); color: var(--band-ink); display: grid; }
+.portal-head > img { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; max-width: 100%; }
+.portal-head .cap { padding: 1.1rem 1.15rem; display: grid; gap: .5rem; }
+.portal-head .cap .row { display: flex; gap: .5rem; flex-wrap: wrap; align-items: center; }
+.portal-head h1 { font-size: 2rem; }
+.portal-head p { color: var(--band-muted); font-size: var(--t-sm); }
+.complete { display: inline-flex; background: var(--deep); color: #F5F2EA; font-size: var(--t-label); font-weight: 700; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .6rem; border-radius: 3px; width: fit-content; }
+@media (min-width: 820px) { .portal-head { grid-template-columns: 1.2fr 1fr; align-items: center; } .portal-head > img { height: 100%; min-height: 260px; aspect-ratio: auto; } }
+.ptabs { position: sticky; top: 0; z-index: 20; background: var(--bg); padding-block: .75rem; }
+@media (min-width: 960px) { .ptabs { top: env(safe-area-inset-top, 0px); } }
+.ptabs .seg { display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+.ptabs .seg::-webkit-scrollbar { display: none; }
+.ptabs .seg button { white-space: nowrap; font-size: var(--t-sm); padding: .55rem .9rem; }
+.ppanel { display: grid; gap: 1rem; padding-bottom: 2.5rem; }
+.cards-2 { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); }
+.pcard { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r-lg); padding: 1.1rem; display: grid; gap: .7rem; align-content: start; min-width: 0; }
+.pcard h3 { font-size: 1.35rem; }
+.task-list { list-style: none; padding: 0; margin: 0; display: grid; gap: .55rem; }
+.task-list li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: .65rem; align-items: start; font-size: var(--t-sm); }
+.task-list .when { font-size: var(--t-label); font-weight: 700; padding: .2rem .5rem; border-radius: 3px; background: var(--surface-2); color: var(--ink-2); white-space: nowrap; }
+.plant-row { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: .85rem; align-items: start; }
+.plant-row img { width: 76px; height: 76px; border-radius: 6px; object-fit: cover; }
+.plant-row h4 { font-family: var(--serif); font-size: 1.2rem; }
+.kv { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: .3rem .8rem; font-size: var(--t-sm); margin: 0; }
+.kv dt { color: var(--ink-2); font-weight: 700; }
+.kv dd { margin: 0; }
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--r-md); }
+table { border-collapse: collapse; width: 100%; min-width: 520px; font-size: var(--t-sm); background: var(--surface); }
+th, td { text-align: left; padding: .65rem .75rem; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: var(--t-label); text-transform: uppercase; letter-spacing: .08em; color: var(--ink-2); background: var(--surface-2); }
+td.num { font-variant-numeric: tabular-nums; font-weight: 700; white-space: nowrap; }
+tr:last-child td { border-bottom: 0; }
+.howto { counter-reset: how; list-style: none; padding: 0; margin: 0; display: grid; gap: .55rem; }
+.howto li { counter-increment: how; display: grid; grid-template-columns: 26px minmax(0, 1fr); gap: .6rem; font-size: var(--t-sm); }
+.howto li::before { content: counter(how); width: 24px; height: 24px; border-radius: 50%; background: var(--surface-2); color: var(--accent-text); font-weight: 700; font-size: var(--t-label); display: grid; place-items: center; }
+.fixture { display: grid; grid-template-columns: 52px minmax(0, 1fr) auto; gap: .75rem; align-items: center; padding: .6rem; background: var(--surface-2); border-radius: var(--r-md); }
+.fixture .ico { width: 52px; height: 52px; border-radius: 6px; background: var(--charcoal); color: var(--leaf); display: grid; place-items: center; }
+.fixture .ico svg { width: 26px; height: 26px; }
+.fixture b { font-size: var(--t-sm); display: block; }
+.fixture small { font-size: var(--t-label); color: var(--ink-2); display: block; }
+.fixture .qty { font-weight: 700; font-variant-numeric: tabular-nums; }
+.demo-banner { display: flex; gap: .4rem .8rem; align-items: center; flex-wrap: wrap; padding: .6rem .8rem; border-radius: var(--r-md); background: var(--warn-bg); color: var(--warn); font-size: var(--t-label); font-weight: 700; margin-top: 1rem; }
+
+/* Deep green accent blocks */
+.lisa-band, .rail-card.dark, .consult-band, .summary-card, .pkg.feature, .portal-head {
+  background: var(--deep); color: #F5F2EA; border-color: transparent;
+  --band-ink: #F5F2EA; --band-muted: #D7DECF; --band-line: rgba(245, 242, 234, .18); --band-outline: rgba(245, 242, 234, .45); --band-accent: #AFE414; --rule: #AFE414;
+}
+.rail-card.dark p, .consult-band p, .portal-head p, .pkg.feature li { color: #D7DECF; }
+
+/* Phones and tablets: one-screen app. Header and navigation stay put; only the content scrolls. */
+@media (max-width: 1199px) {
+  html, body { height: 100%; }
+  body { overflow: hidden; }
+  .infobar { display: none; }
+  .topbar { position: relative; top: auto; }
+  .scroller { min-height: 0; overflow-y: auto; overscroll-behavior-y: contain; -webkit-overflow-scrolling: touch; }
+  .tabbar { position: relative; padding-bottom: 0; }
+  .footer { padding-bottom: 2.25rem; }
+  .ptabs { top: 0; }
+}
+/* Phones: bottom tab bar */
+@media (max-width: 767px) {
+  body { display: flex; flex-direction: column; }
+  .topbar, .tabbar { flex: none; }
+  .scroller { flex: 1 1 auto; }
+}
+/* Tablets: side rail */
+@media (min-width: 768px) and (max-width: 1199px) {
+  body { display: grid; grid-template-columns: 104px minmax(0, 1fr); grid-template-rows: auto minmax(0, 1fr); }
+  .topbar { grid-column: 1 / -1; grid-row: 1; }
+  .scroller { grid-column: 2; grid-row: 2; }
+  .tabbar { grid-column: 1; grid-row: 2; border-top: 0; border-right: 1px solid var(--line); box-shadow: none; padding: 16px 8px; padding-left: max(8px, env(safe-area-inset-left, 0px)); overflow-y: auto; }
+  .tabbar ul { grid-template-columns: 1fr; height: auto; max-width: none; align-items: stretch; gap: 6px; }
+  .tabbar a { height: auto; padding: 12px 4px; border-radius: 10px; font-size: .75rem; text-align: center; }
+  .tabbar a[aria-current="page"] { background: var(--surface-2); }
+  .tabbar .tab-inspire { justify-content: center; padding: 12px 4px; }
+  .tabbar .tab-inspire .orb { width: 54px; height: 54px; margin-top: 0; border-width: 3px; }
+  .tabbar .tab-inspire .soon-dot { top: 4px; left: auto; right: 0; }
+  .head-book { display: inline-flex; }
+}
+
+/* Dialog + toast */
+dialog { border: 0; padding: 0; border-radius: var(--r-lg); width: min(760px, calc(100vw - 24px)); max-height: calc(100dvh - 32px); background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+dialog::backdrop { background: rgba(32, 35, 33, .65); }
+.dlg-img { aspect-ratio: 16 / 9; overflow: hidden; max-width: 100%; }
+.dlg-img img { width: 100%; height: 100%; object-fit: cover; }
+.dlg-body { padding: 1.25rem; display: grid; gap: .85rem; }
+.dlg-body h2 { font-size: clamp(1.7rem, 5vw, 2.3rem); }
+.dlg-body h3 { font-size: 1.25rem; margin-top: .4rem; }
+.dlg-body .prose-col { max-width: 64ch; display: grid; gap: .8rem; }
+.dlg-close { position: absolute; right: 10px; top: 10px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(32, 35, 33, .78); color: #F5F2EA; cursor: pointer; display: grid; place-items: center; font-size: 1.2rem; }
+.dlg-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.dlg-gallery img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; width: 100%; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(var(--tabbar-h) + 20px + env(safe-area-inset-bottom, 0px)); z-index: 70; background: var(--charcoal); color: #F5F2EA; padding: .65rem 1rem; border-radius: var(--r-sm); font-size: var(--t-sm); font-weight: 700; box-shadow: var(--shadow); border-left: 3px solid var(--leaf); }
+@media (min-width: 768px) { .toast { bottom: 28px; } }
+</style>
+
+</head>
+<body>
+<div class="infobar">
+  <div class="wrap"><span><span class="lic">Licensed landscape contractor · </span>CSLB #1150882</span><b>(209) 585-9767</b></div>
+</div>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brandlink" href="#home" aria-label="Green Lion Landscape home">
+      <img class="emblem" src="img/lion-emblem.png" alt="Green Lion Landscape" width="64" height="43">
+      <img class="signature" src="img/logo-horizontal.png" alt="Green Lion: Water Features, Design, Custom Landscaping. CL #1150882" width="360" height="92">
+    </a>
+    <nav class="topnav" aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#services" data-nav="services">Services</a>
+      <a href="#inspire" data-nav="inspire" class="inspire-link">Get Inspired <span class="pill pill-soon">Soon</span></a>
+      <a href="#book" data-nav="book">Book</a>
+      <a href="#portal" data-nav="portal">My Project</a>
+    </nav>
+    <div class="head-actions">
+      <span class="btn btn-on-dark btn-sm call-btn phone-line"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2"/></svg><span>Call</span><button class="copy-btn" type="button" data-copy="(209) 585-9767" aria-label="Copy phone number (209) 585-9767" style="padding:0 0 0 .2rem">585-9767</button></span>
+      <a class="btn btn-leaf btn-sm head-book" href="#book">Schedule your design consultation</a>
+    </div>
+  </div>
+</header>
+
+<div class="scroller" id="scroller">
+<main id="main">
+  <!-- ============ HOME ============ -->
+  <section class="view" id="view-home" data-view="home" aria-label="Home">
+    <div class="hero on-dark">
+      <div class="wrap">
+        <p class="eyebrow on-dark">Water features · Modesto &amp; the Central Valley</p>
+        <h1>Central Valley's <em class="accent">favorite</em> water features</h1>
+        <p class="lede">Water, stone and planting, designed as part of your complete outdoor space. Swipe through waterfalls, ponds and water walls Green Lion has built.</p>
+        <div class="carousel" aria-roledescription="carousel" aria-label="Water feature gallery">
+          <div class="track" id="wf-track" tabindex="0"></div>
+          <div class="carousel-ui">
+            <div class="dots" id="wf-dots" role="tablist" aria-label="Choose a water feature"></div>
+            <div class="arrows">
+              <button type="button" id="wf-prev" aria-label="Previous water feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg></button>
+              <button type="button" id="wf-next" aria-label="Next water feature"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 6l6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="hero-cta">
+          <div style="display:grid;gap:.4rem">
+            <h2>Let's plan a space around how you want to use your backyard.</h2>
+            <p>Custom water features, designed as part of your complete outdoor space.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-leaf" href="#book" data-book="Water feature">Schedule your design consultation</a>
+            <a class="btn btn-on-dark" href="#services" data-focus="svc-water">Explore water features</a>
+            <span class="phone-line" style="font-size:var(--t-sm)">(209) 585-9767 <button class="copy-btn" type="button" data-copy="(209) 585-9767">Copy</button></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <a class="inspire-banner" href="#inspire" aria-label="Get Inspired, coming soon">
+        <svg class="contour" viewBox="0 0 300 220" fill="none" stroke="#202321" stroke-width="1.4" aria-hidden="true"><path d="M10 180c40-30 80-30 120-8s90 20 160-30"/><path d="M20 150c40-28 78-26 116-6s86 18 154-28"/><path d="M30 120c38-26 74-22 110-4s82 16 150-26"/><path d="M40 90c36-24 70-20 104-2s78 14 146-24"/><path d="M50 60c34-22 66-18 98 0s74 12 142-22"/><path d="M60 30c32-20 62-16 92 2s70 10 138-20"/></svg>
+        <div class="row"><span class="pill pill-soon">Coming soon</span><span class="kicker">New feature</span></div>
+        <h2>Get Inspired</h2>
+        <p>Type what you want in your yard. We'll show ideas drawn from projects Green Lion has already built.</p>
+        <span class="fake-input"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 3l1.6 5.2L19 10l-5.4 1.8L12 17l-1.6-5.2L5 10l5.4-1.8z"/></svg><span>"A koi pond with palms and a fire pit for evenings…"</span></span>
+      </a>
+
+      <article class="lisa-band" aria-labelledby="lisa-h">
+        <div class="img"><img src="img/wf-boulder-falls.jpg" alt="Boulder waterfall surrounded by rock and planting, a Green Lion Landscape project" loading="lazy"></div>
+        <div class="body">
+          <p class="eyebrow">From Lisa's Design Notebook</p>
+          <h2 id="lisa-h">Are Water Features Taking Over Modesto Backyards?</h2>
+          <p>A designer's perspective on water, stone and the way you want to live outdoors.</p>
+          <p class="byline">Lisa Taylor, Designer <span class="pill pill-draft">Draft for Lisa's review</span></p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap"><button class="btn btn-leaf" type="button" data-post="lisa">Read the story</button><a class="btn btn-on-dark" href="#book" data-book="Water feature">Schedule your design consultation</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="wrap section" id="journal">
+      <div class="section-head">
+        <div><p class="eyebrow">The Green Lion Journal</p><h2>Learn your landscape</h2></div>
+        <p class="muted">Short seasonal lessons from our crews, with real projects along the way.</p>
+      </div>
+      <div class="journal-grid">
+        <article>
+          <div class="article-hero"><img src="img/learn-citrus.jpg" alt="Young citrus tree and ferns in a walled Modesto garden bed" loading="lazy"></div>
+          <div class="byline-row"><span>Winter 2026</span><span class="dot"></span><span>Central Valley</span><span class="dot"></span><span>6 min read</span></div>
+          <h2 class="article-title">This winter's plants, and how to take care of them</h2>
+          <div class="prose">
+            <p>Central Valley winters are mild most days, then a clear, still night drops into the high 20s. Those few frost nights do most of the damage. The plants we install most often handle winter well when you know which ones need a cover, which ones need less water, and which ones just need a trim in February.</p>
+            <p>Use the frost check below the next time the forecast calls for a cold night.</p>
+          </div>
+
+          <section class="module" aria-labelledby="frost-h">
+            <div class="module-head"><div><p class="eyebrow">Try it</p><h3 id="frost-h">Frost check: what needs a cover tonight?</h3></div></div>
+            <div class="temp-readout"><output id="frost-out" for="frost">31°F</output><span id="frost-label">Frost likely</span></div>
+            <label class="sr" for="frost">Forecast low temperature in Fahrenheit</label>
+            <input type="range" id="frost" min="18" max="45" step="1" value="31">
+            <div class="scale"><span>18°F</span><span>32°F freeze</span><span>45°F</span></div>
+            <ul class="frost-list" id="frost-list"></ul>
+            <p class="note" style="margin-top:.9rem;font-size:var(--t-sm)">Cover with frost cloth that reaches the ground, not plastic touching the leaves. Water dry soil the day before. Moist soil holds more heat. Pull covers off in the morning.</p>
+          </section>
+
+          <aside class="built-band" aria-label="Built by Green Lion">
+            <img src="img/pj-wall-2.jpg" alt="Lit stucco water wall with agave planters at dusk" loading="lazy">
+            <div class="cap">
+              <p class="eyebrow">Built by Green Lion · Modesto</p>
+              <h3>Agave, citrus and a water wall that glows after dark</h3>
+              <p>Water, stone and planting bring this outdoor space together: drought-tolerant agave and grasses, a citrus tree and warm landscape lighting around a custom water wall.</p>
+              <div class="actions"><button class="btn btn-leaf btn-sm" type="button" data-project="wall">View the project</button><a class="btn btn-on-dark btn-sm" href="#book" data-book="Water feature">Schedule your design consultation</a></div>
+            </div>
+          </aside>
+
+          <section class="module" aria-labelledby="plants-h">
+            <div class="module-head"><div><p class="eyebrow">Plant by plant</p><h3 id="plants-h">Winter care for the plants we install most</h3></div><span class="note">Swipe →</span></div>
+            <div class="hscroll" id="plant-cards"></div>
+          </section>
+
+          <section class="module" aria-labelledby="water-h">
+            <div class="module-head"><div><p class="eyebrow">Irrigation</p><h3 id="water-h">Winter watering starting points</h3></div></div>
+            <div class="seg" role="tablist" aria-label="Zone type" id="water-seg"></div>
+            <div class="water-out" id="water-out" aria-live="polite"></div>
+          </section>
+
+          <aside class="built-band" aria-label="Built by Green Lion">
+            <img src="img/svc-lighting.jpg" alt="Modern patio at night with fire table and warm landscape lighting" loading="lazy">
+            <div class="cap">
+              <p class="eyebrow">Built by Green Lion · 2026</p>
+              <h3>A wellness yard made for winter nights</h3>
+              <p>Gas fire lounge, hot tub, cube sauna and low-voltage lighting on a porcelain paver courtyard.</p>
+              <div class="actions"><button class="btn btn-leaf btn-sm" type="button" data-project="well">View the project</button><a class="btn btn-on-dark btn-sm" href="#book" data-book="Fire feature">Schedule your design consultation</a></div>
+            </div>
+          </aside>
+
+          <section class="module" aria-labelledby="check-h">
+            <div class="module-head"><div><p class="eyebrow">Your list</p><h3 id="check-h">Winter yard checklist</h3></div><span class="muted" id="check-count" style="font-size:var(--t-sm);font-weight:700;font-variant-numeric:tabular-nums">0 of 9 done</span></div>
+            <div class="progress" aria-hidden="true"><i id="check-bar"></i></div>
+            <ul class="checklist" id="checklist"></ul>
+          </section>
+        </article>
+
+        <aside class="rail" aria-label="Quick actions">
+          <div class="rail-card dark">
+            <p class="eyebrow on-dark">Design consultation</p>
+            <h3>Planning a project for spring?</h3>
+            <p>Winter is a good time to plan. Bring your ideas and questions and we'll walk the property with you.</p>
+            <a class="btn btn-leaf" href="#book">Schedule your design consultation</a>
+          </div>
+          <a class="rail-card" href="#inspire" style="text-decoration:none;color:inherit">
+            <span class="pill pill-soon" style="width:fit-content">Coming soon</span>
+            <h3>Get Inspired</h3>
+            <p class="muted" style="font-size:var(--t-sm)">Describe your dream yard and see matching Green Lion projects.</p>
+          </a>
+          <div class="rail-card">
+            <p class="eyebrow">Already a client?</p>
+            <h3>Your care details live in My Project</h3>
+            <p class="muted" style="font-size:var(--t-sm)">Plants, watering, lighting and product care for your installation.</p>
+            <a class="btn btn-ghost" href="#portal">Open My Project</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <div class="wrap section" style="padding-top:0">
+      <div class="section-head"><div><p class="eyebrow">More from the Journal</p><h2>Quick reads for this season</h2></div></div>
+      <div class="post-grid" id="post-grid"></div>
+    </div>
+
+    <div class="wrap section" style="padding-top:0">
+      <div class="section-head"><div><p class="eyebrow">Complete your outdoor space</p><h2>Other outdoor-living services</h2></div><a class="btn btn-ghost btn-sm" href="#services">All services</a></div>
+      <div class="svc-strip" id="svc-strip"></div>
+    </div>
+
+    <div class="wrap section" style="padding-top:0">
+      <div class="section-head"><div><p class="eyebrow">Recent projects</p><h2>Real Green Lion work</h2></div></div>
+      <div class="proj-scroll" id="proj-scroll"></div>
+    </div>
+
+    <div class="consult-band on-dark">
+      <div class="wrap">
+        <div style="display:grid;gap:.5rem"><p class="eyebrow on-dark">Design consultation</p><h2>Plan your outdoor space.</h2><p>Bring your ideas and questions. We'll look at your property and talk through the possibilities together.</p></div>
+        <div class="actions"><a class="btn btn-leaf" href="#book">Schedule your design consultation</a><span class="phone-line">(209) 585-9767 <button class="copy-btn" type="button" data-copy="(209) 585-9767">Copy</button></span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES ============ -->
+  <section class="view" id="view-services" data-view="services" aria-label="Services">
+    <div class="wrap">
+      <div class="page-head">
+        <p class="eyebrow">Services</p>
+        <h1>Outdoor living. Beautifully built.</h1>
+        <p>Custom landscaping, design and water features for outdoor spaces that feel connected. One team plans the whole space, so the water, stone, planting and lighting work together.</p>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-primary" href="#book">Schedule your design consultation</a><a class="btn btn-ghost" href="#inspire">Get Inspired <span class="pill pill-soon">Soon</span></a></div>
+      </div>
+      <div class="section" style="padding-top:.75rem">
+        <div class="section-head"><div><p class="eyebrow">How it works</p><h2 style="font-size:1.75rem">From first visit to aftercare</h2></div></div>
+        <ol class="steps">
+          <li><b>Consultation</b><span>A walk-through and an honest conversation about your goals, style and space.</span></li>
+          <li><b>2D &amp; 3D design</b><span>Scaled plans and renderings so you see the space before it's built.</span></li>
+          <li><b>Selection</b><span>We fine-tune every material, plant, fixture and finish with you.</span></li>
+          <li><b>Build</b><span>Our crews build to the approved plans.</span></li>
+          <li><b>Aftercare</b><span>Plant, watering, lighting and product care for your installation in My Project.</span></li>
+        </ol>
+      </div>
+      <div class="section" style="padding-top:0">
+        <div class="section-head"><div><p class="eyebrow">What we build</p><h2 style="font-size:1.75rem">Water features lead. Everything else connects.</h2></div></div>
+        <div class="svc-grid" id="svc-grid"></div>
+      </div>
+      <div class="section" style="padding-top:0">
+        <div class="section-head"><div><p class="eyebrow">Project scopes</p><h2 style="font-size:1.75rem">Scopes to fit your lifestyle</h2></div><p class="note">Every design is custom. Pricing is set after your design consultation.</p></div>
+        <div class="pkg-grid">
+          <div class="pkg"><p class="eyebrow">Essential</p><h3>A clean, usable yard</h3><ul><li>Concrete walkways</li><li>Sod and planting</li><li>Starter fire pit or pergola</li></ul></div>
+          <div class="pkg feature"><p class="eyebrow">Signature</p><h3>Room to gather</h3><ul><li>Paver or tile walkways</li><li>Premium planting</li><li>Fire feature or outdoor kitchen</li></ul></div>
+          <div class="pkg"><p class="eyebrow">Luxury</p><h3>A complete retreat</h3><ul><li>Hot tub, sauna and water features</li><li>Custom tile or porcelain</li><li>Full outdoor kitchen</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ INSPIRE ============ -->
+  <section class="view" id="view-inspire" data-view="inspire" aria-label="Get Inspired">
+    <div class="inspire-hero on-dark">
+      <div class="wrap">
+        <div class="row"><span class="pill" style="background:var(--leaf);color:var(--charcoal)">Coming soon</span><span class="eyebrow on-dark">Early preview</span></div>
+        <h1>Get Inspired</h1>
+        <p>Tell us what you picture in your yard. We'll pull ideas from projects Green Lion has already built, so everything you see is something our crews know how to deliver.</p>
+        <form class="prompt-box" id="inspire-form">
+          <label for="inspire-text">What do you want your yard to feel like?</label>
+          <textarea id="inspire-text" name="inspire-text">A koi pond with palms, a fire pit for winter evenings and warm lighting</textarea>
+          <div class="idea-chips" id="idea-chips" aria-label="Add an idea"></div>
+          <div class="prompt-actions"><span class="note">Matches against 5 Green Lion projects today.</span><button class="btn btn-primary" type="submit">Show me ideas</button></div>
+        </form>
+      </div>
+    </div>
+    <div class="wrap section">
+      <div class="section-head"><div><p class="eyebrow">From our past projects</p><h2 id="inspire-h">Ideas for you</h2></div></div>
+      <div class="result-grid" id="results" aria-live="polite"></div>
+      <div class="coming" style="margin-top:1.25rem">
+        <b>What's coming</b>
+        <p class="muted" style="font-size:var(--t-sm)">The full version will create concept images of your idea from the materials, plants and water features in our real projects. Concepts will always be labeled as concepts, separate from completed work.</p>
+        <div><a class="btn btn-primary btn-sm" href="#book" data-book="Design consultation">Schedule your design consultation</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ BOOK ============ -->
+  <section class="view" id="view-book" data-view="book" aria-label="Book">
+    <div class="wrap">
+      <div class="page-head">
+        <p class="eyebrow">Book</p>
+        <h1>Schedule your design consultation</h1>
+        <p>Three quick steps. A Green Lion designer meets you at your home to walk the yard.</p>
+      </div>
+      <div class="book-grid">
+        <form class="form-card" id="book-form" novalidate>
+          <fieldset><legend><span class="n">1</span>What are you planning?</legend><div class="idea-chips" id="book-types"></div></fieldset>
+          <fieldset>
+            <legend><span class="n">2</span>Pick a preferred time</legend>
+            <div class="days" id="book-days" aria-label="Day"></div>
+            <div class="slots" id="book-slots" aria-label="Time"></div>
+            <p class="note">Sample availability for this preview. A preferred time is confirmed by our team.</p>
+          </fieldset>
+          <fieldset>
+            <legend><span class="n">3</span>Your details</legend>
+            <div class="fields">
+              <div class="field"><label for="b-name">Name</label><input id="b-name" name="name" autocomplete="name" required><span class="err" id="e-name" hidden>Enter your name.</span></div>
+              <div class="field"><label for="b-phone">Phone</label><input id="b-phone" name="phone" type="tel" autocomplete="tel" required><span class="err" id="e-phone" hidden>Enter a phone number so we can confirm.</span></div>
+              <div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email"></div>
+              <div class="field"><label for="b-city">City</label><select id="b-city" name="city"><option>Modesto</option><option>Turlock</option><option>Ripon</option><option>Manteca</option><option>Oakdale</option><option>Riverbank</option><option>Salida</option><option>Stockton</option><option>Tracy</option><option>Other</option></select></div>
+            </div>
+            <div class="field"><label for="b-notes">Tell us about your yard</label><textarea id="b-notes" name="notes" placeholder="New build backyard, about 40 × 30 ft. Want a water feature and a place to entertain."></textarea></div>
+            <div class="field"><label for="b-photos">Add photos of your yard (optional)</label><input id="b-photos" type="file" accept="image/*" multiple><div class="thumbs" id="b-thumbs"></div></div>
+          </fieldset>
+          <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center"><button class="btn btn-primary" type="submit">Request my consultation</button><span class="note">Prefer to call? <b class="phone-line">(209) 585-9767</b></span></div>
+        </form>
+        <div style="display:grid;gap:1rem;align-content:start">
+          <div class="summary-card on-dark" id="book-summary" aria-live="polite"></div>
+          <div class="receipt" id="book-receipt" hidden></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ MY PROJECT ============ -->
+  <section class="view" id="view-portal" data-view="portal" aria-label="My Project">
+    <div class="wrap" id="portal-login">
+      <div class="login-wrap">
+        <form class="login-card" id="login-form" novalidate>
+          <p class="eyebrow">My Project</p>
+          <h1>Sign in to your project</h1>
+          <p class="muted" style="font-size:var(--t-sm)">Green Lion clients get access when their project is complete.</p>
+          <div class="field"><label for="l-email">Email</label><input id="l-email" type="email" autocomplete="username"></div>
+          <div class="field"><label for="l-pass">Password</label><input id="l-pass" type="password" autocomplete="current-password"></div>
+          <span class="err" id="l-err" hidden>Enter your email and password, or open the demo project below.</span>
+          <button class="btn btn-primary" type="submit">Sign in</button>
+          <div class="divider">or</div>
+          <button class="btn btn-ghost" type="button" id="demo-login">Open the demo project</button>
+          <p class="note">This preview uses a sample project record. No real accounts are connected.</p>
+        </form>
+        <div class="login-art">
+          <img src="img/wf-waterwall.jpg" alt="Lit water wall at dusk" loading="lazy">
+          <div class="cap"><b>Inside My Project</b><ul><li>Completion photos and approved plans</li><li>Every plant, with watering by season</li><li>Your lights, transformer and how to use them</li><li>Pavers, walls and water feature care</li><li>Water feature maintenance requests</li></ul></div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap" id="portal-app" hidden></div>
+  </section>
+</main>
+
+
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="grid">
+      <div class="logo-cell"><img src="img/logo-master.png" alt="Green Lion: Water Features, Design, Custom Landscaping. CL #1150882" width="360" height="273" loading="lazy"></div>
+      <div style="display:grid;gap:.5rem"><p class="brandline">Outdoor living. Beautifully built.</p><p>Custom landscaping, design and water features for outdoor spaces that feel connected.</p></div>
+      <div><h4>Contact</h4><ul><li>(209) 585-9767</li><li>info@greenlionlandscape.com</li><li>greenlionlandscape.com</li><li>Modesto &amp; the Central Valley</li></ul></div>
+      <div><h4>Explore</h4><ul><li><a href="#services">Services</a></li><li><a href="#inspire">Get Inspired</a></li><li><a href="#book">Schedule your design consultation</a></li><li><a href="#portal">My Project</a></li></ul></div>
+    </div>
+    <div class="legal"><span>Green Lion Landscape Inc.</span><span>CSLB #1150882</span></div>
+  </div>
+</footer>
+</div>
+
+<nav class="tabbar" aria-label="App tabs">
+  <ul>
+    <li><a href="#home" data-nav="home"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg>Home</a></li>
+    <li><a href="#services" data-nav="services"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"/><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"/></svg>Services</a></li>
+    <li><a href="#inspire" data-nav="inspire" class="tab-inspire"><span class="soon-dot">Soon</span><span class="orb"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.9 5.6L19.5 10l-5.6 1.9L12 17.5l-1.9-5.6L4.5 10l5.6-1.4z"/><path d="M18.5 15.5l.7 1.8 1.8.7-1.8.7-.7 1.8-.7-1.8-1.8-.7 1.8-.7z"/></svg></span>Inspire</a></li>
+    <li><a href="#book" data-nav="book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18M8 15h3"/></svg>Book</a></li>
+    <li><a href="#portal" data-nav="portal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M4 21V10l8-6 8 6v11z"/><path d="M9 21v-6h6v6"/></svg>My Project</a></li>
+  </ul>
+</nav>
+
+<dialog id="dlg" aria-labelledby="dlg-title"><div style="position:relative"><button class="dlg-close" type="button" id="dlg-close" aria-label="Close">✕</button><div id="dlg-content"></div></div></dialog>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+(() => {
+  const $ = (s, el = document) => el.querySelector(s);
+  const $$ = (s, el = document) => [...el.querySelectorAll(s)];
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+  const PHONE = '(209) 585-9767';
+  const store = {
+    get(k, d) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : d; } catch { return d; } },
+    set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }
+  };
+  const toast = msg => { const t = $('#toast'); t.textContent = msg; t.hidden = false; clearTimeout(toast._t); toast._t = setTimeout(() => t.hidden = true, 2400); };
+
+  /* ---------- Data (real Green Lion project photos; titles are working names) ---------- */
+  const waterFeatures = [
+    { img: 'wf-boulder-falls', title: 'Boulder Falls', place: 'Green Lion project', type: 'Boulder waterfall and stream', note: 'Moving water, rock and planting working as one design.' },
+    { img: 'wf-waterwall', title: 'Moonlit Water Wall', place: 'Modesto', year: '2026', type: 'Stucco and ledgestone water wall', note: 'A sheer spillway into a lit basin, framed by agave planters and warm wall sconces.', project: 'wall' },
+    { img: 'wf-koi', title: 'Palm Koi Pond', place: 'Green Lion project', year: '2026', type: 'Koi pond with boulder falls', note: 'A deep koi pond under palms, with stepped falls and feather grass at the edge.', project: 'koi' },
+    { img: 'wf-pond-garden', title: 'Garden Pond', place: 'Green Lion project', type: 'Pond with planted edges', note: 'A low waterfall feeding a planted pond, with grasses and perennials to the waterline.' },
+    { img: 'wf-boulder-night', title: 'Lantern Falls', place: 'Green Lion project', type: 'Boulder waterfall, underwater lights', note: 'Multi-tier boulder falls lit from below so the water glows after dark.' },
+    { img: 'wf-modern', title: 'Scupper Water Wall', place: 'Hidden Resort', type: 'Porcelain wall with three scuppers', note: 'Stainless scuppers pour into a river-rock basin in the Hidden Resort wellness yard.', project: 'hidden' },
+    { img: 'wf-stream', title: 'Garden Stream', place: 'Green Lion project', type: 'Pondless stream', note: 'A shallow stream stepping over stone between ornamental grasses.' },
+    { img: 'wf-stonewall', title: 'Ledgestone Spill Wall', place: 'Green Lion project', year: '2026', type: 'Stacked stone wall with spillway', note: 'Uplit stacked stone and a thin spillway between smooth stucco columns.', project: 'well' }
+  ];
+
+  const projects = {
+    hidden: { name: 'Hidden Resort', sub: 'Wellness meets modern living', imgs: ['pj-hidden-1', 'pj-hidden-2', 'wf-modern', 'svc-kitchen'],
+      story: 'A wellness walkway leads to a cedar sauna and spa. Raised beds, lush planting and stone accents give it a boutique resort feel, anchored by an outdoor kitchen under a louvered pergola.',
+      features: ['Cedar barrel sauna', 'Hot tub', 'Scupper water wall', 'Outdoor kitchen', 'Louvered pergola', 'Turf', 'Raised beds', 'Covered lounge'],
+      tags: ['sauna', 'spa', 'hot tub', 'wellness', 'water wall', 'kitchen', 'pergola', 'turf', 'raised beds', 'modern', 'lounge', 'bar', 'fire'] },
+    luxe: { name: 'Luxe Lounge', sub: 'Open-air comfort, low maintenance', imgs: ['pj-luxe-1', 'pj-luxe-2', 'svc-pavers'],
+      story: 'A modern louvered pergola creates a refined gathering space, with paver patios, drought-tolerant planting and integrated lighting.',
+      features: ['Louvered pergola', 'Paver patio', 'Drought-tolerant planting', 'Trellis climbers', 'Integrated lighting'],
+      tags: ['pergola', 'lounge', 'pavers', 'low maintenance', 'drought', 'minimal', 'trellis', 'dining', 'shade'] },
+    wall: { name: 'Water Wall Garden', sub: 'Modesto, 2026', imgs: ['pj-wall-1', 'pj-wall-2', 'pt-urn', 'learn-citrus'],
+      story: 'A stucco and ledgestone water wall with leaping-frog sculptures, agave urns, flagstone, citrus and warm landscape lighting.',
+      features: ['Custom water wall', 'Wall sconces', 'Spotlights', 'Agave urns', 'Flagstone patio', 'Citrus tree', 'River rock'],
+      tags: ['water wall', 'fountain', 'water feature', 'lighting', 'agave', 'citrus', 'flagstone', 'drought', 'night', 'modern'] },
+    koi: { name: 'Palm Koi Pond', sub: 'Green Lion project, 2026', imgs: ['pj-koi-1', 'pj-koi-2', 'learn-tropical', 'wf-koi'],
+      story: 'A large koi pond with boulder waterfalls, palms, tropical planting and ornamental grasses around the shoreline.',
+      features: ['Koi pond', 'Boulder waterfalls', 'Palms', 'Tropical planting', 'Ornamental grasses'],
+      tags: ['koi', 'pond', 'waterfall', 'water feature', 'palms', 'tropical', 'fish', 'boulders', 'grasses'] },
+    well: { name: 'Modern Wellness Yard', sub: 'Green Lion project, 2026', imgs: ['pj-well-1', 'pj-well-2', 'svc-wellness', 'svc-fire'],
+      story: 'Hot tub on a composite deck, cube sauna, gas fire lounge and an uplit stone water wall on porcelain pavers.',
+      features: ['Hot tub', 'Cube sauna', 'Gas fire table', 'Porcelain pavers', 'Stone water wall', 'Landscape lighting', 'Turf'],
+      tags: ['hot tub', 'spa', 'sauna', 'fire', 'fire pit', 'lounge', 'pavers', 'lighting', 'water wall', 'turf', 'night', 'modern', 'wellness'] }
+  };
+
+  const frostPlants = [
+    { name: 'Citrus (lemon, lime, mandarin)', img: 'learn-citrus', cover: 32, damage: 28, tip: 'Young trees and lemons are most tender.' },
+    { name: 'Bougainvillea', img: 'learn-bougainvillea', cover: 32, damage: 30, tip: 'Leaves burn first; wait to prune until spring.' },
+    { name: 'Elephant ears and tropicals', img: 'learn-tropical', cover: 33, damage: 30, tip: 'Tops die back in frost; roots usually return.' },
+    { name: 'Foxtail fern', img: 'learn-foxtail', cover: 30, damage: 26, tip: 'Cover in the ground; move potted ones under the eaves.' },
+    { name: 'Queen palm', ph: 'PLM', cover: 28, damage: 25, tip: 'Mexican fan palms are hardier.' },
+    { name: 'Variegated agave', img: 'learn-agave', cover: 27, damage: 24, tip: 'Cold plus wet causes rot. Keep it dry.' },
+    { name: 'Mexican feather grass, blue fescue', img: 'learn-feathergrass', cover: 10, damage: 5, tip: 'Fully hardy here. Comb out in February.' },
+    { name: 'Roses and lavender', ph: 'RSE', cover: 15, damage: 10, tip: 'Hardy. Prune roses mid-January to mid-February.' }
+  ];
+  const plantCards = [
+    { name: 'Citrus', latin: 'Citrus spp.', img: 'learn-citrus', tips: ['Cover at 32°F with frost cloth to the ground', 'Deep water every 2–3 weeks if no rain', 'Feed in February with citrus fertilizer', 'Leave fruit on; it stores on the tree'] },
+    { name: 'Agave', latin: 'Agave americana & variegated forms', img: 'learn-agave', tips: ['Turn its drip off November to March', 'Hardy to the mid 20s when dry', 'Pull dead lower leaves with gloves on', 'Never let pots sit in a saucer of water'] },
+    { name: 'Foxtail fern', latin: 'Asparagus densiflorus \'Myersii\'', img: 'learn-foxtail', tips: ['Cover below 30°F', 'Water every 10 days in winter', 'Cut frost-browned plumes to the base in March'] },
+    { name: 'Mexican feather grass', latin: 'Nassella tenuissima', img: 'learn-feathergrass', tips: ['Comb out dead blades with your fingers in February', 'Cut back by a third if it flops', 'Water every 2 weeks in winter, less after rain'] },
+    { name: 'Blue fescue and boulders', latin: 'Festuca glauca', img: 'learn-mossrock', tips: ['Rake old blades out in late winter', 'Divide clumps every 3 years', 'Keep mulch off the crown so it stays dry'] },
+    { name: 'Bougainvillea', latin: 'Bougainvillea spp.', img: 'learn-bougainvillea', tips: ['Cover the base and trunk on frost nights', 'Hold off pruning until March', 'Nearly dry in winter: water monthly'] },
+    { name: 'Blue ground covers', latin: 'Scaevola, lobelia', img: 'learn-blueflowers', tips: ['Shear lightly after a frost burns the tips', 'Fill gaps with violas or pansies for winter color', 'Replant thin spots in March'] }
+  ];
+  const waterZones = {
+    drip: { label: 'Drip shrubs & grasses', days: 'Every 10–14 days', mins: '20–30 min', skip: 'After ½″ of rain', note: 'Winter roots need a deep, occasional soak. Short daily runs keep the crown wet and invite rot in agave and grasses.' },
+    lawn: { label: 'Lawn spray', days: 'Once a week', mins: '2 × 6 min', skip: 'After ¼″ of rain', note: 'Split the run into two cycles so the water soaks in instead of running onto the sidewalk. Artificial turf needs no water.' },
+    trees: { label: 'Trees & citrus', days: 'Every 2–3 weeks', mins: '15 min', skip: 'After 1″ of rain', note: 'Water citrus the day before a frost night. Moist soil releases heat overnight.' },
+    pots: { label: 'Pots', days: 'Check weekly', mins: 'By hand', skip: 'Until the top inch dries', note: 'Pots under eaves miss the rain. Water only when the top inch of soil is dry.' }
+  };
+  const checklistItems = [
+    ['Switch the irrigation controller to its winter schedule', 'This week'], ['Check landscape light timers after clocks fall back', 'Sunday, Nov 1'],
+    ['Buy frost cloth for citrus and tender plants', 'Before the first frost'], ['Clean the water feature skimmer and check the auto-fill', 'Every 2 weeks'],
+    ['Stop feeding koi once the water is below 50°F', 'December'], ['Clear leaves from paver joints, drains and wall weep holes', 'Before each storm'],
+    ['Plant winter color: violas, pansies, snapdragons, cyclamen', 'November'], ['Prune roses', 'Mid-Jan to mid-Feb'], ['Comb out blue fescue and feather grass', 'February']
+  ];
+
+  const lisa = {
+    img: 'wf-boulder-falls', tag: "Lisa's Design Notebook", title: 'Are Water Features Taking Over Modesto Backyards?',
+    byline: 'Lisa Taylor, Designer, Green Lion Landscape',
+    sections: [
+      ['', 'When I think about a backyard in Modesto, I start with a simple question: how do you want to spend time there? You might picture a quiet morning outside, dinner with family, or a place to sit at the end of the day. A water feature gives us something to design those moments around.'],
+      ['Start with the feeling, then choose the feature', 'A waterfall, a planted pond and a more architectural water feature create different experiences. Before choosing one, I want to understand the views from your home, where you sit, how you use the yard and the amount of care you are comfortable taking on.'],
+      ['Let the water connect to the rest of the backyard', 'I like to think about water, stone and planting as parts of one design. The surrounding pavers, a nearby seating area or a view from the kitchen window can be just as important as the feature itself.'],
+      ['Plan for care from the beginning', 'I also want to talk about what happens after installation: the type of feature, the equipment it uses, access for service and what you will need to understand about its care.'],
+      ['So, are water features taking over Modesto?', 'I would put it this way: a water feature deserves a place in the conversation when you are planning your outdoor space. If you are wondering where one might fit in your backyard, bring us your ideas and questions.']
+    ],
+    gallery: ['wf-pond-garden', 'lisa-stream']
+  };
+  const posts = [
+    { id: 'water', tag: 'Water features', img: 'wf-boulder-night', title: 'Keep your water feature running all winter', dek: 'Moving water stays clean and rarely freezes in the valley.',
+      body: ['Leave the pump on through winter. Moving water resists freezing, keeps oxygen in the pond and stops algae from settling in. Central Valley nights rarely get cold enough to freeze a running feature.', 'Leaves are the main winter job. Empty the skimmer net every week or two while trees drop, and pull leaves from the basin before they sink and break down.', 'Switch to a cold-water bacteria treatment once the water is below 50°F, and stop feeding koi at the same point. Their digestion slows and uneaten food fouls the water.', 'If the water level drops fast, check the auto-fill valve and look for a splash leak at the spillway before topping off.'] },
+    { id: 'lights', tag: 'Lighting', img: 'learn-spotlight', title: 'Clocks fall back Nov 1: check your lights', dek: 'A two-minute check keeps your yard lit at dusk.',
+      body: ['If your transformer uses a simple clock timer, set it back one hour after the time change or your lights will turn on an hour late. Astronomic timers and photocells adjust on their own.', 'Walk the yard at dusk once. Plants grew all summer, so spotlights aimed at a tree trunk in spring may now be lighting a leaf. Loosen the knuckle and re-aim.', 'Wipe lenses with a soft cloth and a little white vinegar to remove sprinkler spots. Keep photocells clear of new growth so they read the sky.'] },
+    { id: 'pavers', tag: 'Hardscape', img: 'svc-walls', title: 'After the first big rain: a 10-minute check', dek: 'Pavers, walls and drains tell you where water goes.',
+      body: ['Look for puddles that sit on pavers for more than a day. A low spot is easier to re-level now, before it grows.', 'Check retaining walls and seat walls for clear weep holes and drains. Water trapped behind a wall is what pushes it out over time.', 'White haze on new pavers is efflorescence. It fades on its own in the first year. If joint sand washed low, top it up in dry weather and mist it to set.'] }
+  ];
+  const services = [
+    { id: 'water', name: 'Water features', img: 'svc-water', desc: 'Waterfalls, koi ponds, water walls and pondless streams, designed as part of your complete outdoor space.', items: ['Waterfalls', 'Koi ponds', 'Water walls', 'Pondless streams', 'Fountains'] },
+    { id: 'kitchen', name: 'Pavilions & outdoor kitchens', img: 'svc-kitchen', desc: 'Custom pavilions, louvered pergolas and outdoor kitchens built for how you cook and host.', items: ['Outdoor kitchens', 'Louvered pergolas', 'Pavilions', 'Bar seating'] },
+    { id: 'pavers', name: 'Pavers & decorative concrete', img: 'svc-pavers', desc: 'Paver patios and driveways, porcelain, stamped and stained concrete, and walkways.', items: ['Paver patios', 'Driveways', 'Porcelain tile', 'Stamped concrete', 'Walkways'] },
+    { id: 'lighting', name: 'Lighting, audio & video', img: 'svc-lighting', desc: 'Low-voltage LED landscape lighting, outdoor speakers and entertainment systems.', items: ['Landscape lighting', 'Wall sconces', 'Outdoor sound', 'Outdoor TV'] },
+    { id: 'walls', name: 'Retaining walls & seat walls', img: 'svc-walls', desc: 'Segmental block and veneer walls, curved seat walls and raised planters.', items: ['Retaining walls', 'Seat walls', 'Raised beds'] },
+    { id: 'wellness', name: 'Saunas, hot tubs & wellness', img: 'svc-wellness', desc: 'Cedar barrel and cube saunas, hot tubs and wellness walkways.', items: ['Cube saunas', 'Barrel saunas', 'Hot tubs', 'Wellness walkways'] },
+    { id: 'fire', name: 'Fire features', img: 'svc-fire', desc: 'Gas fire tables, fire pits and lounge layouts built around them.', items: ['Fire tables', 'Fire pits', 'Lounge layouts'] },
+    { id: 'turf', name: 'Turf, planting & irrigation', img: 'svc-turf', desc: 'Drought-tolerant planting, artificial turf and smart irrigation controllers.', items: ['Artificial turf', 'Drought-tolerant planting', 'Smart irrigation', 'Sod'] },
+    { id: 'design', name: '2D & 3D design', svg: true, desc: 'Scaled 2D site plans and 3D renderings, revised with you until it feels right. Renderings are always labeled as concepts.', items: ['2D site plans', '3D renderings', 'Interactive revisions'] }
+  ];
+  const ideaChips = ['Water wall', 'Koi pond', 'Waterfall', 'Fire pit', 'Outdoor kitchen', 'Sauna & hot tub', 'Pergola shade', 'Low water planting', 'Night lighting', 'Turf for kids', 'Palms & tropical'];
+  const synonyms = {
+    'water wall': ['water wall', 'fountain', 'scupper', 'spillway'], 'koi': ['koi', 'fish', 'pond'], 'waterfall': ['waterfall', 'falls', 'cascade', 'stream', 'creek'],
+    'fire': ['fire', 'firepit', 'fire pit', 'fire table', 'fireplace', 'cozy'], 'kitchen': ['kitchen', 'bbq', 'grill', 'cook', 'bar', 'pizza'],
+    'sauna': ['sauna'], 'hot tub': ['hot tub', 'jacuzzi', 'spa', 'soak'], 'pergola': ['pergola', 'shade', 'pavilion', 'patio cover', 'covered'],
+    'drought': ['drought', 'low water', 'water wise', 'succulent', 'agave', 'xeriscape', 'low maintenance'], 'lighting': ['light', 'lights', 'lighting', 'night', 'evening', 'glow', 'warm'],
+    'turf': ['turf', 'grass', 'lawn', 'kids', 'dog'], 'palms': ['palm', 'palms', 'tropical', 'resort'], 'pavers': ['paver', 'pavers', 'patio', 'porcelain', 'stone'],
+    'wellness': ['wellness', 'relax', 'retreat', 'spa'], 'lounge': ['lounge', 'entertain', 'friends', 'gather', 'dining']
+  };
+
+  /* ---------- Router ---------- */
+  const views = ['home', 'services', 'inspire', 'book', 'portal'];
+  let pendingFocus = null;
+  function route() {
+    const h = (location.hash || '#home').slice(1);
+    const v = views.includes(h) ? h : 'home';
+    $$('.view').forEach(el => el.classList.toggle('active', el.dataset.view === v));
+    $$('[data-nav]').forEach(a => a.dataset.nav === v ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current'));
+    if (pendingFocus && document.getElementById(pendingFocus)) { const id = pendingFocus; pendingFocus = null; requestAnimationFrame(() => document.getElementById(id).scrollIntoView({ block: 'start' })); }
+    else if (views.includes(h)) { window.scrollTo(0, 0); $('#scroller').scrollTop = 0; }
+  }
+  window.addEventListener('hashchange', route);
+
+  /* ---------- Carousel ---------- */
+  const track = $('#wf-track'), dots = $('#wf-dots');
+  track.innerHTML = waterFeatures.map((w, i) => `
+    <figure class="wf-card" aria-label="${i + 1} of ${waterFeatures.length}">
+      <img src="img/${w.img}.jpg" alt="${esc(w.title)}: ${esc(w.type)}" ${i > 1 ? 'loading="lazy"' : ''}>
+      <figcaption><span class="type">${esc(w.type)}</span><h3>${esc(w.title)}</h3><p>${esc(w.note)}</p>
+        <span class="meta"><span>${esc(w.place)}${w.year ? ' · ' + w.year : ''}</span>${w.project ? `<button type="button" class="copy-btn" style="color:#F5F2EA" data-project="${w.project}">View the project</button>` : ''}</span></figcaption>
+    </figure>`).join('');
+  dots.innerHTML = waterFeatures.map((w, i) => `<button type="button" role="tab" aria-label="${esc(w.title)}" data-i="${i}"></button>`).join('');
+  const cards = $$('.wf-card', track);
+  let current = 0;
+  const setDot = i => { current = i; $$('button', dots).forEach((b, j) => b.setAttribute('aria-current', j === i ? 'true' : 'false')); };
+  const goTo = i => { const c = cards[(i + cards.length) % cards.length]; track.scrollTo({ left: c.offsetLeft, behavior: 'smooth' }); };
+  setDot(0);
+  track.addEventListener('scroll', () => {
+    const x = track.scrollLeft; let best = 0, bd = Infinity;
+    cards.forEach((c, i) => { const d = Math.abs(c.offsetLeft - x); if (d < bd) { bd = d; best = i; } });
+    if (best !== current) setDot(best);
+  }, { passive: true });
+  dots.addEventListener('click', e => { const b = e.target.closest('button'); if (b) goTo(+b.dataset.i); });
+  $('#wf-prev').addEventListener('click', () => goTo(current - 1));
+  $('#wf-next').addEventListener('click', () => goTo(current + 1));
+  track.addEventListener('keydown', e => { if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); } if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); } });
+
+  /* ---------- Journal modules ---------- */
+  const frost = $('#frost');
+  function renderFrost() {
+    const t = +frost.value;
+    $('#frost-out').textContent = t + '°F';
+    $('#frost-label').textContent = t <= 28 ? 'Hard frost night' : t <= 32 ? 'Frost likely' : t <= 36 ? 'Chilly, frost possible in low spots' : 'Mild night';
+    $('#frost-list').innerHTML = frostPlants.map(p => {
+      const s = t <= p.damage ? ['s-bad', 'Cover + add heat'] : t <= p.cover ? ['s-warn', 'Cover tonight'] : ['s-ok', 'Fine'];
+      const pic = p.img ? `<img src="img/${p.img}.jpg" alt="" loading="lazy">` : `<span class="ph" aria-hidden="true">${p.ph}</span>`;
+      return `<li>${pic}<div><b>${esc(p.name)}</b><small>${esc(p.tip)}</small></div><span class="status ${s[0]}">${s[1]}</span></li>`;
+    }).join('');
+  }
+  frost.addEventListener('input', renderFrost);
+
+  $('#plant-cards').innerHTML = plantCards.map(p => `<div class="plant-card"><div class="img"><img src="img/${p.img}.jpg" alt="${esc(p.name)}" loading="lazy"></div><div class="body"><h4>${esc(p.name)}</h4><span class="latin">${esc(p.latin)}</span><ul>${p.tips.map(t => `<li>${esc(t)}</li>`).join('')}</ul></div></div>`).join('');
+
+  const seg = $('#water-seg');
+  seg.innerHTML = Object.entries(waterZones).map(([k, z], i) => `<button type="button" role="tab" aria-selected="${i === 0}" data-k="${k}">${esc(z.label)}</button>`).join('');
+  function renderWater(k) {
+    const z = waterZones[k];
+    $$('button', seg).forEach(b => b.setAttribute('aria-selected', b.dataset.k === k));
+    $('#water-out').innerHTML = `<div class="stat-row"><div class="stat"><small>How often</small><b>${z.days}</b></div><div class="stat"><small>Run time</small><b>${z.mins}</b></div><div class="stat"><small>Skip</small><b>${z.skip}</b></div></div>
+      <p style="font-size:var(--t-sm)">${esc(z.note)}</p><p class="note">General starting points for December through February. Follow your city's watering days. Clients see the schedule approved for their own installation in My Project.</p>`;
+  }
+  seg.addEventListener('click', e => { const b = e.target.closest('button'); if (b) renderWater(b.dataset.k); });
+
+  const done = new Set(store.get('gl-winter-checklist', []));
+  $('#checklist').innerHTML = checklistItems.map(([t, w], i) => `<li><label for="ck-${i}"><input type="checkbox" id="ck-${i}" data-i="${i}" ${done.has(i) ? 'checked' : ''}><span>${esc(t)}<span class="when">${esc(w)}</span></span></label></li>`).join('');
+  function renderCheck() { const n = $$('#checklist input:checked').length; $('#check-count').textContent = `${n} of ${checklistItems.length} done`; $('#check-bar').style.width = (n / checklistItems.length * 100) + '%'; }
+  $('#checklist').addEventListener('change', e => { const i = +e.target.dataset.i; e.target.checked ? done.add(i) : done.delete(i); store.set('gl-winter-checklist', [...done]); renderCheck(); });
+
+  $('#post-grid').innerHTML = posts.map(p => `<button type="button" class="post-card" data-post="${p.id}"><div class="img"><img src="img/${p.img}.jpg" alt="" loading="lazy"></div><div class="body"><span class="tag">${esc(p.tag)}</span><h3>${esc(p.title)}</h3><p>${esc(p.dek)}</p></div></button>`).join('');
+  $('#proj-scroll').innerHTML = Object.entries(projects).map(([k, p]) => `<button type="button" class="proj-card" data-project="${k}"><div class="img"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}" loading="lazy"></div><b>${esc(p.name)}</b><small>${esc(p.sub)}</small></button>`).join('');
+  $('#svc-strip').innerHTML = services.filter(s => ['kitchen', 'pavers', 'lighting', 'walls'].includes(s.id)).map(s => `<a class="svc-tile" href="#services" data-focus="svc-${s.id}"><img src="img/${s.img}.jpg" alt="" loading="lazy"><span>${esc(s.name)} <span aria-hidden="true">→</span></span></a>`).join('');
+
+  /* ---------- Services ---------- */
+  const planSvg = `<svg viewBox="0 0 300 200" role="img" aria-label="Sample 2D site plan, labeled concept"><rect width="300" height="200" style="fill:var(--surface-2)"/>
+    <g style="stroke:var(--accent-text)" stroke-width="1.5" fill="none"><rect x="20" y="20" width="260" height="160" rx="2"/><rect x="20" y="20" width="260" height="34" stroke-dasharray="4 3"/></g>
+    <text x="150" y="42" text-anchor="middle" font-size="10" style="fill:var(--ink-2)" font-family="Arimo, Arial, sans-serif">HOUSE</text>
+    <rect x="40" y="70" width="110" height="60" style="fill:var(--stone)" opacity=".6"/><text x="95" y="104" text-anchor="middle" font-size="9" style="fill:var(--ink)" font-family="Arimo, Arial, sans-serif">PAVER PATIO</text>
+    <rect x="170" y="70" width="90" height="40" rx="20" fill="#7FB3BF" opacity=".75"/><text x="215" y="94" text-anchor="middle" font-size="9" style="fill:var(--ink)" font-family="Arimo, Arial, sans-serif">POND</text>
+    <rect x="170" y="125" width="90" height="40" style="fill:var(--leaf)" opacity=".45"/><text x="215" y="149" text-anchor="middle" font-size="9" style="fill:var(--ink)" font-family="Arimo, Arial, sans-serif">TURF</text>
+    <circle cx="70" cy="155" r="14" style="fill:var(--deep)" opacity=".75"/><circle cx="110" cy="158" r="10" style="fill:var(--deep)" opacity=".6"/>
+    <text x="280" y="196" text-anchor="end" font-size="8" style="fill:var(--ink-2)" font-family="Arimo, Arial, sans-serif">CONCEPT · 1/8″ = 1′-0″</text></svg>`;
+  $('#svc-grid').innerHTML = services.map(s => `
+    <article class="svc" id="svc-${s.id}"><div class="img">${s.svg ? planSvg : `<img src="img/${s.img}.jpg" alt="${esc(s.name)}" loading="lazy">`}</div>
+      <div class="body"><h3>${esc(s.name)}</h3><p>${esc(s.desc)}</p><ul>${s.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>
+        <div class="actions"><a class="btn btn-primary btn-sm" href="#book" data-book="${esc(s.name)}">Schedule a consultation</a></div></div></article>`).join('');
+
+  /* ---------- Inspire ---------- */
+  const chipBox = $('#idea-chips'), ta = $('#inspire-text');
+  chipBox.innerHTML = ideaChips.map(c => `<button type="button" class="chip" data-chip="${esc(c)}">+ ${esc(c)}</button>`).join('');
+  chipBox.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const v = ta.value.trim(); ta.value = v ? `${v}, ${b.dataset.chip.toLowerCase()}` : b.dataset.chip; ta.focus(); });
+  function matchIdeas(text) {
+    const q = ' ' + text.toLowerCase().replace(/[^a-z0-9\s&]/g, ' ') + ' ';
+    const wanted = Object.entries(synonyms).filter(([, words]) => words.some(w => new RegExp('\\b' + w + '\\b').test(q))).map(([k]) => k);
+    const scored = Object.entries(projects).map(([k, p]) => ({ k, p, hits: wanted.filter(w => p.tags.some(t => t.includes(w) || w.includes(t) || (synonyms[w] || []).some(s => t.includes(s)))) }))
+      .filter(r => r.hits.length).sort((a, b) => b.hits.length - a.hits.length);
+    return { wanted, scored };
+  }
+  function renderIdeas() {
+    const { wanted, scored } = matchIdeas(ta.value.trim());
+    $('#inspire-h').textContent = scored.length ? `${scored.length} project${scored.length > 1 ? 's' : ''} with your ideas` : 'Ideas for you';
+    if (!scored.length) { $('#results').innerHTML = `<div class="coming"><b>No close matches yet</b><p class="muted" style="font-size:var(--t-sm)">Try words like water wall, koi pond, fire pit, pergola, sauna, hot tub or low water planting.</p></div>`; return; }
+    $('#results').innerHTML = scored.slice(0, 4).map(({ k, p, hits }) => `
+      <article class="result"><div class="pair"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}" loading="lazy"><img src="img/${p.imgs[1]}.jpg" alt="" loading="lazy"></div>
+        <div class="body"><span class="note" style="font-weight:700">Matches ${hits.length} of ${wanted.length} ideas</span><h3>${esc(p.name)}</h3><p class="muted" style="font-size:var(--t-sm)">${esc(p.story)}</p>
+          <div class="match-tags">${hits.map(h => `<span>${esc(h)}</span>`).join('')}</div>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap"><button class="btn btn-ghost btn-sm" type="button" data-project="${k}">View the project</button><a class="btn btn-primary btn-sm" href="#book" data-book="Design consultation" data-note="I'd like to talk about something like ${esc(p.name)}: ${esc(hits.join(', '))}.">Ask about a similar scope</a></div></div></article>`).join('');
+  }
+  $('#inspire-form').addEventListener('submit', e => { e.preventDefault(); renderIdeas(); $('#results').scrollIntoView({ behavior: 'smooth', block: 'start' }); });
+
+  /* ---------- Book ---------- */
+  const bookTypes = ['Water feature', 'Outdoor kitchen', 'Pavers & patio', 'Lighting', 'Sauna & hot tub', 'Fire feature', 'Turf & planting', 'Retaining walls', 'Design consultation', 'Aftercare visit'];
+  const picked = new Set(['Water feature']);
+  const bt = $('#book-types');
+  const renderTypes = () => { bt.innerHTML = bookTypes.map(t => `<button type="button" class="chip" aria-pressed="${picked.has(t)}" data-t="${esc(t)}">${esc(t)}</button>`).join(''); };
+  bt.addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; const t = b.dataset.t; picked.has(t) ? picked.delete(t) : picked.add(t); renderTypes(); renderSummary(); });
+  const days = []; const d0 = new Date(); d0.setHours(0, 0, 0, 0);
+  for (let d = new Date(d0); days.length < 10;) { d.setDate(d.getDate() + 1); if (d.getDay() !== 0) days.push(new Date(d)); }
+  const slotTimes = ['8:00 am', '10:30 am', '1:00 pm', '3:30 pm'];
+  let dayIdx = 0, slot = null;
+  const isFull = (di, si) => ((di * 7 + si * 3) % 5) === 0;
+  function renderDays() {
+    $('#book-days').innerHTML = days.map((d, i) => `<button type="button" class="day" aria-pressed="${i === dayIdx}" data-i="${i}"><small>${d.toLocaleDateString('en-US', { weekday: 'short' })}</small><b>${d.getDate()}</b><small>${d.toLocaleDateString('en-US', { month: 'short' })}</small></button>`).join('');
+    $('#book-slots').innerHTML = slotTimes.map((s, si) => `<button type="button" class="chip slot" aria-pressed="${slot === si}" data-s="${si}" ${isFull(dayIdx, si) ? 'disabled aria-label="' + s + ', unavailable"' : ''}>${s}</button>`).join('');
+  }
+  $('#book-days').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; dayIdx = +b.dataset.i; if (slot !== null && isFull(dayIdx, slot)) slot = null; renderDays(); renderSummary(); });
+  $('#book-slots').addEventListener('click', e => { const b = e.target.closest('button'); if (!b || b.disabled) return; slot = +b.dataset.s; renderDays(); renderSummary(); });
+  function renderSummary() {
+    const d = days[dayIdx];
+    $('#book-summary').innerHTML = `<p class="eyebrow on-dark">Your consultation</p><dl>
+      <div><dt>Project</dt><dd>${picked.size ? esc([...picked].join(', ')) : 'Choose at least one'}</dd></div>
+      <div><dt>Preferred time</dt><dd>${d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}${slot !== null ? ' · ' + slotTimes[slot] : ' · pick a time'}</dd></div>
+      <div><dt>Where</dt><dd>${esc($('#b-city').value)}</dd></div>
+      <div><dt>Length</dt><dd>About 45 minutes, at your home</dd></div></dl>`;
+  }
+  $('#b-city').addEventListener('change', renderSummary);
+  $('#b-photos').addEventListener('change', e => { const box = $('#b-thumbs'); box.innerHTML = ''; [...e.target.files].slice(0, 6).forEach(f => { const img = document.createElement('img'); img.alt = f.name; img.src = URL.createObjectURL(f); box.appendChild(img); }); });
+  $('#book-form').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = $('#b-name').value.trim(), phone = $('#b-phone').value.trim();
+    $('#e-name').hidden = !!name; $('#e-phone').hidden = !!phone;
+    if (!name) { $('#b-name').focus(); return; }
+    if (!phone) { $('#b-phone').focus(); return; }
+    if (slot === null) { toast('Pick a preferred time first'); $('#book-slots').scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+    const d = days[dayIdx], r = $('#book-receipt');
+    r.innerHTML = `<h3>We received your request, ${esc(name.split(' ')[0])}</h3><p>${esc([...picked].join(', ') || 'Design consultation')}. Preferred time: ${d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })} at ${slotTimes[slot]}.</p>
+      <p>Your preferred time is not booked yet. Our team will call ${esc(phone)} to confirm the visit.</p><p class="note">Preview only: nothing was sent.</p>`;
+    r.hidden = false; r.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  /* ---------- My Project (sample record) ---------- */
+  const demo = {
+    client: 'Sample Homeowner', project: 'Water Wall Garden', city: 'Modesto', done: 'Completed August 2026', hero: 'wf-waterwall', updated: 'October 28, 2026',
+    plants: [
+      { name: 'Meyer lemon', latin: 'Citrus × meyeri', qty: 1, where: 'Courtyard bed by the wall', img: 'learn-citrus', water: 'Deep soak every 2–3 weeks in winter; weekly in summer', feed: 'Citrus fertilizer in Feb, May and Aug', winter: 'Cover at 32°F with frost cloth to the ground' },
+      { name: 'Variegated agave', latin: 'Agave americana \'Marginata\'', qty: 4, where: 'Urns and water wall planters', img: 'pt-urn', water: 'Drip off Nov–Mar; monthly in summer', feed: 'None needed', winter: 'Keep dry. Hardy to the mid 20s.' },
+      { name: 'Mexican feather grass', latin: 'Nassella tenuissima', qty: 9, where: 'Front of the water wall', img: 'learn-feathergrass', water: 'Every 2 weeks in winter; weekly in summer', feed: 'None needed', winter: 'Comb out dead blades in February' },
+      { name: 'Blue fescue', latin: 'Festuca glauca', qty: 12, where: 'Lawn border and boulders', img: 'learn-mossrock', water: 'Every 2 weeks in winter', feed: 'Light slow-release in March', winter: 'Rake out old blades in late winter' },
+      { name: 'Fan flower', latin: 'Scaevola aemula', qty: 8, where: 'River rock bed', img: 'learn-blueflowers', water: 'Weekly in winter if dry', feed: 'Bloom food monthly, Apr–Sep', winter: 'Shear frost-burned tips in March' },
+      { name: 'Foxtail fern', latin: 'Asparagus densiflorus \'Myersii\'', qty: 3, where: 'Shade side of courtyard', img: 'learn-foxtail', water: 'Every 10 days in winter', feed: 'Balanced feed in spring', winter: 'Cover below 30°F' }
+    ],
+    controller: { model: 'Hunter Hydrawise HPC, 6 zones (Wi-Fi)', location: 'Garage wall, left of the panel', rain: 'Weather-based skipping on' },
+    zones: [
+      { z: 1, name: 'Water wall planters', type: 'Drip', winter: 'Every 14 days · 20 min', spring: '2×/wk · 25 min', summer: '3×/wk · 35 min', fall: '2×/wk · 25 min' },
+      { z: 2, name: 'Citrus and courtyard', type: 'Bubbler', winter: 'Every 14 days · 15 min', spring: '1×/wk · 20 min', summer: '2×/wk · 30 min', fall: '1×/wk · 20 min' },
+      { z: 3, name: 'Grasses and border', type: 'Drip', winter: 'Every 14 days · 20 min', spring: '1×/wk · 25 min', summer: '2×/wk · 35 min', fall: '1×/wk · 25 min' },
+      { z: 4, name: 'Lawn', type: 'Rotor spray', winter: '1×/wk · 2 × 6 min', spring: '2×/wk · 2 × 8 min', summer: '3×/wk · 2 × 10 min', fall: '2×/wk · 2 × 8 min' }
+    ],
+    lights: { transformer: '300W low-voltage transformer with astronomic timer', location: 'Side yard, on the post by the gate', schedule: 'On at dusk, off at 11:00 pm',
+      fixtures: [ { type: 'Spotlights', detail: 'Brass, 2700K warm white, 4W LED', where: 'Agave, citrus, grasses', qty: 8, icon: 'spot' }, { type: 'Wall sconces', detail: 'Up/down, bronze, 2700K', where: 'Water wall columns', qty: 4, icon: 'sconce' },
+        { type: 'Underwater lights', detail: 'Sealed LED, 3W', where: 'Water wall basin', qty: 2, icon: 'water' }, { type: 'Path lights', detail: 'Brass, 2700K, 3W', where: 'Flagstone path', qty: 3, icon: 'path' } ] },
+    hardscape: [
+      { name: 'Flagstone patio', spec: 'Arizona flagstone, about 420 sq ft, set in decomposed granite', tasks: [['Weekly', 'Sweep or blow off leaves'], ['Yearly', 'Re-set any rocking stones; top up joint material'], ['Avoid', 'Pressure-washing joints out']] },
+      { name: 'Paver walkway', spec: 'Concrete pavers with polymeric sand joints', tasks: [['Monthly', 'Sweep; rinse with a garden hose'], ['As needed', 'Top up joint sand when joints drop ¼″'], ['Every 3–5 yrs', 'Clean and seal in dry weather'], ['Year 1', 'White haze (efflorescence) fades on its own']] },
+      { name: 'Seat wall and raised beds', spec: 'Segmental block with stucco finish', tasks: [['Before storms', 'Clear weep holes and drains'], ['Yearly', 'Look for cracks or bulging; call us if you see any'], ['Always', 'Keep sprinkler spray off stucco to prevent staining']] },
+      { name: 'River rock and mulch', spec: '1–3″ river rock; 3″ shredded bark', tasks: [['Spring', 'Top up mulch to 3″ deep'], ['Fall', 'Rake leaves out of rock beds']] }
+    ],
+    waterFeature: { pump: '2,000 GPH submersible pump, runs 24/7', fill: 'Auto-fill valve in the basin vault', tasks: [['Weekly', 'Check water level; clear leaves from the basin'], ['Every 2 weeks', 'Empty skimmer and pump intake screen'], ['Monthly', 'Add beneficial bacteria (cold-water formula below 50°F)'], ['Spring', 'Wipe mineral scale off the spillway lip with diluted vinegar'], ['Winter', 'Keep it running. Moving water rarely freezes here.'], ['Never', 'Let the pump run dry. Switch it off if the level drops below the intake.']] }
+  };
+  const ico = {
+    spot: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M7 14l6-6 4 4-6 6z"/><path d="M9 16l-3 5M18 6l3-3M14 4l1-2M20 10l2-1"/></svg>',
+    sconce: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="8" y="6" width="8" height="12" rx="2"/><path d="M12 2v3M12 19v3"/></svg>',
+    water: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 3s6 6.5 6 11a6 6 0 01-12 0c0-4.5 6-11 6-11z"/></svg>',
+    path: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 5h8l-2 4h-4z"/><path d="M12 9v12M9 21h6"/></svg>'
+  };
+  const seasons = ['winter', 'spring', 'summer', 'fall'];
+  let ptab = 'overview', season = 'winter', svcReceipt = null;
+  const cap = s => s[0].toUpperCase() + s.slice(1);
+  function portalTabs() {
+    const tabs = [['overview', 'Overview'], ['plants', 'Plants'], ['watering', 'Watering'], ['lighting', 'Lighting'], ['hardscape', 'Pavers & walls'], ['water', 'Water feature']];
+    return `<div class="ptabs"><div class="seg" role="tablist" aria-label="Project sections">${tabs.map(([k, l]) => `<button type="button" role="tab" aria-selected="${k === ptab}" data-ptab="${k}">${l}</button>`).join('')}</div></div>`;
+  }
+  function panel() {
+    const D = demo;
+    if (ptab === 'overview') return `<div class="cards-2">
+      <div class="pcard"><h3>This week in your yard</h3><p class="note">Winter care · Modesto</p><ul class="task-list">
+        <li><span class="when">Sun Nov 1</span><span>Clocks fall back. Your astronomic timer adjusts on its own; confirm the lights come on at dusk.</span></li>
+        <li><span class="when">This week</span><span>Your controller moves to the winter schedule. Zones 1–3 now run every 14 days.</span></li>
+        <li><span class="when">Frost nights</span><span>Cover the Meyer lemon and foxtail ferns below 32°F. Agave and grasses are fine.</span></li>
+        <li><span class="when">Every 2 wks</span><span>Empty the water wall skimmer while leaves are falling.</span></li></ul></div>
+      <div class="pcard"><h3>Your project at a glance</h3><dl class="kv">
+        <dt>Plants</dt><dd>${D.plants.reduce((a, p) => a + p.qty, 0)} plants, ${D.plants.length} varieties</dd>
+        <dt>Irrigation</dt><dd>${D.zones.length} zones on ${esc(D.controller.model)}</dd>
+        <dt>Lighting</dt><dd>${D.lights.fixtures.reduce((a, f) => a + f.qty, 0)} fixtures on one 300W transformer</dd>
+        <dt>Hardscape</dt><dd>Flagstone patio, paver walk, seat wall, river rock</dd>
+        <dt>Water feature</dt><dd>Stucco and ledgestone water wall</dd>
+        <dt>Care updated</dt><dd>${esc(D.updated)}</dd></dl></div>
+      <div class="pcard"><h3>Plans &amp; files</h3><ul class="task-list">
+        <li><span class="when">PDF</span><span>Final 2D plan and 3D renderings (concept)</span></li><li><span class="when">PDF</span><span>As-built irrigation and lighting map</span></li>
+        <li><span class="when">PDF</span><span>Manufacturer manuals: pump, transformer, controller</span></li></ul><p class="note">Files are placeholders in this preview.</p></div></div>`;
+    if (ptab === 'plants') return `<div class="cards-2">${D.plants.map(p => `<div class="pcard"><div class="plant-row"><img src="img/${p.img}.jpg" alt="${esc(p.name)}" loading="lazy">
+      <div style="display:grid;gap:.15rem;min-width:0"><h4>${esc(p.name)} <span class="muted" style="font-family:var(--sans);font-size:var(--t-sm)">× ${p.qty}</span></h4><span style="font-size:var(--t-label);color:var(--ink-2);font-style:italic">${esc(p.latin)}</span><span style="font-size:var(--t-label);color:var(--ink-2)">${esc(p.where)}</span></div></div>
+      <dl class="kv"><dt>Water</dt><dd>${esc(p.water)}</dd><dt>Feed</dt><dd>${esc(p.feed)}</dd><dt>Winter</dt><dd>${esc(p.winter)}</dd></dl></div>`).join('')}</div>`;
+    if (ptab === 'watering') return `<div class="cards-2">
+      <div class="pcard"><h3>Your timer</h3><dl class="kv"><dt>Controller</dt><dd>${esc(D.controller.model)}</dd><dt>Location</dt><dd>${esc(D.controller.location)}</dd><dt>Rain</dt><dd>${esc(D.controller.rain)}</dd></dl></div>
+      <div class="pcard"><h3>Change a run time</h3><ol class="howto"><li>Open the Hydrawise app and tap <b>Zones</b>.</li><li>Pick the zone, then tap <b>Edit</b>.</li><li>Set the run time and how often it waters. Lawn zones use two short cycles.</li><li>Save. The controller updates over Wi-Fi in about a minute.</li><li>Big storm coming? Use <b>Suspend</b> for a few days instead of turning the controller off.</li></ol></div></div>
+      <div class="pcard"><div class="module-head" style="margin:0"><h3>Run times by season</h3><div class="seg" role="tablist" aria-label="Season">${seasons.map(s => `<button type="button" role="tab" aria-selected="${s === season}" data-season="${s}">${cap(s)}</button>`).join('')}</div></div>
+      <div class="table-wrap"><table><thead><tr><th>Zone</th><th>Area</th><th>Type</th><th>${cap(season)} schedule</th></tr></thead><tbody>${D.zones.map(z => `<tr><td class="num">${z.z}</td><td>${esc(z.name)}</td><td>${esc(z.type)}</td><td class="num">${esc(z[season])}</td></tr>`).join('')}</tbody></table></div>
+      <p class="note">Set and approved by your Green Lion crew for this installation. Follow your city's watering days.</p></div>`;
+    if (ptab === 'lighting') return `<div class="cards-2">
+      <div class="pcard"><h3>Your system</h3><dl class="kv"><dt>Transformer</dt><dd>${esc(D.lights.transformer)}</dd><dt>Location</dt><dd>${esc(D.lights.location)}</dd><dt>Schedule</dt><dd>${esc(D.lights.schedule)}</dd></dl>
+        <div style="display:grid;gap:.5rem">${D.lights.fixtures.map(f => `<div class="fixture"><span class="ico">${ico[f.icon]}</span><div><b>${esc(f.type)}</b><small>${esc(f.detail)} · ${esc(f.where)}</small></div><span class="qty">× ${f.qty}</span></div>`).join('')}</div></div>
+      <div class="pcard"><h3>How to use your lights</h3><ol class="howto">
+        <li><b>Change the off time:</b> on the transformer timer, choose Dusk + hours or a fixed off time, then press Set.</li>
+        <li><b>After a power outage:</b> astronomic timers keep their settings. A blinking display means re-enter the time only.</li>
+        <li><b>Re-aim a spotlight:</b> loosen the knuckle, point it at the trunk or base of the plant, and retighten. Check each fall as plants grow.</li>
+        <li><b>Clean lenses:</b> wipe sprinkler spots off with a soft cloth and a little white vinegar.</li>
+        <li><b>A fixture is out:</b> these are sealed LEDs. Request a visit and our crew will replace it.</li></ol>
+        <a class="btn btn-ghost btn-sm" href="#book" data-book="Aftercare visit" data-note="Lighting: ">Report a light that's out</a></div></div>`;
+    if (ptab === 'hardscape') return `<div class="cards-2">${D.hardscape.map(h => `<div class="pcard"><h3>${esc(h.name)}</h3><p class="muted" style="font-size:var(--t-sm)">${esc(h.spec)}</p><ul class="task-list">${h.tasks.map(([w, t]) => `<li><span class="when">${esc(w)}</span><span>${esc(t)}</span></li>`).join('')}</ul></div>`).join('')}</div>`;
+    if (ptab === 'water') return `<div class="cards-2">
+      <div class="pcard"><img src="img/pj-wall-1.jpg" alt="Water wall in daylight" style="border-radius:6px;aspect-ratio:16/10;object-fit:cover;width:100%" loading="lazy"><h3>Your water wall</h3><dl class="kv"><dt>Pump</dt><dd>${esc(D.waterFeature.pump)}</dd><dt>Fill</dt><dd>${esc(D.waterFeature.fill)}</dd><dt>Lights</dt><dd>2 underwater LEDs on the main transformer</dd></dl></div>
+      <div class="pcard"><h3>Care schedule</h3><ul class="task-list">${D.waterFeature.tasks.map(([w, t]) => `<li><span class="when">${esc(w)}</span><span>${esc(t)}</span></li>`).join('')}</ul></div>
+      <form class="pcard" id="svc-form" novalidate><h3>Request water feature maintenance</h3>
+        <div class="field"><label for="svc-issue">What's happening?</label><select id="svc-issue"><option>Water level dropping</option><option>Pump stopped or noisy</option><option>Cloudy water or algae</option><option>Basin lights out</option><option>Leak or wet spot nearby</option><option>Seasonal cleaning</option><option>Something else</option></select></div>
+        <div class="field"><label for="svc-notes">Notes</label><textarea id="svc-notes" placeholder="When did you notice it? Anything that changed recently?"></textarea></div>
+        <div class="field"><label for="svc-when">Preferred window</label><select id="svc-when"><option>Weekday morning</option><option>Weekday afternoon</option><option>Saturday morning</option></select></div>
+        <button class="btn btn-primary" type="submit">Send request</button>
+        ${svcReceipt ? `<div class="receipt"><h3>Request received</h3><p>We received your water feature maintenance request (${esc(svcReceipt.issue)}, ${esc(svcReceipt.when.toLowerCase())}). Your preferred date is not booked yet. Our team will contact you to confirm the scope and appointment.</p><p class="note">Preview only: nothing was sent.</p></div>` : ''}
+      </form></div>`;
+    return '';
+  }
+  function renderPortal() {
+    const D = demo;
+    $('#portal-app').innerHTML = `<div class="demo-banner"><span style="min-width:0;flex:1 1 220px">Sample project record. Each client sees only their own approved plants, products and plans.</span><button class="copy-btn" type="button" id="logout">Sign out</button></div>
+      <div class="portal-head"><img src="img/${D.hero}.jpg" alt="${esc(D.project)}"><div class="cap"><span class="complete">Project complete</span><p class="eyebrow on-dark">Welcome back, ${esc(D.client)}</p><h1>Your completed backyard</h1><p>${esc(D.project)} · ${esc(D.city)} · ${esc(D.done)}</p>
+        <div class="row"><a class="btn btn-leaf btn-sm" href="#book" data-book="Aftercare visit">Request a visit</a><span class="btn btn-on-dark btn-sm phone-line">${PHONE}</span></div></div></div>
+      ${portalTabs()}<div class="ppanel" id="ppanel" role="tabpanel">${panel()}</div>`;
+  }
+  function login() { try { sessionStorage.setItem('gl-portal', '1'); } catch {} $('#portal-login').hidden = true; $('#portal-app').hidden = false; renderPortal(); }
+  function logout() { try { sessionStorage.removeItem('gl-portal'); } catch {} $('#portal-login').hidden = false; $('#portal-app').hidden = true; }
+  $('#demo-login').addEventListener('click', login);
+  $('#login-form').addEventListener('submit', e => { e.preventDefault(); const ok = $('#l-email').value.trim() && $('#l-pass').value.trim(); $('#l-err').hidden = !!ok; if (ok) { login(); toast('Opened the demo project'); } });
+  $('#portal-app').addEventListener('click', e => {
+    const t = e.target.closest('[data-ptab]'); if (t) { ptab = t.dataset.ptab; renderPortal(); $('.ptabs').scrollIntoView({ block: 'nearest' }); return; }
+    const s = e.target.closest('[data-season]'); if (s) { season = s.dataset.season; $('#ppanel').innerHTML = panel(); return; }
+    if (e.target.closest('#logout')) logout();
+  });
+  $('#portal-app').addEventListener('submit', e => {
+    if (e.target.id !== 'svc-form') return; e.preventDefault();
+    svcReceipt = { issue: $('#svc-issue').value, when: $('#svc-when').value }; $('#ppanel').innerHTML = panel();
+    $('#svc-form .receipt').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+
+  /* ---------- Dialogs ---------- */
+  const dlg = $('#dlg');
+  const openDlg = html => { $('#dlg-content').innerHTML = html; if (dlg.showModal) dlg.showModal(); else dlg.setAttribute('open', ''); };
+  const closeDlg = () => dlg.close ? dlg.close() : dlg.removeAttribute('open');
+  $('#dlg-close').addEventListener('click', closeDlg);
+  dlg.addEventListener('click', e => { if (e.target === dlg) closeDlg(); });
+  function openProject(k) {
+    const p = projects[k]; if (!p) return;
+    openDlg(`<div class="dlg-img"><img src="img/${p.imgs[0]}.jpg" alt="${esc(p.name)}"></div><div class="dlg-body"><p class="eyebrow">${esc(p.sub)}</p><h2 id="dlg-title">${esc(p.name)}</h2><p>${esc(p.story)}</p>
+      <ul class="feat-list">${p.features.map(f => `<li>${esc(f)}</li>`).join('')}</ul><div class="dlg-gallery">${p.imgs.slice(1).map(i => `<img src="img/${i}.jpg" alt="" loading="lazy">`).join('')}</div>
+      <div style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-primary" href="#book" data-book="Design consultation" data-note="I'd like to talk about something like ${esc(p.name)}.">Ask about a similar scope</a><a class="btn btn-ghost" href="#inspire">Get Inspired</a></div></div>`);
+  }
+  function openPost(id) {
+    if (id === 'lisa') {
+      openDlg(`<div class="dlg-img"><img src="img/${lisa.img}.jpg" alt="Boulder waterfall surrounded by rock and planting, a Green Lion Landscape project"></div><div class="dlg-body"><p class="eyebrow">${esc(lisa.tag)}</p><h2 id="dlg-title">${esc(lisa.title)}</h2>
+        <p style="font-weight:700">${esc(lisa.byline)} <span class="pill pill-draft">Draft for Lisa's review</span></p><div class="prose-col">${lisa.sections.map(([h, t]) => `${h ? `<h3>${esc(h)}</h3>` : ''}<p>${esc(t)}</p>`).join('')}</div>
+        <div class="dlg-gallery">${lisa.gallery.map(i => `<img src="img/${i}.jpg" alt="Green Lion Landscape water feature project" loading="lazy">`).join('')}</div>
+        <p class="note">Project photos are starting points for a conversation, not promises that the same design suits every property.</p>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-primary" href="#services" data-focus="svc-water">Explore water features</a><a class="btn btn-ghost" href="#book" data-book="Water feature">Schedule your design consultation</a></div></div>`);
+      return;
+    }
+    const p = posts.find(x => x.id === id); if (!p) return;
+    openDlg(`<div class="dlg-img"><img src="img/${p.img}.jpg" alt=""></div><div class="dlg-body"><p class="eyebrow">${esc(p.tag)}</p><h2 id="dlg-title">${esc(p.title)}</h2><div class="prose-col">${p.body.map(t => `<p>${esc(t)}</p>`).join('')}</div>
+      <div><a class="btn btn-primary" href="#book" data-book="Aftercare visit">Request an aftercare visit</a></div></div>`);
+  }
+
+  /* ---------- Global clicks ---------- */
+  document.addEventListener('click', e => {
+    const pj = e.target.closest('[data-project]'); if (pj) { e.preventDefault(); openProject(pj.dataset.project); return; }
+    const po = e.target.closest('[data-post]'); if (po) { openPost(po.dataset.post); return; }
+    const cp = e.target.closest('[data-copy]');
+    if (cp) { e.preventDefault(); e.stopPropagation(); const v = cp.dataset.copy; const p = navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(v) : Promise.reject(); p.then(() => toast('Phone number copied')).catch(() => toast('Call ' + v)); return; }
+    const fc = e.target.closest('[data-focus]'); if (fc) { pendingFocus = fc.dataset.focus; if (dlg.open) closeDlg(); if (location.hash === fc.getAttribute('href')) route(); }
+    const bk = e.target.closest('[data-book]');
+    if (bk) {
+      const want = bk.dataset.book;
+      const rules = [[/water/i, 'Water feature'], [/kitchen|pavilion/i, 'Outdoor kitchen'], [/paver|concrete/i, 'Pavers & patio'], [/light/i, 'Lighting'], [/sauna|wellness|spa|hot tub/i, 'Sauna & hot tub'], [/fire/i, 'Fire feature'], [/turf|plant/i, 'Turf & planting'], [/wall/i, 'Retaining walls'], [/aftercare/i, 'Aftercare visit']];
+      const hit = bookTypes.includes(want) ? want : ((rules.find(([re]) => re.test(want)) || [, 'Design consultation'])[1]);
+      picked.clear(); picked.add(hit);
+      if (bk.dataset.note) $('#b-notes').value = bk.dataset.note;
+      renderTypes(); renderSummary(); $('#book-receipt').hidden = true;
+      if (dlg.open) closeDlg();
+    }
+  });
+
+  renderFrost(); renderWater('drip'); renderCheck(); renderTypes(); renderDays(); renderSummary(); renderIdeas();
+  try { if (sessionStorage.getItem('gl-portal') === '1') login(); } catch {}
+  route();
+})();
+</script>
+</body>
+</html>
