@@ -60,7 +60,7 @@ Web-sized crops used by the page are in `img/`: `logo-horizontal.png`, `logo-mas
 
 ### Rules used in the build
 
-- The logo always sits on a solid, quiet panel. This build uses Warm white, the guide's alternate background (Charcoal is the preferred one). The logo is never placed over photos.
+- The logo always sits on a solid, quiet panel. This build uses Charcoal, the guide's preferred background. The logo is never placed over photos.
 - No stretching, retyping or retracing, added effects (shadows, glows, outlines) or mixed lions.
 - Earlier lion and waterfall marks are retired. The Inspirational Waterscapes mark has been removed from the site.
 - Clear space: X = 8% of the logo's total width on every side.
@@ -94,4 +94,10 @@ From the guide's digital application section:
 
 ## Page surfaces in this build
 
-At the owner's request the site uses one light theme: a lighter beige page (`#FBF8F1`), Warm white header and section bands, white cards and tab bar, and Deep green for a few accent blocks (Lisa's article, the consultation band, the booking summary, the featured scope and the My Project header). The logo sits on Warm white, the guide's alternate background.
+The site uses the **Charcoal Split** direction (chosen November 10, 2026), styled closer to greenlionlandscape.com while keeping the 2026 palette and logo:
+
+- Charcoal (`#202321`) info bar, header, tab bar or side rail, home hero, Get Inspired hero and footer. Charcoal is the guide's preferred logo background, so the logo now sits on Charcoal everywhere.
+- A 3 px Leaf green rule under the header and the home hero.
+- Home hero is split on screens 960 px and wider: headline, lede and buttons on the left, a Leaf green divider, and the water-feature gallery on the right. Phones and tablets stack the copy above the gallery.
+- Buttons in the dark areas are Leaf green with Charcoal text, in uppercase with letter spacing. The italic accent word in hero headlines is Lime.
+- Content sections stay light: the beige page (`#FBF8F1`), Warm white bands, white cards, and Deep green accent blocks (Lisa's article, the consultation band, the booking summary, the featured scope and the My Project header).

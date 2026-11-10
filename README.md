@@ -16,9 +16,9 @@ python3 -m http.server 8000
 
 ## Brand
 
-- Palette from the 2026 guide: a lighter beige page with Warm white bands, Leaf green accents and rules, and Deep green buttons and accent blocks.
+- Palette from the 2026 guide, in the **Charcoal Split** direction: Charcoal header, navigation, home hero and footer; Leaf green rules and buttons; a light beige page with Warm white bands and Deep green accent blocks for the content.
 - Type: Liberation Serif for display and Liberation Sans for body, loaded as Tinos and Arimo from Google Fonts.
-- The header uses the approved October 16 logos on Warm white (the guide's alternate background): the lion emblem on phones and tablets and the horizontal signature on desktop. The footer uses the Master lockup.
+- The header uses the approved October 16 logos on Charcoal (the guide's preferred background): the lion emblem on phones and tablets and the horizontal signature on desktop. The footer uses the Master lockup.
 
 Details are in [`docs/BRAND.md`](docs/BRAND.md).
 
