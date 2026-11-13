@@ -35,8 +35,8 @@ The 2026 guide asks for grounded claims, no unapproved pricing and only the curr
 
 | Item | Where | Note |
 | --- | --- | --- |
-| Water-feature working titles | Home carousel, Get Inspired | *Boulder Falls*, *Moonlit Water Wall*, *Palm Koi Pond*, *Garden Pond*, *Lantern Falls*, *Scupper Water Wall*, *Garden Stream* and *Ledgestone Spill Wall* are working titles. |
-| Project working titles | Project cards, Get Inspired, My Project | *Water Wall Garden*, *Palm Koi Pond* and *Modern Wellness Yard* are working titles. |
+| Water-feature working titles | Home carousel, Get Inspired | *Boulder Falls*, *Lavender Creek*, *Moonlit Water Wall*, *Palm Koi Pond*, *Garden Pond*, *Lantern Falls*, *Scupper Water Wall*, *Fire Bowl Creek*, *Garden Stream* and *Ledgestone Spill Wall* are working titles. |
+| Project working titles | Project cards, Get Inspired, My Project | *Water Wall Garden*, *Palm Koi Pond*, *Creekside Pavilion Yard* and *Modern Wellness Yard* are working titles. The Creekside project's city is not confirmed, so it is captioned "Green Lion project". |
 | My Project data | My Project | Plants, the Hunter Hydrawise controller, zone run times, the transformer and the fixtures are a **sample record** that shows the layout. They don't describe a real client's install. |
 | My Project files | My Project › Overview | The listed plans, maps and manuals are placeholders. |
 | Frost thresholds and winter watering times | Journal, My Project | General Central Valley guidance. The crew should review the numbers. |
@@ -55,8 +55,11 @@ Exported from the Green Lion shared drive at web size (JPEG, quality 72). The RA
 | `pj-hidden-*`, `svc-kitchen`, `svc-turf` | Look Book › Hidden Resort | 2025 |
 | `pj-luxe-*`, `svc-pavers`, `learn-bougainvillea`, `pt-pavers` | Look Book › Luxe Lounge | 2025 |
 | `wf-boulder-falls` (IMG_0397), `wf-pond-garden` (IMG_1815), `wf-stream` (IMG_6162), `lisa-stream` (IMG_6163), `learn-foxtail` (IMG_0848), `svc-walls` (IMG_1810) | CreatorLab drive › Branding | Added Oct 29, 2026 |
+| `wf-creek-falls` (IMG_6484), `wf-creek-firebowl` (IMG_6376), `pj-creek-1` (IMG_6379), `pj-creek-2` (IMG_6381), `pj-creek-3` (IMG_6483), `pj-creek-4` (IMG_6371), `pj-creek-5` (IMG_6358), `pj-creek-6` (IMG_6360), `svc-pavilion` (IMG_6382), `learn-lavender` (IMG_6463) | CreatorLab drive › Branding › Final Photos (edited and upscaled versions of real project photos) | Added Nov 13, 2026 |
 
-`svc-walls` (IMG_1810) replaces the earlier Hidden Resort raised-bed shot.
+`svc-walls` (IMG_1810) replaces the earlier Hidden Resort raised-bed shot. `svc-pavilion` replaces the Hidden Resort kitchen photo on the Services card; that photo is still used in the Hidden Resort project.
+
+Final Photos also holds 13 copies of the Aug 2026 client project shots that were already on the site, so they were not added twice.
 
 The full RAW shoot has 276 frames. This build uses a sample of every sixth frame, so there are more shots to choose from.
 

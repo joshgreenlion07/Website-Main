@@ -524,6 +524,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
 .dlg-close { position: absolute; right: 10px; top: 10px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(32, 35, 33, .78); color: #F5F2EA; cursor: pointer; display: grid; place-items: center; font-size: 1.2rem; }
 .dlg-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .dlg-gallery img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; width: 100%; }
+.dlg-gallery img:last-child:nth-child(odd) { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
 .toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(var(--tabbar-h) + 20px + env(safe-area-inset-bottom, 0px)); z-index: 70; background: var(--charcoal); color: #F5F2EA; padding: .65rem 1rem; border-radius: var(--r-sm); font-size: var(--t-sm); font-weight: 700; box-shadow: var(--shadow); border-left: 3px solid var(--leaf); }
 @media (min-width: 768px) { .toast { bottom: 28px; } }
 </style>
@@ -764,7 +765,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
           <label for="inspire-text">What do you want your yard to feel like?</label>
           <textarea id="inspire-text" name="inspire-text">A koi pond with palms, a fire pit for winter evenings and warm lighting</textarea>
           <div class="idea-chips" id="idea-chips" aria-label="Add an idea"></div>
-          <div class="prompt-actions"><span class="note">Matches against 5 Green Lion projects today.</span><button class="btn btn-primary" type="submit">Show me ideas</button></div>
+          <div class="prompt-actions"><span class="note">Matches against 6 Green Lion projects today.</span><button class="btn btn-primary" type="submit">Show me ideas</button></div>
         </form>
       </div>
     </div>
@@ -886,11 +887,13 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
   /* ---------- Data (real Green Lion project photos; titles are working names) ---------- */
   const waterFeatures = [
     { img: 'wf-boulder-falls', title: 'Boulder Falls', place: 'Green Lion project', type: 'Boulder waterfall and stream', note: 'Moving water, rock and planting working as one design.' },
+    { img: 'wf-creek-falls', title: 'Lavender Creek', place: 'Green Lion project', type: 'Pondless stream and waterfalls', note: 'A pondless stream steps down over boulders between lavender, salvia and ornamental grasses.', project: 'creek' },
     { img: 'wf-waterwall', title: 'Moonlit Water Wall', place: 'Modesto', year: '2026', type: 'Stucco and ledgestone water wall', note: 'A sheer spillway into a lit basin, framed by agave planters and warm wall sconces.', project: 'wall' },
     { img: 'wf-koi', title: 'Palm Koi Pond', place: 'Green Lion project', year: '2026', type: 'Koi pond with boulder falls', note: 'A deep koi pond under palms, with stepped falls and feather grass at the edge.', project: 'koi' },
     { img: 'wf-pond-garden', title: 'Garden Pond', place: 'Green Lion project', type: 'Pond with planted edges', note: 'A low waterfall feeding a planted pond, with grasses and perennials to the waterline.' },
     { img: 'wf-boulder-night', title: 'Lantern Falls', place: 'Green Lion project', type: 'Boulder waterfall, underwater lights', note: 'Multi-tier boulder falls lit from below so the water glows after dark.' },
     { img: 'wf-modern', title: 'Scupper Water Wall', place: 'Hidden Resort', type: 'Porcelain wall with three scuppers', note: 'Stainless scuppers pour into a river-rock basin in the Hidden Resort wellness yard.', project: 'hidden' },
+    { img: 'wf-creek-firebowl', title: 'Fire Bowl Creek', place: 'Green Lion project', type: 'Stream with a gravel fire court', note: 'A concrete fire bowl on a gravel court, set in front of the falls so the fire and the water share one view.', project: 'creek' },
     { img: 'wf-stream', title: 'Garden Stream', place: 'Green Lion project', type: 'Pondless stream', note: 'A shallow stream stepping over stone between ornamental grasses.' },
     { img: 'wf-stonewall', title: 'Ledgestone Spill Wall', place: 'Green Lion project', year: '2026', type: 'Stacked stone wall with spillway', note: 'Uplit stacked stone and a thin spillway between smooth stucco columns.', project: 'well' }
   ];
@@ -912,6 +915,10 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
       story: 'A large koi pond with boulder waterfalls, palms, tropical planting and ornamental grasses around the shoreline.',
       features: ['Koi pond', 'Boulder waterfalls', 'Palms', 'Tropical planting', 'Ornamental grasses'],
       tags: ['koi', 'pond', 'waterfall', 'water feature', 'palms', 'tropical', 'fish', 'boulders', 'grasses'] },
+    creek: { name: 'Creekside Pavilion Yard', sub: 'Green Lion project', imgs: ['pj-creek-1', 'pj-creek-2', 'pj-creek-3', 'pj-creek-4', 'pj-creek-5', 'pj-creek-6'],
+      story: 'A pondless stream winds through lavender and ornamental grasses to a gravel fire-bowl court, a few steps from a timber pavilion with an outdoor kitchen, a stone-veneer bar and a beer tap. A flagstone path leads past a tiered fountain to the side yard.',
+      features: ['Pondless stream and waterfalls', 'Gravel fire-bowl court', 'Timber pavilion', 'Outdoor kitchen', 'Stone-veneer bar with fridge', 'Beer tap', 'Stamped concrete', 'Flagstone path', 'Tiered fountain', 'Lavender and ornamental grasses'],
+      tags: ['waterfall', 'stream', 'pondless', 'water feature', 'fire', 'fire pit', 'kitchen', 'bar', 'pavilion', 'stamped concrete', 'flagstone', 'fountain', 'lavender', 'grasses', 'drought', 'gravel', 'entertain'] },
     well: { name: 'Modern Wellness Yard', sub: 'Green Lion project, 2026', imgs: ['pj-well-1', 'pj-well-2', 'svc-wellness', 'svc-fire'],
       story: 'Hot tub on a composite deck, cube sauna, gas fire lounge and an uplit stone water wall on porcelain pavers.',
       features: ['Hot tub', 'Cube sauna', 'Gas fire table', 'Porcelain pavers', 'Stone water wall', 'Landscape lighting', 'Turf'],
@@ -926,11 +933,12 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
     { name: 'Queen palm', ph: 'PLM', cover: 28, damage: 25, tip: 'Mexican fan palms are hardier.' },
     { name: 'Variegated agave', img: 'learn-agave', cover: 27, damage: 24, tip: 'Cold plus wet causes rot. Keep it dry.' },
     { name: 'Mexican feather grass, blue fescue', img: 'learn-feathergrass', cover: 10, damage: 5, tip: 'Fully hardy here. Comb out in February.' },
-    { name: 'Roses and lavender', ph: 'RSE', cover: 15, damage: 10, tip: 'Hardy. Prune roses mid-January to mid-February.' }
+    { name: 'Roses and lavender', img: 'learn-lavender', cover: 15, damage: 10, tip: 'Hardy. Prune roses mid-January to mid-February.' }
   ];
   const plantCards = [
     { name: 'Citrus', latin: 'Citrus spp.', img: 'learn-citrus', tips: ['Cover at 32°F with frost cloth to the ground', 'Deep water every 2–3 weeks if no rain', 'Feed in February with citrus fertilizer', 'Leave fruit on; it stores on the tree'] },
     { name: 'Agave', latin: 'Agave americana & variegated forms', img: 'learn-agave', tips: ['Turn its drip off November to March', 'Hardy to the mid 20s when dry', 'Pull dead lower leaves with gloves on', 'Never let pots sit in a saucer of water'] },
+    { name: 'Lavender and salvia', latin: 'Lavandula, Salvia', img: 'learn-lavender', tips: ['Leave the spent stems on until February', 'Cut back by a third in late winter, never into bare wood', 'Water every 2–3 weeks in winter; they rot in wet soil'] },
     { name: 'Foxtail fern', latin: 'Asparagus densiflorus \'Myersii\'', img: 'learn-foxtail', tips: ['Cover below 30°F', 'Water every 10 days in winter', 'Cut frost-browned plumes to the base in March'] },
     { name: 'Mexican feather grass', latin: 'Nassella tenuissima', img: 'learn-feathergrass', tips: ['Comb out dead blades with your fingers in February', 'Cut back by a third if it flops', 'Water every 2 weeks in winter, less after rain'] },
     { name: 'Blue fescue and boulders', latin: 'Festuca glauca', img: 'learn-mossrock', tips: ['Rake old blades out in late winter', 'Divide clumps every 3 years', 'Keep mulch off the crown so it stays dry'] },
@@ -972,7 +980,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
   ];
   const services = [
     { id: 'water', name: 'Water features', img: 'svc-water', desc: 'Waterfalls, koi ponds, water walls and pondless streams, designed as part of your complete outdoor space.', items: ['Waterfalls', 'Koi ponds', 'Water walls', 'Pondless streams', 'Fountains'] },
-    { id: 'kitchen', name: 'Pavilions & outdoor kitchens', img: 'svc-kitchen', desc: 'Custom pavilions, louvered pergolas and outdoor kitchens built for how you cook and host.', items: ['Outdoor kitchens', 'Louvered pergolas', 'Pavilions', 'Bar seating'] },
+    { id: 'kitchen', name: 'Pavilions & outdoor kitchens', img: 'svc-pavilion', desc: 'Custom pavilions, louvered pergolas and outdoor kitchens built for how you cook and host.', items: ['Outdoor kitchens', 'Louvered pergolas', 'Pavilions', 'Bar seating'] },
     { id: 'pavers', name: 'Pavers & decorative concrete', img: 'svc-pavers', desc: 'Paver patios and driveways, porcelain, stamped and stained concrete, and walkways.', items: ['Paver patios', 'Driveways', 'Porcelain tile', 'Stamped concrete', 'Walkways'] },
     { id: 'lighting', name: 'Lighting, audio & video', img: 'svc-lighting', desc: 'Low-voltage LED landscape lighting, outdoor speakers and entertainment systems.', items: ['Landscape lighting', 'Wall sconces', 'Outdoor sound', 'Outdoor TV'] },
     { id: 'walls', name: 'Retaining walls & seat walls', img: 'svc-walls', desc: 'Segmental block and veneer walls, curved seat walls and raised planters.', items: ['Retaining walls', 'Seat walls', 'Raised beds'] },
