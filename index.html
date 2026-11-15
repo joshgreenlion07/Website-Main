@@ -302,6 +302,8 @@ input[type="range"] { width: 100%; accent-color: var(--deep); height: 32px; }
 .footer p, .footer li { font-size: var(--t-sm); }
 .footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: .3rem; }
 .footer a { color: var(--accent-text); }
+.footer .vendor-cell { display: grid; gap: .55rem; align-content: start; }
+.footer .vendor-login { width: fit-content; color: var(--charcoal); text-decoration: none; }  /* beats .footer a so the label keeps Charcoal on Leaf green */
 .footer .legal { margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--band-line); font-size: var(--t-label); letter-spacing: .06em; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; text-transform: uppercase; }
 .brandline { font-family: var(--serif); font-size: 1.35rem; color: var(--ink); }
 
@@ -853,6 +855,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
       <div style="display:grid;gap:.5rem"><p class="brandline">Outdoor living. Beautifully built.</p><p>Custom landscaping, design and water features for outdoor spaces that feel connected.</p></div>
       <div><h4>Contact</h4><ul><li>(209) 585-9767</li><li>info@greenlionlandscape.com</li><li>greenlionlandscape.com</li><li>Modesto &amp; the Central Valley</li></ul></div>
       <div><h4>Explore</h4><ul><li><a href="#services">Services</a></li><li><a href="#inspire">Get Inspired</a></li><li><a href="#book">Schedule your design consultation</a></li><li><a href="#portal">My Project</a></li></ul></div>
+      <div class="vendor-cell"><h4>Vendors &amp; crew</h4><p>Plans, measurements and estimates in Green Lion Area Planner.</p><a class="btn btn-leaf btn-sm vendor-login" href="https://area-planner-beta.vercel.app/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>Vendor login</a></div>
     </div>
     <div class="legal"><span>Green Lion Landscape Inc.</span><span>CSLB #1150882</span></div>
   </div>

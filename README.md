@@ -30,7 +30,7 @@ Navigation adapts by screen size, with the same five tabs (**Home · Services ·
 - **Tablets (768–1199 px):** a left side rail plus the fixed header.
 - **Desktop (1200 px and up):** a top nav with the full horizontal signature.
 
-Call and *Schedule your design consultation* stay in the header. The page uses a light beige background throughout; Deep green is kept for a few accent blocks. Views are routed on the URL hash (`#home`, `#services`, `#inspire`, `#book`, `#portal`).
+Call and *Schedule your design consultation* stay in the header. The footer has a **Vendor login** button for vendors and crew that opens Green Lion Area Planner (https://area-planner-beta.vercel.app/) in a new tab. The page uses a light beige background throughout; Deep green is kept for a few accent blocks. Views are routed on the URL hash (`#home`, `#services`, `#inspire`, `#book`, `#portal`).
 
 | View | What it does |
 | --- | --- |
