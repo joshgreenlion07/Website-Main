@@ -9,8 +9,29 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Project names, stories and features for the Look Book projects **Hidden Resort** and **Luxe Lounge**, from the Look Book creative brief.
 - The five-step process and the Essential / Signature / Luxury project scopes, from the Look Book creative brief. Dollar ranges have been removed (see below).
 - Service categories, from the *Website Marketing* content brief.
-- Lisa Taylor's article **"Are Water Features Taking Over Modesto Backyards?"**, from her design-notebook draft. The page shows an abridged version with a "Draft for Lisa's review" label. Lisa needs to approve the first-person text before it is published.
+- Lisa Taylor's article **"Are Water Features Taking Over Modesto Backyards?"**, from her design-notebook draft. The page shows an abridged version. Lisa approved it on Nov 18, 2026, so the draft label is gone.
 - All photos are Green Lion projects. Nothing is AI-generated.
+
+## Going live (Nov 18, 2026)
+
+At the owner's request, before pointing greenlionlandscape.com at this site:
+
+- **Book is off for now.** The booking form only showed a receipt and sent nothing, so it was removed. Every booking button is now a Call button (`tel:+12096464046`).
+- **Gallery** takes Book's place in the nav and tab bar: 50 project photos with category filters and a larger view.
+- **My Project** links to Green Lion Area Planner in a new tab. The demo client portal was removed.
+- **Lisa's article** is approved, and the draft label is gone.
+- **SEO:** the page title matches the old site ("Landscape Contractor Modesto, CA | Green Lion Landscape"). It also has a canonical URL, social preview tags, `robots.txt` and `sitemap.xml`.
+- **Redirects:** `vercel.json` sends all 27 page addresses of the old site to the matching view, service card or gallery filter. Fencing and maintenance pages go to Services, because this site has no fencing or maintenance service yet. The About and Accessibility pages go to Home.
+
+### DNS at Squarespace
+
+The domain's DNS is at Squarespace. Before the switch it pointed at the old site on Hostinger: `A @ 194.195.84.174` and `CNAME www greenlionlandscape.com`. To go live:
+
+1. In Vercel, add `www.greenlionlandscape.com` and `greenlionlandscape.com` to the `website-main` project (team joshua-jackson). Vercel then shows the exact records to use.
+2. In Squarespace, under Domains › greenlionlandscape.com › DNS, change the `@` A record and the `www` CNAME to Vercel's values.
+3. Leave the Google email record (`MX 1 smtp.google.com`) and the three `google-site-verification` TXT records alone.
+
+To undo the switch, put the two Hostinger values back.
 
 ## Home page simplified (Nov 18, 2026)
 
@@ -19,18 +40,18 @@ At the owner's request:
 - **Get Inspired is off for now:** the nav item, the Inspire tab, the coming-soon banner and side card, the footer link, the Services button, the project-dialog button and the Get Inspired page itself. An old `#inspire` link now opens Home. The code is in git history (commit 771d5fc) if it comes back.
 - **Middle tab:** the raised circle in the tab bar is now a Call button (`tel:+12096464046`).
 - **Hero gallery order:** Fire Bowl Creek, Lavender Creek, Moonlit Water Wall and Palm Koi Pond come first, then the rest as before.
-- **Shorter Journal:** after the frost check ("Try it"), the home page drops the two Built by Green Lion bands, the plant cards, winter watering, the winter checklist, the Journal side cards and the Quick reads posts. The page goes straight to other services, recent projects and the consultation band. On a phone it is about 12 screens long instead of 20. Watering and plant care for clients are still in My Project.
+- **Shorter Journal:** after the frost check ("Try it"), the home page drops the two Built by Green Lion bands, the plant cards, winter watering, the winter checklist, the Journal side cards and the Quick reads posts. The page goes straight to other services, recent projects and the consultation band. On a phone it is about 12 screens long instead of 20. The removed winter watering and plant-care content is in git history (commit 771d5fc).
 
 ## 3D Before You Build promos
 
 Added November 18, 2026 with the owner's approval of the free 3D design offer.
 
-- **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Book your 3D design consultation*, a silent loop of the *plan, 3D, built* reel, a dusk / daytime switch and slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the reel with sound.
+- **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Call to book your free 3D design*, a silent loop of the *plan, 3D, built* reel, a dusk / daytime switch and slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the reel with sound.
 - **Services:** Water features, Pavers & decorative concrete, and Turf, planting & irrigation each have a free 3D design row. It opens one reel in a dialog: water features get *We built this backyard in 3D first* (19 s), pavers get *Walk your yard in 3D* (13 s), and turf and planting get *Same yard, every hour of the day* (12 s). Their booking button reads *Book your 3D design consultation*.
 - The disclosure line sits under the home video and in every video dialog: *Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.* The slides are still photos and 3D renders labeled *3D design* and *Built*.
 - No client names appear in the copy, the slides or the reels.
-- Booking buttons pick *Design consultation* and prefill the note "I'd like a free 3D design of my yard."
-- Every reel on the site stops just before its end card, with a half-second fade. The end cards in the social files still show the old number, (209) 585-9767, and the page has its own booking button anyway. The silent home loops (`video/3d-loop-dusk.mp4`, `video/3d-loop-day.mp4`) stop at 12.8 s. The pop-up reels with sound are 13, 19, 13 and 12 s.
+- The 3D buttons call (209) 646-4046.
+- Every reel on the site stops just before its end card, with a half-second fade. The end cards in the social files still show the old number, (209) 585-9767, and the page has its own Call button anyway. The silent home loops (`video/3d-loop-dusk.mp4`, `video/3d-loop-day.mp4`) stop at 12.8 s. The pop-up reels with sound are 13, 19, 13 and 12 s.
 - When the social media files are re-exported with (209) 646-4046, the full reels can go back in. Carousel slide 8 shows the old number too, and the site doesn't use it.
 - The loop plays only while it is on screen, and does not autoplay for visitors who ask for reduced motion (they get play controls).
 - Not used yet: the spa and sauna reel, the *see it before ground* daytime reel and carousel slide 8 (the end card).
@@ -52,19 +73,15 @@ The 2026 guide asks for grounded claims, no unapproved pricing and only the curr
 | --- | --- | --- |
 | Phone number | The older *Website Marketing* brief listed (209) 338-8766 and the 2026 guide used (209) 585-9767. On Nov 18, 2026 the owner changed the number to (209) 646-4046. | Uses (209) 646-4046 everywhere on the site. The 3D reels and carousel slide 8 still show the old number in their end cards until the social media files are re-exported (see below). |
 | Hero headline | The owner asked for "Central Valley's favorite water features". The guide says to keep claims grounded. Lisa's draft suggests "Water. Stone. Your backyard retreat." instead. | Shows the owner's headline. |
-| Bottom navigation | The UX spec's bottom nav is Home, Services, Call, My Project. The owner first asked for Home, Services, Inspire, Book, My Project. | Since Nov 18, 2026: Home, Services, Call (the raised circle), Book, My Project. The header Call button is still there too. |
+| Bottom navigation | The UX spec's bottom nav is Home, Services, Call, My Project. The owner first asked for Home, Services, Inspire, Book, My Project. | Since Nov 18, 2026: Home, Services, Call (the raised circle), Gallery, My Project (opens Area Planner). The header Call button is still there too. |
 
 ## Placeholders to confirm before launch
 
 | Item | Where | Note |
 | --- | --- | --- |
 | Water-feature working titles | Home carousel | *Boulder Falls*, *Lavender Creek*, *Moonlit Water Wall*, *Palm Koi Pond*, *Garden Pond*, *Lantern Falls*, *Scupper Water Wall*, *Fire Bowl Creek*, *Garden Stream* and *Ledgestone Spill Wall* are working titles. |
-| Project working titles | Project cards, My Project | *Water Wall Garden*, *Palm Koi Pond*, *Creekside Pavilion Yard* and *Modern Wellness Yard* are working titles. The Creekside project's city is not confirmed, so it is captioned "Green Lion project". |
-| My Project data | My Project | Plants, the Hunter Hydrawise controller, zone run times, the transformer and the fixtures are a **sample record** that shows the layout. They don't describe a real client's install. |
-| My Project files | My Project › Overview | The listed plans, maps and manuals are placeholders. |
-| Frost thresholds and winter watering times | Journal, My Project | General Central Valley guidance. The crew should review the numbers. |
-| Booking | Book | Time slots and full slots are generated sample data. The form sends nothing. Its receipt says the preferred time is not booked yet. |
-| Water-feature maintenance request | My Project | Preview only, so nothing is sent. Its receipt says the preferred date is not booked yet and that the team will confirm. |
+| Project working titles | Project cards, Gallery | *Water Wall Garden*, *Palm Koi Pond*, *Creekside Pavilion Yard* and *Modern Wellness Yard* are working titles. The Creekside project's city is not confirmed, so it is captioned "Green Lion project". |
+| Frost thresholds | Journal | General Central Valley guidance. The crew should review the numbers. |
 
 ## Photo sources
 
