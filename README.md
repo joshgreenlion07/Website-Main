@@ -34,8 +34,8 @@ Call and *Schedule your design consultation* stay in the header. The footer has 
 
 | View | What it does |
 | --- | --- |
-| **Home** | Follows the guide's homepage order: a water-feature hero with a swipeable waterfall and pond gallery, Lisa's featured article, the seasonal Journal, other services and recent projects, then a design consultation call to action. |
-| **Services** | The five-step process, the service categories and the project scopes. No prices are shown. |
+| **Home** | Follows the guide's homepage order: a water-feature hero with a swipeable waterfall and pond gallery, then the *3D Before You Build* band (free 3D design offer, a silent 3D-to-built loop with a dusk/daytime switch and a design-vs-built slide gallery), Lisa's featured article, the seasonal Journal, other services and recent projects, then a design consultation call to action. |
+| **Services** | The five-step process, the service categories and the project scopes. No prices are shown. Water features, Pavers and Turf & planting each carry a free 3D design row that opens a 3D walkthrough reel. |
 | **Get Inspired** | Marked *coming soon*. Matches the visitor's words against tags on past Green Lion projects. |
 | **Book** | Lets the visitor pick project types, a day and a preferred time. The receipt says the time is not booked yet. |
 | **My Project** | A sign-in screen and a demo project with plants, watering by season, lighting, hardscape and water-feature care. It includes a water-feature maintenance request. |
@@ -44,7 +44,8 @@ Call and *Schedule your design consultation* stay in the header. The footer has 
 
 ```
 index.html            The whole site: markup, styles and script
-img/                  Web-sized photos and logo crops
+img/                  Web-sized photos and logo crops (3d-* are the 3D promo slides and reel covers)
+video/                Web-sized 3D promo reels (H.264, 720 × 1280)
 brand/                Approved Oct 16 logos (PNG + SVG) and guide page renders
 docs/BRAND.md         Colors, type, logo and voice rules used in the build
 docs/CONTENT_NOTES.md What's real, what's sample data, open decisions, photo sources
