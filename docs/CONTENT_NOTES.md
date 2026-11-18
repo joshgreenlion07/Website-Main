@@ -12,6 +12,15 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa Taylor's article **"Are Water Features Taking Over Modesto Backyards?"**, from her design-notebook draft. The page shows an abridged version with a "Draft for Lisa's review" label. Lisa needs to approve the first-person text before it is published.
 - All photos are Green Lion projects. Nothing is AI-generated.
 
+## Home page simplified (Nov 18, 2026)
+
+At the owner's request:
+
+- **Get Inspired is off for now:** the nav item, the Inspire tab, the coming-soon banner and side card, the footer link, the Services button, the project-dialog button and the Get Inspired page itself. An old `#inspire` link now opens Home. The code is in git history (commit 771d5fc) if it comes back.
+- **Middle tab:** the raised circle in the tab bar is now a Call button (`tel:+12095859767`).
+- **Hero gallery order:** Fire Bowl Creek, Lavender Creek, Moonlit Water Wall and Palm Koi Pond come first, then the rest as before.
+- **Shorter Journal:** after the frost check ("Try it"), the home page drops the two Built by Green Lion bands, the plant cards, winter watering, the winter checklist, the Journal side cards and the Quick reads posts. The page goes straight to other services, recent projects and the consultation band. On a phone it is about 12 screens long instead of 20. Watering and plant care for clients are still in My Project.
+
 ## 3D Before You Build promos
 
 Added November 18, 2026 with the owner's approval of the free 3D design offer.
@@ -42,14 +51,14 @@ The 2026 guide asks for grounded claims, no unapproved pricing and only the curr
 | --- | --- | --- |
 | Phone number | The older *Website Marketing* brief lists (209) 338-8766. The 2026 guide and Lisa's draft use (209) 585-9767. | Uses (209) 585-9767 everywhere. |
 | Hero headline | The owner asked for "Central Valley's favorite water features". The guide says to keep claims grounded. Lisa's draft suggests "Water. Stone. Your backyard retreat." instead. | Shows the owner's headline. |
-| Bottom navigation | The UX spec's bottom nav is Home, Services, Call, My Project. The owner asked for Home, Services, Inspire, Book, My Project. | Keeps the owner's tabs and puts Call in the header. |
+| Bottom navigation | The UX spec's bottom nav is Home, Services, Call, My Project. The owner first asked for Home, Services, Inspire, Book, My Project. | Since Nov 18, 2026: Home, Services, Call (the raised circle), Book, My Project. The header Call button is still there too. |
 
 ## Placeholders to confirm before launch
 
 | Item | Where | Note |
 | --- | --- | --- |
-| Water-feature working titles | Home carousel, Get Inspired | *Boulder Falls*, *Lavender Creek*, *Moonlit Water Wall*, *Palm Koi Pond*, *Garden Pond*, *Lantern Falls*, *Scupper Water Wall*, *Fire Bowl Creek*, *Garden Stream* and *Ledgestone Spill Wall* are working titles. |
-| Project working titles | Project cards, Get Inspired, My Project | *Water Wall Garden*, *Palm Koi Pond*, *Creekside Pavilion Yard* and *Modern Wellness Yard* are working titles. The Creekside project's city is not confirmed, so it is captioned "Green Lion project". |
+| Water-feature working titles | Home carousel | *Boulder Falls*, *Lavender Creek*, *Moonlit Water Wall*, *Palm Koi Pond*, *Garden Pond*, *Lantern Falls*, *Scupper Water Wall*, *Fire Bowl Creek*, *Garden Stream* and *Ledgestone Spill Wall* are working titles. |
+| Project working titles | Project cards, My Project | *Water Wall Garden*, *Palm Koi Pond*, *Creekside Pavilion Yard* and *Modern Wellness Yard* are working titles. The Creekside project's city is not confirmed, so it is captioned "Green Lion project". |
 | My Project data | My Project | Plants, the Hunter Hydrawise controller, zone run times, the transformer and the fixtures are a **sample record** that shows the layout. They don't describe a real client's install. |
 | My Project files | My Project › Overview | The listed plans, maps and manuals are placeholders. |
 | Frost thresholds and winter watering times | Journal, My Project | General Central Valley guidance. The crew should review the numbers. |

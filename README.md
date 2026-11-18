@@ -24,7 +24,7 @@ Details are in [`docs/BRAND.md`](docs/BRAND.md).
 
 ## Layout
 
-Navigation adapts by screen size, with the same five tabs (**Home · Services · Inspire · Book · My Project**):
+Navigation adapts by screen size, with the same tabs (**Home · Services · Call · Book · My Project**). On phones and tablets the raised circle in the middle of the tab bar is a **Call** button that dials (209) 585-9767:
 
 - **Phones (under 768 px):** a one-screen app. The header and bottom tab bar stay on screen and only the content scrolls.
 - **Tablets (768–1199 px):** a left side rail plus the fixed header.
@@ -34,9 +34,8 @@ Call and *Schedule your design consultation* stay in the header. The footer has 
 
 | View | What it does |
 | --- | --- |
-| **Home** | Follows the guide's homepage order: a water-feature hero with a swipeable waterfall and pond gallery, then the *3D Before You Build* band (free 3D design offer, a silent 3D-to-built loop with a dusk/daytime switch and a design-vs-built slide gallery), Lisa's featured article, the seasonal Journal, other services and recent projects, then a design consultation call to action. |
+| **Home** | A water-feature hero with a swipeable gallery that leads with *Fire Bowl Creek*, *Lavender Creek*, *Moonlit Water Wall* and *Palm Koi Pond*. Then the *3D Before You Build* band (free 3D design offer, a silent 3D-to-built loop with a dusk/daytime switch and a design-vs-built slide gallery), Lisa's featured article, one short Journal lesson with the frost check, other services, recent projects and a design consultation call to action. |
 | **Services** | The five-step process, the service categories and the project scopes. No prices are shown. Water features, Pavers and Turf & planting each carry a free 3D design row that opens a 3D walkthrough reel. |
-| **Get Inspired** | Marked *coming soon*. Matches the visitor's words against tags on past Green Lion projects. |
 | **Book** | Lets the visitor pick project types, a day and a preferred time. The receipt says the time is not booked yet. |
 | **My Project** | A sign-in screen and a demo project with plants, watering by season, lighting, hardscape and water-feature care. It includes a water-feature maintenance request. |
 
@@ -59,4 +58,3 @@ Not built yet:
 
 - Booking submission, real availability and maintenance dispatch, which need a scheduling backend. Today's receipts are previews only.
 - Client authentication and per-client data for My Project. The demo uses a sample record.
-- The *Get Inspired* generator. Today it only matches keywords.

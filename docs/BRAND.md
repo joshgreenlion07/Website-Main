@@ -98,7 +98,7 @@ From the guide's digital application section:
 
 The site uses the **Charcoal Split** direction (chosen November 10, 2026), styled closer to greenlionlandscape.com while keeping the 2026 palette and logo:
 
-- Charcoal (`#202321`) info bar, header, tab bar or side rail, home hero, Get Inspired hero and footer. Charcoal is the guide's preferred logo background, so the logo now sits on Charcoal everywhere.
+- Charcoal (`#202321`) info bar, header, tab bar or side rail, home hero and footer. Charcoal is the guide's preferred logo background, so the logo now sits on Charcoal everywhere.
 - A 3 px Leaf green rule under the header and the home hero.
 - Home hero is split on screens 960 px and wider: headline, lede and buttons on the left, a Leaf green divider, and the water-feature gallery on the right. Phones and tablets stack the copy above the gallery.
 - Buttons in the dark areas are Leaf green with Charcoal text, in uppercase with letter spacing. The italic accent word in hero headlines is Lime.
