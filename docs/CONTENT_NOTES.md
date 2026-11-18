@@ -10,7 +10,7 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - The five-step process and the Essential / Signature / Luxury project scopes, from the Look Book creative brief. Dollar ranges have been removed (see below).
 - Service categories, from the *Website Marketing* content brief.
 - Lisa Taylor's article **"Are Water Features Taking Over Modesto Backyards?"**, from her design-notebook draft. The page shows an abridged version with a "Draft for Lisa's review" label. Lisa needs to approve the first-person text before it is published.
-- All photos are Green Lion projects. Nothing is AI-generated.
+- All photos are Green Lion projects. The photos themselves are not AI-generated. The "Free 3D design" band on Home (added 2026-11-18, branch `3d-promos`) uses 3D renders from Green Lion's planning software plus short videos whose photo motion, voice and music were made with AI tools; the band carries that disclosure line. The files are in `media/3d/`.
 
 ## Changes made for brand compliance
 

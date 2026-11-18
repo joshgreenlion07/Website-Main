@@ -4,7 +4,29 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="Green Lion Landscape: custom landscaping, design and water features in Modesto and the Central Valley.">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} [hidden]{display:none!important}</style>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} [hidden]{display:none!important}
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+/* Free 3D design band: muted loop, offer copy, reel and slide gallery */
+.d3 { background: var(--charcoal); color: var(--warm); padding-block: 2.5rem 2.75rem; border-bottom: 3px solid var(--leaf); }
+.d3 .eyebrow { color: var(--lime); }
+.d3 h2 { font-size: clamp(2rem, 5vw, 3.2rem); line-height: 1.05; margin-top: .6rem; max-width: 18ch; }
+.d3 h2 em { color: var(--lime); font-style: normal; }
+.d3 .lede { color: #CFCBC0; max-width: 56ch; margin-top: .75rem; font-size: 1.0625rem; }
+.d3-grid { display: grid; gap: 1.5rem; margin-top: 1.5rem; }
+.d3-loop { border-radius: var(--r-md); overflow: hidden; background: #000; aspect-ratio: 16 / 9; }
+.d3-loop video { width: 100%; height: 100%; object-fit: cover; display: block; }
+.d3-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1rem; list-style: none; padding: 0; }
+.d3-tags li { border: 1px solid rgba(245,242,234,.3); border-radius: 999px; padding: .3rem .8rem; font-size: var(--t-sm); }
+.d3 .actions { display: flex; flex-wrap: wrap; gap: .6rem; margin-top: 1.25rem; }
+.d3-reels { display: grid; grid-auto-flow: column; grid-auto-columns: 46%; gap: .75rem; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 1.75rem; padding-bottom: .5rem; }
+.d3-reels figure, .d3-slides figure { margin: 0; scroll-snap-align: start; }
+.d3-reels video { width: 100%; aspect-ratio: 9 / 16; object-fit: cover; border-radius: var(--r-md); background: #000; display: block; }
+.d3-slides { display: grid; grid-auto-flow: column; grid-auto-columns: 78%; gap: .75rem; overflow-x: auto; scroll-snap-type: x mandatory; margin-top: 1.25rem; padding-bottom: .5rem; }
+.d3-slides img { width: 100%; border-radius: var(--r-md); display: block; }
+.d3 h3 { font-family: var(--sans); font-size: var(--t-label); text-transform: uppercase; letter-spacing: .12em; color: var(--lime); margin-top: 1.75rem; }
+.d3 .note { color: #A9A59A; font-size: var(--t-sm); margin-top: 1rem; max-width: 70ch; }
+@media (min-width: 960px) { .d3-grid { grid-template-columns: 1.2fr 1fr; align-items: center; gap: 2.5rem; } .d3-reels { grid-auto-columns: 19%; } .d3-slides { grid-auto-columns: 30%; } }
+</style>
 <title>Green Lion Landscape App</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -589,6 +611,27 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
         </div>
       </div>
     </div>
+
+    <section class="d3 on-dark" id="free-3d" aria-labelledby="d3-h">
+      <div class="wrap">
+        <p class="eyebrow on-dark">Water features · Pavers · Landscaping</p>
+        <h2 id="d3-h">Every project gets a <em>free 3D design</em></h2>
+        <p class="lede">Big or small, you see your yard in 3D before we break ground. Water features, pavers and landscaping, designed and walked through first, then built exactly that way.</p>
+        <div class="d3-grid">
+          <div class="d3-loop"><video autoplay muted loop playsinline preload="metadata" poster="media/3d/3d-vs-built-loop-poster.jpg" src="media/3d/3d-vs-built-loop.mp4" aria-label="Green Lion 3D design on the left and the finished yard on the right"></video></div>
+          <div>
+            <p class="lede" style="margin-top:0">See your yard before we build it.</p>
+            <ul class="d3-tags"><li>Water features</li><li>Pavers</li><li>Landscaping</li><li>Free 3D design, any size</li></ul>
+            <div class="actions"><a class="btn btn-leaf" href="#book" data-book="3D design consultation">Book your 3D design consultation</a><a class="btn btn-on-dark" href="tel:+12095859767">Call (209) 585-9767</a></div>
+          </div>
+        </div>
+        <h3>Watch the 3D come to life</h3>
+        <div class="d3-reels" tabindex="0" aria-label="3D design videos"><figure><video controls playsinline preload="none" poster="media/3d/reel-see-it-first-poster.jpg" src="media/3d/reel-see-it-first.mp4" aria-label="See it before we break ground"></video><figcaption class="sr-only">See it before we break ground</figcaption></figure><figure><video controls playsinline preload="none" poster="media/3d/reel-plan-3d-built-poster.jpg" src="media/3d/reel-plan-3d-built.mp4" aria-label="Plan, 3D, built"></video><figcaption class="sr-only">Plan, 3D, built</figcaption></figure><figure><video controls playsinline preload="none" poster="media/3d/reel-spa-sauna-poster.jpg" src="media/3d/reel-spa-sauna.mp4" aria-label="Spa and sauna deck"></video><figcaption class="sr-only">Spa and sauna deck</figcaption></figure><figure><video controls playsinline preload="none" poster="media/3d/reel-walk-your-yard-poster.jpg" src="media/3d/reel-walk-your-yard.mp4" aria-label="Walk your yard in 3D"></video><figcaption class="sr-only">Walk your yard in 3D</figcaption></figure><figure><video controls playsinline preload="none" poster="media/3d/reel-day-to-night-poster.jpg" src="media/3d/reel-day-to-night.mp4" aria-label="Day to night"></video><figcaption class="sr-only">Day to night</figcaption></figure></div>
+        <h3>3D design vs. built</h3>
+        <div class="d3-slides" tabindex="0" aria-label="3D design versus built photos"><figure><img src="media/3d/slide-01.jpg" alt="Side by side: Green Lion 3D design above, the finished yard below (slide 1)" loading="lazy" width="1000" height="1250"></figure><figure><img src="media/3d/slide-02.jpg" alt="Side by side: Green Lion 3D design above, the finished yard below (slide 2)" loading="lazy" width="1000" height="1250"></figure><figure><img src="media/3d/slide-03.jpg" alt="Side by side: Green Lion 3D design above, the finished yard below (slide 3)" loading="lazy" width="1000" height="1250"></figure><figure><img src="media/3d/slide-04.jpg" alt="Side by side: Green Lion 3D design above, the finished yard below (slide 4)" loading="lazy" width="1000" height="1250"></figure><figure><img src="media/3d/slide-05.jpg" alt="Side by side: Green Lion 3D design above, the finished yard below (slide 5)" loading="lazy" width="1000" height="1250"></figure><figure><img src="media/3d/slide-06.jpg" alt="Side by side: Green Lion 3D design above, the finished yard below (slide 6)" loading="lazy" width="1000" height="1250"></figure><figure><img src="media/3d/slide-07.jpg" alt="Side by side: Green Lion 3D design above, the finished yard below (slide 7)" loading="lazy" width="1000" height="1250"></figure></div>
+        <p class="note">Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.</p>
+      </div>
+    </section>
 
     <div class="wrap">
       <a class="inspire-banner" href="#inspire" aria-label="Get Inspired, coming soon">
