@@ -5,7 +5,7 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 ## Real content
 
 - Brand colors, fonts, logos and voice, per [BRAND.md](BRAND.md) (Green Lion Brand Guide 2026).
-- Phone (209) 585-9767 and CSLB #1150882, from the 2026 guide. The email info@greenlionlandscape.com and greenlionlandscape.com also come from the guide.
+- Phone (209) 646-4046 (set by the owner on Nov 18, 2026; the 2026 guide lists the old (209) 585-9767) and CSLB #1150882 from the guide. The email info@greenlionlandscape.com and greenlionlandscape.com also come from the guide.
 - Project names, stories and features for the Look Book projects **Hidden Resort** and **Luxe Lounge**, from the Look Book creative brief.
 - The five-step process and the Essential / Signature / Luxury project scopes, from the Look Book creative brief. Dollar ranges have been removed (see below).
 - Service categories, from the *Website Marketing* content brief.
@@ -17,7 +17,7 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 At the owner's request:
 
 - **Get Inspired is off for now:** the nav item, the Inspire tab, the coming-soon banner and side card, the footer link, the Services button, the project-dialog button and the Get Inspired page itself. An old `#inspire` link now opens Home. The code is in git history (commit 771d5fc) if it comes back.
-- **Middle tab:** the raised circle in the tab bar is now a Call button (`tel:+12095859767`).
+- **Middle tab:** the raised circle in the tab bar is now a Call button (`tel:+12096464046`).
 - **Hero gallery order:** Fire Bowl Creek, Lavender Creek, Moonlit Water Wall and Palm Koi Pond come first, then the rest as before.
 - **Shorter Journal:** after the frost check ("Try it"), the home page drops the two Built by Green Lion bands, the plant cards, winter watering, the winter checklist, the Journal side cards and the Quick reads posts. The page goes straight to other services, recent projects and the consultation band. On a phone it is about 12 screens long instead of 20. Watering and plant care for clients are still in My Project.
 
@@ -25,12 +25,13 @@ At the owner's request:
 
 Added November 18, 2026 with the owner's approval of the free 3D design offer.
 
-- **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Book your 3D design consultation*, a silent loop of the *plan, 3D, built* reel, a dusk / daytime switch and slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the full reel.
-- **Services:** Water features, Pavers & decorative concrete, and Turf, planting & irrigation each have a free 3D design row. It opens one reel in a dialog: water features get *We built this backyard in 3D first* (24 s), pavers get *Walk your yard in 3D* (18 s), and turf and planting get *Same yard, every hour of the day* (16 s). Their booking button reads *Book your 3D design consultation*.
+- **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Book your 3D design consultation*, a silent loop of the *plan, 3D, built* reel, a dusk / daytime switch and slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the reel with sound.
+- **Services:** Water features, Pavers & decorative concrete, and Turf, planting & irrigation each have a free 3D design row. It opens one reel in a dialog: water features get *We built this backyard in 3D first* (19 s), pavers get *Walk your yard in 3D* (13 s), and turf and planting get *Same yard, every hour of the day* (12 s). Their booking button reads *Book your 3D design consultation*.
 - The disclosure line sits under the home video and in every video dialog: *Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.* The slides are still photos and 3D renders labeled *3D design* and *Built*.
 - No client names appear in the copy, the slides or the reels.
 - Booking buttons pick *Design consultation* and prefill the note "I'd like a free 3D design of my yard."
-- The silent home loops (`video/3d-loop-dusk.mp4`, `video/3d-loop-day.mp4`) stop at 12.8 s, before the reel's end card, because the page has its own booking button. The reels in the dialogs are complete, with sound.
+- Every reel on the site stops just before its end card, with a half-second fade. The end cards in the social files still show the old number, (209) 585-9767, and the page has its own booking button anyway. The silent home loops (`video/3d-loop-dusk.mp4`, `video/3d-loop-day.mp4`) stop at 12.8 s. The pop-up reels with sound are 13, 19, 13 and 12 s.
+- When the social media files are re-exported with (209) 646-4046, the full reels can go back in. Carousel slide 8 shows the old number too, and the site doesn't use it.
 - The loop plays only while it is on screen, and does not autoplay for visitors who ask for reduced motion (they get play controls).
 - Not used yet: the spa and sauna reel, the *see it before ground* daytime reel and carousel slide 8 (the end card).
 
@@ -49,7 +50,7 @@ The 2026 guide asks for grounded claims, no unapproved pricing and only the curr
 
 | Decision | What conflicts | Prototype today |
 | --- | --- | --- |
-| Phone number | The older *Website Marketing* brief lists (209) 338-8766. The 2026 guide and Lisa's draft use (209) 585-9767. | Uses (209) 585-9767 everywhere. |
+| Phone number | The older *Website Marketing* brief listed (209) 338-8766 and the 2026 guide used (209) 585-9767. On Nov 18, 2026 the owner changed the number to (209) 646-4046. | Uses (209) 646-4046 everywhere on the site. The 3D reels and carousel slide 8 still show the old number in their end cards until the social media files are re-exported (see below). |
 | Hero headline | The owner asked for "Central Valley's favorite water features". The guide says to keep claims grounded. Lisa's draft suggests "Water. Stone. Your backyard retreat." instead. | Shows the owner's headline. |
 | Bottom navigation | The UX spec's bottom nav is Home, Services, Call, My Project. The owner first asked for Home, Services, Inspire, Book, My Project. | Since Nov 18, 2026: Home, Services, Call (the raised circle), Book, My Project. The header Call button is still there too. |
 

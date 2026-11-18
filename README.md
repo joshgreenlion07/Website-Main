@@ -24,7 +24,7 @@ Details are in [`docs/BRAND.md`](docs/BRAND.md).
 
 ## Layout
 
-Navigation adapts by screen size, with the same tabs (**Home · Services · Call · Book · My Project**). On phones and tablets the raised circle in the middle of the tab bar is a **Call** button that dials (209) 585-9767:
+Navigation adapts by screen size, with the same tabs (**Home · Services · Call · Book · My Project**). On phones and tablets the raised circle in the middle of the tab bar is a **Call** button that dials (209) 646-4046:
 
 - **Phones (under 768 px):** a one-screen app. The header and bottom tab bar stay on screen and only the content scrolls.
 - **Tablets (768–1199 px):** a left side rail plus the fixed header.
