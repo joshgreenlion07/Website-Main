@@ -1,0 +1,140 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/accessibility.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
+      "source": "/waterscapes.html",
+      "destination": "/#svc-water",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio.html",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/service-pavers.html",
+      "destination": "/#svc-pavers",
+      "permanent": true
+    },
+    {
+      "source": "/service-fire.html",
+      "destination": "/#svc-fire",
+      "permanent": true
+    },
+    {
+      "source": "/service-kitchens.html",
+      "destination": "/#svc-kitchen",
+      "permanent": true
+    },
+    {
+      "source": "/service-pergolas.html",
+      "destination": "/#svc-kitchen",
+      "permanent": true
+    },
+    {
+      "source": "/service-lighting.html",
+      "destination": "/#svc-lighting",
+      "permanent": true
+    },
+    {
+      "source": "/service-retaining.html",
+      "destination": "/#svc-walls",
+      "permanent": true
+    },
+    {
+      "source": "/service-sauna.html",
+      "destination": "/#svc-wellness",
+      "permanent": true
+    },
+    {
+      "source": "/service-turf.html",
+      "destination": "/#svc-turf",
+      "permanent": true
+    },
+    {
+      "source": "/service-fencing.html",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
+      "source": "/service-maintenance.html",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-highlights.html",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-water.html",
+      "destination": "/#gallery-water",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-pavers.html",
+      "destination": "/#gallery-pavers",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-retaining.html",
+      "destination": "/#gallery-retaining",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-kitchens.html",
+      "destination": "/#gallery-kitchens",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-pergolas.html",
+      "destination": "/#gallery-pergolas",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-fire.html",
+      "destination": "/#gallery-fire",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-sauna.html",
+      "destination": "/#gallery-sauna",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-turf.html",
+      "destination": "/#gallery-turf",
+      "permanent": true
+    },
+    {
+      "source": "/gallery-fencing.html",
+      "destination": "/#gallery",
+      "permanent": true
+    }
+  ]
+}
