@@ -82,7 +82,7 @@ Web-sized crops used by the page are in `img/`: `logo-horizontal.png`, `logo-mas
 - Approved offer (owner, November 18, 2026): **a free 3D design** for water features, pavers and landscaping, big or small projects. Headline: *See your yard before we build it.* Action: **Book your 3D design consultation**.
 - Keep this line next to any 3D promo video: *Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.*
 - Brand name in prose: Green Lion Landscape. Formal name: Green Lion Landscape Inc.
-- CSLB #1150882. Phone (209) 585-9767.
+- CSLB #1150882. Phone (209) 646-4046 (changed by the owner on Nov 18, 2026; the guide itself still lists (209) 585-9767).
 
 ## Homepage order
 
@@ -98,7 +98,7 @@ From the guide's digital application section:
 
 The site uses the **Charcoal Split** direction (chosen November 10, 2026), styled closer to greenlionlandscape.com while keeping the 2026 palette and logo:
 
-- Charcoal (`#202321`) info bar, header, tab bar or side rail, home hero, Get Inspired hero and footer. Charcoal is the guide's preferred logo background, so the logo now sits on Charcoal everywhere.
+- Charcoal (`#202321`) info bar, header, tab bar or side rail, home hero and footer. Charcoal is the guide's preferred logo background, so the logo now sits on Charcoal everywhere.
 - A 3 px Leaf green rule under the header and the home hero.
 - Home hero is split on screens 960 px and wider: headline, lede and buttons on the left, a Leaf green divider, and the water-feature gallery on the right. Phones and tablets stack the copy above the gallery.
 - Buttons in the dark areas are Leaf green with Charcoal text, in uppercase with letter spacing. The italic accent word in hero headlines is Lime.
