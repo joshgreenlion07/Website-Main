@@ -12,6 +12,19 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa Taylor's article **"Are Water Features Taking Over Modesto Backyards?"**, from her design-notebook draft. The page shows an abridged version with a "Draft for Lisa's review" label. Lisa needs to approve the first-person text before it is published.
 - All photos are Green Lion projects. Nothing is AI-generated.
 
+## 3D Before You Build promos
+
+Added November 18, 2026 with the owner's approval of the free 3D design offer.
+
+- **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Book your 3D design consultation*, a silent loop of the *plan, 3D, built* reel, a dusk / daytime switch and slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the full reel.
+- **Services:** Water features, Pavers & decorative concrete, and Turf, planting & irrigation each have a free 3D design row. It opens one reel in a dialog: water features get *We built this backyard in 3D first* (24 s), pavers get *Walk your yard in 3D* (18 s), and turf and planting get *Same yard, every hour of the day* (16 s). Their booking button reads *Book your 3D design consultation*.
+- The disclosure line sits under the home video and in every video dialog: *Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.* The slides are still photos and 3D renders labeled *3D design* and *Built*.
+- No client names appear in the copy, the slides or the reels.
+- Booking buttons pick *Design consultation* and prefill the note "I'd like a free 3D design of my yard."
+- The silent home loops (`video/3d-loop-dusk.mp4`, `video/3d-loop-day.mp4`) stop at 12.8 s, before the reel's end card, because the page has its own booking button. The reels in the dialogs are complete, with sound.
+- The loop plays only while it is on screen, and does not autoplay for visitors who ask for reduced motion (they get play controls).
+- Not used yet: the spa and sauna reel, the *see it before ground* daytime reel and carousel slide 8 (the end card).
+
 ## Changes made for brand compliance
 
 - Pools removed (2026-11-01): Green Lion doesn't build pools. The Pools & spas service, the Palmstone Escape lap-pool project and its photos, and every pool option in Book and Get Inspired were taken out. Hot tubs moved under Saunas, hot tubs & wellness.
@@ -35,8 +48,8 @@ The 2026 guide asks for grounded claims, no unapproved pricing and only the curr
 
 | Item | Where | Note |
 | --- | --- | --- |
-| Water-feature working titles | Home carousel, Get Inspired | *Boulder Falls*, *Moonlit Water Wall*, *Palm Koi Pond*, *Garden Pond*, *Lantern Falls*, *Scupper Water Wall*, *Garden Stream* and *Ledgestone Spill Wall* are working titles. |
-| Project working titles | Project cards, Get Inspired, My Project | *Water Wall Garden*, *Palm Koi Pond* and *Modern Wellness Yard* are working titles. |
+| Water-feature working titles | Home carousel, Get Inspired | *Boulder Falls*, *Lavender Creek*, *Moonlit Water Wall*, *Palm Koi Pond*, *Garden Pond*, *Lantern Falls*, *Scupper Water Wall*, *Fire Bowl Creek*, *Garden Stream* and *Ledgestone Spill Wall* are working titles. |
+| Project working titles | Project cards, Get Inspired, My Project | *Water Wall Garden*, *Palm Koi Pond*, *Creekside Pavilion Yard* and *Modern Wellness Yard* are working titles. The Creekside project's city is not confirmed, so it is captioned "Green Lion project". |
 | My Project data | My Project | Plants, the Hunter Hydrawise controller, zone run times, the transformer and the fixtures are a **sample record** that shows the layout. They don't describe a real client's install. |
 | My Project files | My Project › Overview | The listed plans, maps and manuals are placeholders. |
 | Frost thresholds and winter watering times | Journal, My Project | General Central Valley guidance. The crew should review the numbers. |
@@ -55,8 +68,12 @@ Exported from the Green Lion shared drive at web size (JPEG, quality 72). The RA
 | `pj-hidden-*`, `svc-kitchen`, `svc-turf` | Look Book › Hidden Resort | 2025 |
 | `pj-luxe-*`, `svc-pavers`, `learn-bougainvillea`, `pt-pavers` | Look Book › Luxe Lounge | 2025 |
 | `wf-boulder-falls` (IMG_0397), `wf-pond-garden` (IMG_1815), `wf-stream` (IMG_6162), `lisa-stream` (IMG_6163), `learn-foxtail` (IMG_0848), `svc-walls` (IMG_1810) | CreatorLab drive › Branding | Added Oct 29, 2026 |
+| `wf-creek-falls` (IMG_6484), `wf-creek-firebowl` (IMG_6376), `pj-creek-1` (IMG_6379), `pj-creek-2` (IMG_6381), `pj-creek-3` (IMG_6483), `pj-creek-4` (IMG_6371), `pj-creek-5` (IMG_6358), `pj-creek-6` (IMG_6360), `svc-pavilion` (IMG_6382), `learn-lavender` (IMG_6463) | CreatorLab drive › Branding › Final Photos (edited and upscaled versions of real project photos) | Added Nov 13, 2026 |
+| `3d-*` images and `video/3d-*` reels (covers, design-vs-built slides 1 to 7, dusk and daytime) | Green Lion Landscape › 3D Before You Build, and its daytime subfolder | Reels and carousels made for social, Nov 2026. Reels re-encoded to 720 × 1280 H.264; slides resized to 720 × 900. |
 
-`svc-walls` (IMG_1810) replaces the earlier Hidden Resort raised-bed shot.
+`svc-walls` (IMG_1810) replaces the earlier Hidden Resort raised-bed shot. `svc-pavilion` replaces the Hidden Resort kitchen photo on the Services card; that photo is still used in the Hidden Resort project.
+
+Final Photos also holds 13 copies of the Aug 2026 client project shots that were already on the site, so they were not added twice.
 
 The full RAW shoot has 276 frames. This build uses a sample of every sixth frame, so there are more shots to choose from.
 
