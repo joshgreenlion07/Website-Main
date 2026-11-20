@@ -36,7 +36,7 @@ The working titles *Moonlit Water Wall* and *Lantern Falls* are kept; their capt
 The Services page has a *From a Measured Plan to Your Yard in 3D* section after *How It Works*. It shows one client's yard with the owner's details removed:
 
 - **The plan** (`design-plan`) is the *Site Development Plan* from the project's design set (Oct 2025). It's cropped to remove the title block, which holds the client's names, address, the design team's credits and the plan index. The house is shown only as a generic "Owner's House" roof, with no rooms. The plan keeps the yard dimensions, the lettered features, the plant legend and the hardscape materials. The same image replaces the sample drawing on the *2D & 3D Design* service card.
-- **The 3D** (`design-3d-1` to `-6`) is six daytime renderings of the same yard from that design set: the view from above, the fire pit lounge, the hot tub and pergola fireplace, the water feature wall, the outdoor kitchen and the side yard. They're labeled as design concepts. The built water feature differs from the 3D concept.
+- **The 3D** (`design-3d-1` to `-6`) is six daytime renderings of the same yard from that design set: the view from above, the fire pit lounge, the hot tub and pergola fireplace, the water feature wall, the outdoor kitchen and the side yard. They're labeled as design concepts.
 - Tapping the plan or a render opens it larger. No client name, address or street appears anywhere on the site.
 
 ## Home page updates (Nov 20, 2026)
