@@ -14,6 +14,9 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 
 ## Home page updates (Nov 20, 2026)
 
+- **Landscape Lighting:** the service is no longer *Lighting, Audio & Video*. Audio and video are out at the owner's request. It now shows a close-up of a lit spotlight among yucca blades (`svc-lighting-closeup`, from the Aug 2026 client photography).
+- **Retaining walls:** the service now shows a block retaining wall with a raised bed (`svc-retaining`, Hidden Resort frame E9A5259). The curved seat-wall photo (`svc-walls`) stays in the Gallery.
+
 - **Hero text:** now about specialty water feature design and installation.
 - **What we install:** a showcase sits after the 3D band, followed by Lisa's Design Notebook band. It has five photo tiles: custom water features, landscaping, pavers, outdoor kitchens and synthetic grass. Each tile opens the matching Gallery filter, and *See more in our gallery* opens the full Gallery.
 - **Gallery filters:** landscaping and synthetic grass both open the *Planting & turf* filter.
@@ -99,9 +102,9 @@ Exported from the Green Lion shared drive at web size (JPEG, quality 72). The RA
 | Files | Source folder | Shot |
 | --- | --- | --- |
 | `wf-koi`, `wf-stonewall`, `wf-three-column-wall`, `pj-koi-*`, `pj-well-*`, `learn-tropical`, `svc-lighting`, `svc-wellness`, `svc-fire` | Branding › Photos RAW | Feb 2026 |
-| `wf-waterwall`, `pj-wall-*`, `learn-citrus`, `learn-agave`, `learn-feathergrass`, `learn-mossrock`, `learn-spotlight`, `learn-sconce`, `learn-blueflowers`, `pt-urn`, `pt-fixture` | Completed client project photography | Aug 2026 |
+| `wf-waterwall`, `pj-wall-*`, `learn-citrus`, `learn-agave`, `learn-feathergrass`, `learn-mossrock`, `learn-spotlight`, `learn-sconce`, `svc-lighting-closeup`, `learn-blueflowers`, `pt-urn`, `pt-fixture` | Completed client project photography | Aug 2026 |
 | `wf-boulder-night`, `wf-modern`, `svc-water` | Look Book › Inspirational Waterscapes | 2025 |
-| `pj-hidden-*`, `svc-kitchen`, `svc-turf` | Look Book › Hidden Resort | 2025 |
+| `pj-hidden-*`, `svc-kitchen`, `svc-turf`, `svc-retaining` (E9A5259) | Look Book › Hidden Resort | 2025 |
 | `pj-luxe-*`, `svc-pavers`, `learn-bougainvillea`, `pt-pavers` | Look Book › Luxe Lounge | 2025 |
 | `wf-boulder-falls` (IMG_0397), `wf-pond-garden` (IMG_1815), `wf-stream` (IMG_6162), `lisa-stream` (IMG_6163), `learn-foxtail` (IMG_0848), `svc-walls` (IMG_1810) | CreatorLab drive › Branding | Added Oct 29, 2026 |
 | `wf-creek-falls` (IMG_6484), `lisa-waterfall` (IMG_6463), `wf-creek-firebowl` (IMG_6376), `pj-creek-1` (IMG_6379), `pj-creek-2` (IMG_6381), `pj-creek-3` (IMG_6483), `pj-creek-4` (IMG_6371), `pj-creek-5` (IMG_6358), `pj-creek-6` (IMG_6360), `svc-pavilion` (IMG_6382), `learn-lavender` (IMG_6463) | CreatorLab drive › Branding › Final Photos (edited and upscaled versions of real project photos) | Added Nov 13, 2026 |
