@@ -46,12 +46,12 @@ At the owner's request:
 
 Added November 18, 2026 with the owner's approval of the free 3D design offer.
 
-- **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Call to book your free 3D design*, a silent loop of the *plan, 3D, built* reel, a dusk / daytime switch and slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the reel with sound.
+- **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Call to book your free 3D design*, the *We built this yard in 3D first* reel playing silently on a loop (the daytime version by default; the owner chose it on Nov 20, 2026), a Daytime / Dusk switch that swaps the reel and the slides, and slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the same reel with sound.
 - **Services:** Water features, Pavers & decorative concrete, and Turf, planting & irrigation each have a free 3D design row. It opens one reel in a dialog: water features get *We built this backyard in 3D first* (19 s), pavers get *Walk your yard in 3D* (13 s), and turf and planting get *Same yard, every hour of the day* (12 s). Their booking button reads *Book your 3D design consultation*.
 - The disclosure line sits under the home video and in every video dialog: *Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.* The slides are still photos and 3D renders labeled *3D design* and *Built*.
 - No client names appear in the copy, the slides or the reels.
 - The 3D buttons call (209) 646-4046.
-- Every reel on the site stops just before its end card, with a half-second fade. The end cards in the social files still show the old number, (209) 585-9767, and the page has its own Call button anyway. The silent home loops (`video/3d-loop-dusk.mp4`, `video/3d-loop-day.mp4`) stop at 12.8 s. The pop-up reels with sound are 13, 19, 13 and 12 s.
+- Every reel on the site stops just before its end card, with a half-second fade. The end cards in the social files still show the old number, (209) 585-9767, and the page has its own Call button anyway. The band's daytime reel (`video/3d-see-it-first-day.mp4`, from `post1d_final.mp4`, the same file as the Drive daytime reel) is 18.8 s. The pop-up reels with sound are 19 s (water features, dusk), 13 s (pavers) and 12 s (turf and planting).
 - When the social media files are re-exported with (209) 646-4046, the full reels can go back in. Carousel slide 8 shows the old number too, and the site doesn't use it.
 - The loop plays only while it is on screen, and does not autoplay for visitors who ask for reduced motion (they get play controls).
 - Not used yet: the spa and sauna reel, the *see it before ground* daytime reel and carousel slide 8 (the end card).

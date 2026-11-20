@@ -34,7 +34,7 @@ Every booking button is a **Call** button (`tel:+12096464046`), and the header k
 
 | View | What it does |
 | --- | --- |
-| **Home** | A water-feature hero with a swipeable gallery that leads with *Fire Bowl Creek*, *Lavender Creek*, *Moonlit Water Wall* and *Palm Koi Pond*. Then the *3D Before You Build* band (free 3D design offer, a silent 3D-to-built loop with a dusk/daytime switch and a design-vs-built slide gallery), Lisa's featured article, one short Journal lesson with the frost check, other services, recent projects and a design consultation call to action. |
+| **Home** | A water-feature hero with a swipeable gallery that leads with *Fire Bowl Creek*, *Lavender Creek*, *Moonlit Water Wall* and *Palm Koi Pond*. Then the *3D Before You Build* band (free 3D design offer, the *We built this yard in 3D first* reel on a silent loop with a Daytime / Dusk switch and a design-vs-built slide gallery), Lisa's featured article, one short Journal lesson with the frost check, other services, recent projects and a design consultation call to action. |
 | **Services** | The five-step process, the service categories and the project scopes. No prices are shown. Water features, Pavers and Turf & planting each carry a free 3D design row that opens a 3D walkthrough reel. |
 | **Gallery** | 50 photos of Green Lion work in a grid, with filters for water features, patios and pavers, kitchens and pavilions, fire and lighting, saunas and hot tubs, planting and turf, and 3D design vs built. Tap a photo for a larger view, its project and a Call button. |
 

@@ -503,13 +503,13 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
             <ol class="p3-steps"><li>We map your yard.</li><li>You walk through it in 3D.</li><li>Then we build it.</li></ol>
             <div class="p3-actions">
               <a class="btn btn-primary" href="tel:+12096464046">Call to book your free 3D design</a>
-              <button class="btn btn-ghost" type="button" data-video="plan"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch with sound · 13 s</button>
+              <button class="btn btn-ghost" type="button" id="p3-sound" data-video="seeday"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>Watch with sound · 19 s</button>
             </div>
             <p class="p3-actions"><span class="phone-line">(209) 646-4046 <button class="copy-btn" type="button" data-copy="(209) 646-4046">Copy</button></span><span class="note">CSLB #1150882</span></p>
           </div>
           <div class="p3-media">
-            <div class="p3-video"><video id="p3-video" muted loop playsinline preload="none" poster="img/3d-plan-built-cover.jpg" aria-label="Silent loop: a Green Lion backyard mapped as a plan, walked through in 3D, then shown as built"></video></div>
-            <div class="seg" role="group" aria-label="3D lighting"><button type="button" data-p3="dusk" aria-pressed="true">Dusk</button><button type="button" data-p3="day" aria-pressed="false">Daytime</button></div>
+            <div class="p3-video"><video id="p3-video" muted loop playsinline preload="none" poster="img/3d-see-it-first-day-cover.jpg" aria-label="Silent loop: one Green Lion backyard in 3D design and as built, from the water wall and fire lounge to the spa, the sauna and every planter and path"></video></div>
+            <div class="seg" role="group" aria-label="3D lighting"><button type="button" data-p3="day" aria-pressed="true">Daytime</button><button type="button" data-p3="dusk" aria-pressed="false">Dusk</button></div>
             <p class="p3-disclose">Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.</p>
           </div>
         </div>
@@ -802,7 +802,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
   /* ---------- 3D Before You Build (reels and slides from the social campaign; files in video/ and img/3d-*) ---------- */
   const DISCLOSE_3D = 'Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.';
   const promoVideos = {
-    plan: { src: 'video/3d-plan-built.mp4', poster: 'img/3d-plan-built-cover.jpg', len: 13, title: 'How it works', text: 'We map your yard. You walk through it in 3D. Then we build it.' },
+    seeday: { src: 'video/3d-see-it-first-day.mp4', poster: 'img/3d-see-it-first-day-cover.jpg', len: 19, title: 'We built this backyard in 3D first', text: 'The water wall, the fire lounge, the spa and sauna deck, every planter and path: placed and walked through before we broke ground.' },
     build: { src: 'video/3d-before-you-build.mp4', poster: 'img/3d-before-you-build-cover.jpg', len: 19, title: 'We built this backyard in 3D first', text: 'The water wall, the fire lounge, the spa and sauna deck, every planter and path: placed and walked through before we broke ground.' },
     walk: { src: 'video/3d-walk-your-yard.mp4', poster: 'img/3d-walk-your-yard-cover.jpg', len: 13, title: 'Walk your yard in 3D before a single paver is laid', text: 'From the side yard to the covered patio, you see the space, the walkways and the water feature first. Then we build it.' },
     night: { src: 'video/3d-day-to-night.mp4', poster: 'img/3d-day-to-night-cover.jpg', len: 12, title: 'Same yard, every hour of the day', text: 'Bright daylight, golden hour and after dark with the fire lit, all in 3D before we build. The last shot is the finished yard at dusk.' }
@@ -811,13 +811,14 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
     <div><span class="k">Free 3D design</span><p>See your yard before we build it.</p><button type="button" class="link-btn" data-video="${k}">Watch the 3D walkthrough · ${v.len} s</button></div></div>`; };
   const p3Slides = ['The side yard, designed in 3D and built for real', 'The water wall', 'The fire lounge', 'The spa deck', 'The sauna', 'The covered patio', 'The turf yard'];
   const P3 = {
-    dusk: { loop: 'video/3d-loop-dusk.mp4', poster: 'img/3d-plan-built-cover.jpg', slide: i => `img/3d-dvb-dusk-${i}.jpg` },
-    day: { loop: 'video/3d-loop-day.mp4', poster: 'img/3d-plan-built-day-cover.jpg', slide: i => `img/3d-dvb-day-${i}.jpg` }
+    // The band plays the "We built this yard in 3D first" reel muted; Watch with sound opens the same reel with sound.
+    day: { loop: 'video/3d-see-it-first-day.mp4', poster: 'img/3d-see-it-first-day-cover.jpg', reel: 'seeday', slide: i => `img/3d-dvb-day-${i}.jpg` },
+    dusk: { loop: 'video/3d-before-you-build.mp4', poster: 'img/3d-before-you-build-cover.jpg', reel: 'build', slide: i => `img/3d-dvb-dusk-${i}.jpg` }
   };
-  let p3Mode = 'dusk', p3Visible = false;
+  let p3Mode = 'day', p3Visible = false;
   const p3v = $('#p3-video');
   const reduceMotion = matchMedia('(prefers-reduced-motion: reduce)');
-  $('#dvb-scroll').innerHTML = p3Slides.map((t, i) => `<figure><img src="${P3.dusk.slide(i + 1)}" alt="${esc(t)}: the 3D design above, the finished yard below" width="720" height="900" loading="lazy"></figure>`).join('');
+  $('#dvb-scroll').innerHTML = p3Slides.map((t, i) => `<figure><img src="${P3[p3Mode].slide(i + 1)}" alt="${esc(t)}: the 3D design above, the finished yard below" width="720" height="900" loading="lazy"></figure>`).join('');
   const p3Play = () => {
     if (reduceMotion.matches) return;
     if (!p3v.dataset.loaded) { p3v.src = P3[p3Mode].loop; p3v.dataset.loaded = '1'; }
@@ -831,6 +832,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
     p3Mode = b.dataset.p3;
     $$('[data-p3]').forEach(x => x.setAttribute('aria-pressed', String(x === b)));
     p3v.poster = P3[p3Mode].poster;
+    $('#p3-sound').dataset.video = P3[p3Mode].reel;
     if (p3v.dataset.loaded) { p3v.src = P3[p3Mode].loop; if (p3Visible || reduceMotion.matches) { if (!reduceMotion.matches) p3Play(); } }
     $$('#dvb-scroll img').forEach((im, i) => { im.src = P3[p3Mode].slide(i + 1); });
   }));
