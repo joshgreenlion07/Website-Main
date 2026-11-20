@@ -15,8 +15,9 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 ## Home page updates (Nov 20, 2026)
 
 - **Hero text:** now about specialty water feature design and installation.
-- **What we install:** a showcase sits after the 3D band, followed by Lisa's Design Notebook band, which uses the Moonlit Water Wall photo. It has five photo tiles: custom water features, landscaping, pavers, outdoor kitchens and synthetic grass. Each tile opens the matching Gallery filter, and *See more in our gallery* opens the full Gallery.
+- **What we install:** a showcase sits after the 3D band, followed by Lisa's Design Notebook band. It has five photo tiles: custom water features, landscaping, pavers, outdoor kitchens and synthetic grass. Each tile opens the matching Gallery filter, and *See more in our gallery* opens the full Gallery.
 - **Gallery filters:** landscaping and synthetic grass both open the *Planting & turf* filter.
+- **Lisa's photo:** the band and the article open with `lisa-waterfall`, a waterfall over boulders into a pebble stream with Russian sage. It is Final Photos IMG_6463 and was chosen by the owner on Nov 20, 2026. The article's photo strip shows the Moonlit Water Wall and the three-column water wall. The photo is also sixth in the Gallery.
 - **Three-column water wall:** the photo (`wf-three-column-wall`) leads the showcase and sits fifth in the Gallery. It is frame E9A9118 from the Feb 2026 RAW shoot. It's cropped to the wall and brightened with a shadow lift and automatic contrast, because it was backlit. It is the same wall as *Ledgestone Spill Wall* (`wf-stonewall`, at night).
 - **Headings:** every heading on the site is in title case. Small words such as *and*, *of*, *the*, *to* and *with* stay lowercase unless they come first or last. This covers service names, video titles and gallery captions, because they show as headings in the pop-ups.
 
@@ -103,7 +104,7 @@ Exported from the Green Lion shared drive at web size (JPEG, quality 72). The RA
 | `pj-hidden-*`, `svc-kitchen`, `svc-turf` | Look Book › Hidden Resort | 2025 |
 | `pj-luxe-*`, `svc-pavers`, `learn-bougainvillea`, `pt-pavers` | Look Book › Luxe Lounge | 2025 |
 | `wf-boulder-falls` (IMG_0397), `wf-pond-garden` (IMG_1815), `wf-stream` (IMG_6162), `lisa-stream` (IMG_6163), `learn-foxtail` (IMG_0848), `svc-walls` (IMG_1810) | CreatorLab drive › Branding | Added Oct 29, 2026 |
-| `wf-creek-falls` (IMG_6484), `wf-creek-firebowl` (IMG_6376), `pj-creek-1` (IMG_6379), `pj-creek-2` (IMG_6381), `pj-creek-3` (IMG_6483), `pj-creek-4` (IMG_6371), `pj-creek-5` (IMG_6358), `pj-creek-6` (IMG_6360), `svc-pavilion` (IMG_6382), `learn-lavender` (IMG_6463) | CreatorLab drive › Branding › Final Photos (edited and upscaled versions of real project photos) | Added Nov 13, 2026 |
+| `wf-creek-falls` (IMG_6484), `lisa-waterfall` (IMG_6463), `wf-creek-firebowl` (IMG_6376), `pj-creek-1` (IMG_6379), `pj-creek-2` (IMG_6381), `pj-creek-3` (IMG_6483), `pj-creek-4` (IMG_6371), `pj-creek-5` (IMG_6358), `pj-creek-6` (IMG_6360), `svc-pavilion` (IMG_6382), `learn-lavender` (IMG_6463) | CreatorLab drive › Branding › Final Photos (edited and upscaled versions of real project photos) | Added Nov 13, 2026 |
 | `3d-*` images and `video/3d-*` reels (covers, design-vs-built slides 1 to 7, dusk and daytime) | Green Lion Landscape › 3D Before You Build, and its daytime subfolder | Reels and carousels made for social, Nov 2026. Reels re-encoded to 720 × 1280 H.264; slides resized to 720 × 900. |
 
 `svc-walls` (IMG_1810) replaces the earlier Hidden Resort raised-bed shot. `svc-pavilion` replaces the Hidden Resort kitchen photo on the Services card; that photo is still used in the Hidden Resort project.
