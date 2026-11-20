@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "trailingSlash": false,
   "redirects": [
     {
       "source": "/index.html",
@@ -134,6 +135,171 @@
     {
       "source": "/gallery-fencing.html",
       "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/inspirational-waterscapes",
+      "destination": "/#gallery-water",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/#contact",
+      "permanent": true
+    },
+    {
+      "source": "/commercial-services",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
+      "source": "/residential-services",
+      "destination": "/#services",
+      "permanent": true
+    },
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/links",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pathwaysandpatios",
+      "destination": "/#svc-pavers",
+      "permanent": true
+    },
+    {
+      "source": "/turf",
+      "destination": "/#svc-turf",
+      "permanent": true
+    },
+    {
+      "source": "/customfirepitsandoutdoorkitchens",
+      "destination": "/#svc-fire",
+      "permanent": true
+    },
+    {
+      "source": "/outdoorlighting",
+      "destination": "/#svc-lighting",
+      "permanent": true
+    },
+    {
+      "source": "/3d-virtual-designs",
+      "destination": "/#design-case",
+      "permanent": true
+    },
+    {
+      "source": "/luxe-lounge",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/hidden-resort",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/palmstone-escape",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-highlight-1",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-highlight-2",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio-highlight-3",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/pavers",
+      "destination": "/#gallery-pavers",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/synthetic-grass-putting-greens",
+      "destination": "/#gallery-turf",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/outdoor-kitchens",
+      "destination": "/#gallery-kitchens",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/water-features",
+      "destination": "/#gallery-water",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/retaining-walls",
+      "destination": "/#gallery-retaining",
+      "permanent": true
+    },
+    {
+      "source": "/portfolio/:path*",
+      "destination": "/#gallery",
+      "permanent": true
+    },
+    {
+      "source": "/blog/small-backyard-big-luxury-sauna-amp-hot-tub-installations-in-the-central-valley",
+      "destination": "/#svc-wellness",
+      "permanent": true
+    },
+    {
+      "source": "/blog/transforming-central-valley-backyards-with-modern-pergolas-and-outdoor-living-spaces",
+      "destination": "/#svc-kitchen",
+      "permanent": true
+    },
+    {
+      "source": "/blog/creating-a-home-oasis-the-benefits-of-custom-waterscapes-in-your-backyard",
+      "destination": "/#svc-water",
+      "permanent": true
+    },
+    {
+      "source": "/blog/bringing-tranquility-home-custom-koi-ponds-amp-water-features-in-the-central-valley",
+      "destination": "/#svc-water",
+      "permanent": true
+    },
+    {
+      "source": "/blog/elevating-outdoor-living-how-pavers-amp-porcelain-tile-create-an-upscale-backyard",
+      "destination": "/#svc-pavers",
+      "permanent": true
+    },
+    {
+      "source": "/blog",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/",
       "permanent": true
     }
   ]

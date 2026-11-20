@@ -818,10 +818,11 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
   let pendingFocus = null;
   function route() {
     let h = (location.hash || '#home').slice(1);
-    // Deep links used by the redirects from the old site: #svc-water, #gallery-water, #contact
+    // Deep links used by the redirects from the old site: #svc-water, #gallery-water, #contact, #design-case
     if (/^svc-[a-z]+$/.test(h) && document.getElementById(h)) { pendingFocus = h; h = 'services'; }
     else if (h.startsWith('gallery-')) { setGalleryFilter(GAL_ALIAS[h.slice(8)] || 'all'); h = 'gallery'; }
     else if (h === 'contact') { pendingFocus = 'contact'; h = 'home'; }
+    else if (h === 'design-case') { pendingFocus = 'design-case'; h = 'services'; }
     else if (h === 'gallery') setGalleryFilter('all');
     const v = views.includes(h) ? h : 'home';
     $$('.view').forEach(el => el.classList.toggle('active', el.dataset.view === v));
