@@ -73,6 +73,11 @@ Web-sized crops used by the page are in `img/`: `logo-horizontal.png`, `logo-mas
 | Compact signature | 180 px wide | Not used on the page yet |
 | Lion emblem | 48 px wide | Phone and tablet header, shown at 64 px |
 
+## Photography
+
+- Daytime photos only (owner, Nov 20, 2026). Don't use night or dusk shots of lighting, fire or water features. Use a daytime photo of the same subject instead.
+- 3D renderings are labeled as design concepts. Client names and addresses never appear.
+
 ## Voice
 
 - Primary line: **Outdoor living. Beautifully built.**
