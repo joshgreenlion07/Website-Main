@@ -9,14 +9,16 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Project names, stories and features for the Look Book projects **Hidden Resort** and **Luxe Lounge**, from the Look Book creative brief.
 - The five-step process and the Essential / Signature / Luxury project scopes, from the Look Book creative brief. Dollar ranges have been removed (see below).
 - Service categories, from the *Website Marketing* content brief.
-- Lisa Taylor's article **"Are Water Features Taking Over Modesto Backyards?"** was approved on Nov 18, 2026. On Nov 20, 2026 the owner replaced it on the home page with the *What we install* showcase. The article text is in git history (commit 3b626d6).
+- Lisa's Design Notebook article **"Water Features Are Taking Over"** was rewritten on Nov 20, 2026 at the owner's request. It covers nature, comfort and peace in the backyard, and Green Lion's passion for building these escapes. It's written in the team's voice, but it runs under Lisa Taylor's byline, so **Lisa should read it**. Her earlier article, approved on Nov 18, is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
 
 ## Home page updates (Nov 20, 2026)
 
 - **Hero text:** now about specialty water feature design and installation.
-- **What we install:** a showcase replaces Lisa's Design Notebook band. It has five photo tiles: custom water features, landscaping, pavers, outdoor kitchens and synthetic grass. Each tile opens the matching Gallery filter, and *See more in our gallery* opens the full Gallery.
+- **What we install:** a showcase sits after the 3D band, followed by Lisa's Design Notebook band, which uses the Moonlit Water Wall photo. It has five photo tiles: custom water features, landscaping, pavers, outdoor kitchens and synthetic grass. Each tile opens the matching Gallery filter, and *See more in our gallery* opens the full Gallery.
 - **Gallery filters:** landscaping and synthetic grass both open the *Planting & turf* filter.
+- **Three-column water wall:** the photo (`wf-three-column-wall`) leads the showcase and sits fifth in the Gallery. It is frame E9A9118 from the Feb 2026 RAW shoot. It's cropped to the wall and brightened with a shadow lift and automatic contrast, because it was backlit. It is the same wall as *Ledgestone Spill Wall* (`wf-stonewall`, at night).
+- **Headings:** every heading on the site is in title case. Small words such as *and*, *of*, *the*, *to* and *with* stay lowercase unless they come first or last. This covers service names, video titles and gallery captions, because they show as headings in the pop-ups.
 
 ## Going live (Nov 18, 2026)
 
@@ -95,7 +97,7 @@ Exported from the Green Lion shared drive at web size (JPEG, quality 72). The RA
 
 | Files | Source folder | Shot |
 | --- | --- | --- |
-| `wf-koi`, `wf-stonewall`, `pj-koi-*`, `pj-well-*`, `learn-tropical`, `svc-lighting`, `svc-wellness`, `svc-fire` | Branding › Photos RAW | Feb 2026 |
+| `wf-koi`, `wf-stonewall`, `wf-three-column-wall`, `pj-koi-*`, `pj-well-*`, `learn-tropical`, `svc-lighting`, `svc-wellness`, `svc-fire` | Branding › Photos RAW | Feb 2026 |
 | `wf-waterwall`, `pj-wall-*`, `learn-citrus`, `learn-agave`, `learn-feathergrass`, `learn-mossrock`, `learn-spotlight`, `learn-sconce`, `learn-blueflowers`, `pt-urn`, `pt-fixture` | Completed client project photography | Aug 2026 |
 | `wf-boulder-night`, `wf-modern`, `svc-water` | Look Book › Inspirational Waterscapes | 2025 |
 | `pj-hidden-*`, `svc-kitchen`, `svc-turf` | Look Book › Hidden Resort | 2025 |

@@ -162,6 +162,17 @@ em.accent { font-style: italic; color: var(--deep); }
 @media (min-width: 960px) { .hero { padding-block: 2.5rem 3rem; } .track { grid-auto-columns: 58%; } .arrows { display: flex; } }
 
 
+/* Lisa's featured article band (deep green) */
+.lisa-band { background: var(--deep); color: var(--warm); border-radius: var(--r-lg); overflow: hidden; display: grid; margin-top: 2.5rem; }
+.lisa-band .img { aspect-ratio: 4 / 3; max-width: 100%; }
+.lisa-band .img img { width: 100%; height: 100%; object-fit: cover; }
+.lisa-band .body { padding: 1.25rem; display: grid; gap: .75rem; align-content: center; }
+.lisa-band .eyebrow { color: var(--lime); }
+.lisa-band .eyebrow::before { background: var(--lime); }
+.lisa-band h2 { font-size: var(--t-h2); }
+.lisa-band p { color: #D7DECF; max-width: 54ch; }
+.lisa-band .byline { font-size: var(--t-sm); font-weight: 700; color: var(--warm); display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; }
+@media (min-width: 820px) { .lisa-band { grid-template-columns: 1.1fr 1fr; } .lisa-band .img { aspect-ratio: auto; min-height: 340px; } .lisa-band .body { padding: 2rem; } }
 /* What we install: deep green showcase with photo tiles that open the matching gallery filter */
 .showcase { border-radius: var(--r-lg); margin-top: 2.5rem; padding: 1.4rem 1.25rem 1.5rem; display: grid; gap: 1.1rem; }
 .show-head { display: grid; gap: .55rem; }
@@ -356,7 +367,7 @@ dialog.video-mode { width: min(860px, calc(100vw - 24px)); }
 .dlg-photo img { display: block; max-width: 100%; max-height: 72dvh; width: auto; height: auto; }
 
 /* Deep green accent blocks */
-.showcase, .consult-band, .pkg.feature {
+.showcase, .lisa-band, .consult-band, .pkg.feature {
   background: var(--deep); color: #F5F2EA; border-color: transparent;
   --band-ink: #F5F2EA; --band-muted: #D7DECF; --band-line: rgba(245, 242, 234, .18); --band-outline: rgba(245, 242, 234, .45); --band-accent: #AFE414; --rule: #AFE414;
 }
@@ -435,6 +446,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
 .dlg-body { padding: 1.25rem; display: grid; gap: .85rem; }
 .dlg-body h2 { font-size: clamp(1.7rem, 5vw, 2.3rem); }
 .dlg-body h3 { font-size: 1.25rem; margin-top: .4rem; }
+.dlg-body .prose-col { max-width: 64ch; display: grid; gap: .8rem; }
 .dlg-close { position: absolute; right: 10px; top: 10px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(32, 35, 33, .78); color: #F5F2EA; cursor: pointer; display: grid; place-items: center; font-size: 1.2rem; }
 .dlg-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
 .dlg-gallery img { aspect-ratio: 4 / 3; object-fit: cover; border-radius: 6px; width: 100%; }
@@ -479,7 +491,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
         <p class="lede">Specialty water feature design and installation: waterfalls, koi ponds, streams and water walls, planned with the rest of your yard. Swipe through water features Green Lion has built.</p>
         <div class="hero-cta">
           <div style="display:grid;gap:.4rem">
-            <h2>Let's plan a space around how you want to use your backyard.</h2>
+            <h2>Let's Plan a Space Around How You Want to Use Your Backyard.</h2>
             <p>Custom water features, designed as part of your complete outdoor space.</p>
           </div>
           <div class="actions">
@@ -510,7 +522,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
           <div class="p3-copy">
             <p class="eyebrow">3D before you build</p>
             <span class="p3-offer">Free 3D design</span>
-            <h2 id="p3-h">See your yard before we build it.</h2>
+            <h2 id="p3-h">See Your Yard Before We Build It.</h2>
             <p class="lede">Water features, pavers and landscaping, big projects or small: every Green Lion customer gets a free 3D design. Walk through your yard on screen and change what you want before we break ground.</p>
             <ol class="p3-steps"><li>We map your yard.</li><li>You walk through it in 3D.</li><li>Then we build it.</li></ol>
             <div class="p3-actions">
@@ -526,7 +538,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
           </div>
         </div>
         <div class="p3-gallery">
-          <div class="head"><div><p class="eyebrow">Designed in 3D. Built for real.</p><h3>Seven spaces, one project</h3></div><span class="note">Top: the 3D design. Bottom: the finished yard. Swipe to compare →</span></div>
+          <div class="head"><div><p class="eyebrow">Designed in 3D. Built for real.</p><h3>Seven Spaces, One Project</h3></div><span class="note">Top: the 3D design. Bottom: the finished yard. Swipe to compare →</span></div>
           <div class="dvb-scroll" id="dvb-scroll" tabindex="0" aria-label="3D design compared with the finished yard"></div>
         </div>
       </section>
@@ -534,37 +546,48 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
       <section class="showcase" aria-labelledby="show-h">
         <div class="show-head">
           <p class="eyebrow">What we install</p>
-          <h2 id="show-h">Custom design and installation</h2>
+          <h2 id="show-h">Custom Design and Installation</h2>
           <p>Green Lion designs and installs the whole outdoor space, so the water, stone, planting and paving work together.</p>
         </div>
         <div class="show-grid">
-          <a class="show-tile feature" href="#gallery-water"><img src="img/wf-waterwall.jpg" alt="Lit stucco and ledgestone water wall at dusk" loading="lazy"><span><b>Custom water features</b><small>Waterfalls, koi ponds, streams and water walls</small></span></a>
+          <a class="show-tile feature" href="#gallery-water"><img src="img/wf-three-column-wall.jpg" alt="Three-column stucco and ledgestone water wall with spill scuppers, planter bowls and a tree" loading="lazy"><span><b>Custom Water Features</b><small>Waterfalls, koi ponds, streams and water walls</small></span></a>
           <a class="show-tile" href="#gallery-landscaping"><img src="img/learn-citrus.jpg" alt="Citrus tree, ferns and agave in a walled garden bed" loading="lazy"><span><b>Landscaping</b><small>Drought-tolerant planting and smart irrigation</small></span></a>
           <a class="show-tile" href="#gallery-pavers"><img src="img/svc-pavers.jpg" alt="Paver patio beside a covered lounge" loading="lazy"><span><b>Pavers</b><small>Patios, walkways and driveways</small></span></a>
-          <a class="show-tile" href="#gallery-kitchens"><img src="img/svc-pavilion.jpg" alt="Timber pavilion over an outdoor kitchen" loading="lazy"><span><b>Outdoor kitchens</b><small>Kitchens, bars and pavilions</small></span></a>
-          <a class="show-tile" href="#gallery-turf"><img src="img/svc-turf.jpg" alt="Synthetic grass lawn beside a covered patio" loading="lazy"><span><b>Synthetic grass</b><small>Artificial turf lawns</small></span></a>
+          <a class="show-tile" href="#gallery-kitchens"><img src="img/svc-pavilion.jpg" alt="Timber pavilion over an outdoor kitchen" loading="lazy"><span><b>Outdoor Kitchens</b><small>Kitchens, bars and pavilions</small></span></a>
+          <a class="show-tile" href="#gallery-turf"><img src="img/svc-turf.jpg" alt="Synthetic grass lawn beside a covered patio" loading="lazy"><span><b>Synthetic Grass</b><small>Artificial turf lawns</small></span></a>
         </div>
         <div class="show-cta"><a class="btn btn-leaf" href="#gallery">See more in our gallery</a></div>
       </section>
+
+      <article class="lisa-band" aria-labelledby="lisa-h">
+        <div class="img"><img src="img/wf-waterwall.jpg" alt="Moonlit Water Wall: a lit stucco and ledgestone water wall at dusk, a Green Lion project in Modesto" loading="lazy"></div>
+        <div class="body">
+          <p class="eyebrow">From Lisa's Design Notebook</p>
+          <h2 id="lisa-h">Water Features Are Taking Over</h2>
+          <p>People want nature, comfort and peace in their own backyard. Here's why water is leading the way.</p>
+          <p class="byline">Lisa Taylor, Designer</p>
+          <div style="display:flex;gap:.5rem;flex-wrap:wrap"><button class="btn btn-leaf" type="button" data-post="lisa">Read the story</button><a class="btn btn-on-dark" href="#gallery">See our work</a></div>
+        </div>
+      </article>
     </div>
 
     <div class="wrap section" id="journal">
       <div class="section-head">
-        <div><p class="eyebrow">The Green Lion Journal</p><h2>Learn your landscape</h2></div>
+        <div><p class="eyebrow">The Green Lion Journal</p><h2>Learn Your Landscape</h2></div>
         <p class="muted">Short seasonal lessons from our crews.</p>
       </div>
       <div class="journal-grid">
         <article>
           <div class="article-hero"><img src="img/learn-citrus.jpg" alt="Young citrus tree and ferns in a walled Modesto garden bed" loading="lazy"></div>
           <div class="byline-row"><span>Winter 2026</span><span class="dot"></span><span>Central Valley</span><span class="dot"></span><span>2 min read</span></div>
-          <h2 class="article-title">This winter's plants, and how to take care of them</h2>
+          <h2 class="article-title">This Winter's Plants, and How to Take Care of Them</h2>
           <div class="prose">
             <p>Central Valley winters are mild most days, then a clear, still night drops into the high 20s. Those few frost nights do most of the damage. The plants we install most often handle winter well when you know which ones need a cover, which ones need less water, and which ones just need a trim in February.</p>
             <p>Use the frost check below the next time the forecast calls for a cold night.</p>
           </div>
 
           <section class="module" aria-labelledby="frost-h">
-            <div class="module-head"><div><p class="eyebrow">Try it</p><h3 id="frost-h">Frost check: what needs a cover tonight?</h3></div></div>
+            <div class="module-head"><div><p class="eyebrow">Try it</p><h3 id="frost-h">Frost Check: What Needs a Cover Tonight?</h3></div></div>
             <div class="temp-readout"><output id="frost-out" for="frost">31°F</output><span id="frost-label">Frost likely</span></div>
             <label class="sr" for="frost">Forecast low temperature in Fahrenheit</label>
             <input type="range" id="frost" min="18" max="45" step="1" value="31">
@@ -579,18 +602,18 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
     </div>
 
     <div class="wrap section" style="padding-top:0">
-      <div class="section-head"><div><p class="eyebrow">Complete your outdoor space</p><h2>Other outdoor-living services</h2></div><a class="btn btn-ghost btn-sm" href="#services">All services</a></div>
+      <div class="section-head"><div><p class="eyebrow">Complete your outdoor space</p><h2>Other Outdoor-Living Services</h2></div><a class="btn btn-ghost btn-sm" href="#services">All services</a></div>
       <div class="svc-strip" id="svc-strip"></div>
     </div>
 
     <div class="wrap section" style="padding-top:0">
-      <div class="section-head"><div><p class="eyebrow">Recent projects</p><h2>Real Green Lion work</h2></div></div>
+      <div class="section-head"><div><p class="eyebrow">Recent projects</p><h2>Real Green Lion Work</h2></div></div>
       <div class="proj-scroll" id="proj-scroll"></div>
     </div>
 
     <div class="consult-band on-dark">
       <div class="wrap">
-        <div style="display:grid;gap:.5rem"><p class="eyebrow on-dark">Design consultation</p><h2>Plan your outdoor space.</h2><p>Bring your ideas and questions. We'll look at your property and talk through the possibilities together.</p></div>
+        <div style="display:grid;gap:.5rem"><p class="eyebrow on-dark">Design consultation</p><h2>Plan Your Outdoor Space.</h2><p>Bring your ideas and questions. We'll look at your property and talk through the possibilities together.</p></div>
         <div class="actions"><a class="btn btn-leaf" href="tel:+12096464046">Call to schedule a consultation</a><span class="phone-line">(209) 646-4046 <button class="copy-btn" type="button" data-copy="(209) 646-4046">Copy</button></span></div>
       </div>
     </div>
@@ -601,12 +624,12 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
     <div class="wrap">
       <div class="page-head">
         <p class="eyebrow">Services</p>
-        <h1>Outdoor living. Beautifully built.</h1>
+        <h1>Outdoor Living. Beautifully Built.</h1>
         <p>Custom landscaping, design and water features for outdoor spaces that feel connected. One team plans the whole space, so the water, stone, planting and lighting work together.</p>
         <div style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-primary" href="tel:+12096464046">Call to schedule a consultation</a><a class="btn btn-ghost" href="#gallery">See our work</a></div>
       </div>
       <div class="section" style="padding-top:.75rem">
-        <div class="section-head"><div><p class="eyebrow">How it works</p><h2 style="font-size:1.75rem">From first visit to aftercare</h2></div></div>
+        <div class="section-head"><div><p class="eyebrow">How it works</p><h2 style="font-size:1.75rem">From First Visit to Aftercare</h2></div></div>
         <ol class="steps">
           <li><b>Consultation</b><span>A walk-through and an honest conversation about your goals, style and space.</span></li>
           <li><b>2D &amp; 3D design</b><span>Scaled plans and renderings so you see the space before it's built.</span></li>
@@ -616,15 +639,15 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
         </ol>
       </div>
       <div class="section" style="padding-top:0">
-        <div class="section-head"><div><p class="eyebrow">What we build</p><h2 style="font-size:1.75rem">Water features lead. Everything else connects.</h2></div></div>
+        <div class="section-head"><div><p class="eyebrow">What we build</p><h2 style="font-size:1.75rem">Water Features Lead. Everything Else Connects.</h2></div></div>
         <div class="svc-grid" id="svc-grid"></div>
       </div>
       <div class="section" style="padding-top:0">
-        <div class="section-head"><div><p class="eyebrow">Project scopes</p><h2 style="font-size:1.75rem">Scopes to fit your lifestyle</h2></div><p class="note">Every design is custom. Pricing is set after your design consultation.</p></div>
+        <div class="section-head"><div><p class="eyebrow">Project scopes</p><h2 style="font-size:1.75rem">Scopes to Fit Your Lifestyle</h2></div><p class="note">Every design is custom. Pricing is set after your design consultation.</p></div>
         <div class="pkg-grid">
-          <div class="pkg"><p class="eyebrow">Essential</p><h3>A clean, usable yard</h3><ul><li>Concrete walkways</li><li>Sod and planting</li><li>Starter fire pit or pergola</li></ul></div>
-          <div class="pkg feature"><p class="eyebrow">Signature</p><h3>Room to gather</h3><ul><li>Paver or tile walkways</li><li>Premium planting</li><li>Fire feature or outdoor kitchen</li></ul></div>
-          <div class="pkg"><p class="eyebrow">Luxury</p><h3>A complete retreat</h3><ul><li>Hot tub, sauna and water features</li><li>Custom tile or porcelain</li><li>Full outdoor kitchen</li></ul></div>
+          <div class="pkg"><p class="eyebrow">Essential</p><h3>A Clean, Usable Yard</h3><ul><li>Concrete walkways</li><li>Sod and planting</li><li>Starter fire pit or pergola</li></ul></div>
+          <div class="pkg feature"><p class="eyebrow">Signature</p><h3>Room to Gather</h3><ul><li>Paver or tile walkways</li><li>Premium planting</li><li>Fire feature or outdoor kitchen</li></ul></div>
+          <div class="pkg"><p class="eyebrow">Luxury</p><h3>A Complete Retreat</h3><ul><li>Hot tub, sauna and water features</li><li>Custom tile or porcelain</li><li>Full outdoor kitchen</li></ul></div>
         </div>
       </div>
     </div>
@@ -635,12 +658,12 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
     <div class="wrap">
       <div class="page-head">
         <p class="eyebrow">Gallery</p>
-        <h1>Our work</h1>
+        <h1>Our Work</h1>
         <p>Real Green Lion projects around Modesto and the Central Valley. Tap a photo to see it larger.</p>
       </div>
       <div class="gal-filter" role="group" aria-label="Show photos of" id="gal-filter"></div>
       <div class="gal-grid" id="gal-grid"></div>
-      <div class="gal-cta"><div><h2>Want something like this?</h2><p>Call and we'll talk through your yard. Every project starts with a free 3D design.</p></div>
+      <div class="gal-cta"><div><h2>Want Something Like This?</h2><p>Call and we'll talk through your yard. Every project starts with a free 3D design.</p></div>
         <div class="actions"><a class="btn btn-leaf" href="tel:+12096464046">Call (209) 646-4046</a><span class="phone-line">(209) 646-4046 <button class="copy-btn" type="button" data-copy="(209) 646-4046">Copy</button></span></div></div>
     </div>
   </section>
@@ -655,7 +678,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
       <div style="display:grid;gap:.5rem"><p class="brandline">Outdoor living. Beautifully built.</p><p>Custom landscaping, design and water features for outdoor spaces that feel connected.</p></div>
       <div id="contact"><h4>Contact</h4><ul><li><a href="tel:+12096464046">(209) 646-4046</a></li><li><a href="mailto:info@greenlionlandscape.com">info@greenlionlandscape.com</a></li><li>greenlionlandscape.com</li><li>Modesto &amp; the Central Valley</li></ul></div>
       <div><h4>Explore</h4><ul><li><a href="#services">Services</a></li><li><a href="#gallery">Gallery</a></li><li><a href="https://area-planner-beta.vercel.app/" target="_blank" rel="noopener">My Project</a></li></ul></div>
-      <div class="vendor-cell"><h4>Vendors &amp; crew</h4><p>Plans, measurements and estimates in Green Lion Area Planner.</p><a class="btn btn-leaf btn-sm vendor-login" href="https://area-planner-beta.vercel.app/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>Vendor login</a></div>
+      <div class="vendor-cell"><h4>Vendors &amp; Crew</h4><p>Plans, measurements and estimates in Green Lion Area Planner.</p><a class="btn btn-leaf btn-sm vendor-login" href="https://area-planner-beta.vercel.app/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>Vendor login</a></div>
     </div>
     <div class="legal"><span>Green Lion Landscape Inc.</span><span>CSLB #1150882</span></div>
   </div>
@@ -734,16 +757,28 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
     { name: 'Mexican feather grass, blue fescue', img: 'learn-feathergrass', cover: 10, damage: 5, tip: 'Fully hardy here. Comb out in February.' },
     { name: 'Roses and lavender', img: 'learn-lavender', cover: 15, damage: 10, tip: 'Hardy. Prune roses mid-January to mid-February.' }
   ];
+  const lisa = {
+    img: 'wf-waterwall', tag: "Lisa's Design Notebook", title: 'Water Features Are Taking Over',
+    byline: 'Lisa Taylor, Designer, Green Lion Landscape',
+    sections: [
+      ['', "Across Modesto, Turlock and Tracy, more backyards are being built around moving water: a waterfall over stone, a stream through planting, a water wall that glows after dark. Water features are taking over, and it isn't hard to see why."],
+      ['People Want Nature at Home', "After a long day, most of us don't want another screen. We want to step outside into something living: plants, stone, birds and the sound of water. A water feature brings a piece of the creek or the mountains home, so nature is a few steps from the back door instead of a long drive away."],
+      ['Comfort You Can See, Hear and Feel', "The best outdoor spaces work on every sense. You see the light move on the water, you hear it fall, and you feel the cooler air on a hot valley evening. That is what turns a yard into an escape: a place for coffee in the morning and family time after dinner."],
+      ['A Place for Peace', "For many people, the water is where they slow down. Some use it as a quiet place to think, pray or reflect; for others it is simply where the day lets go. Moving water makes a space feel calm, and connected to nature and to something bigger than ourselves."],
+      ['This Is Our Passion', "Creating these escapes is what we love to do at Green Lion. We start with how you want to feel, then shape the water, stone, planting and lighting around it. Every project starts with a free 3D design, so you can see your escape before we break ground."]
+    ],
+    gallery: ['wf-three-column-wall', 'wf-koi']
+  };
   const services = [
-    { id: 'water', name: 'Water features', img: 'svc-water', promo: 'build', desc: 'Waterfalls, koi ponds, water walls and pondless streams, designed as part of your complete outdoor space.', items: ['Waterfalls', 'Koi ponds', 'Water walls', 'Pondless streams', 'Fountains'] },
-    { id: 'kitchen', name: 'Pavilions & outdoor kitchens', img: 'svc-pavilion', desc: 'Custom pavilions, louvered pergolas and outdoor kitchens built for how you cook and host.', items: ['Outdoor kitchens', 'Louvered pergolas', 'Pavilions', 'Bar seating'] },
-    { id: 'pavers', name: 'Pavers & decorative concrete', img: 'svc-pavers', promo: 'walk', desc: 'Paver patios and driveways, porcelain, stamped and stained concrete, and walkways.', items: ['Paver patios', 'Driveways', 'Porcelain tile', 'Stamped concrete', 'Walkways'] },
-    { id: 'lighting', name: 'Lighting, audio & video', img: 'svc-lighting', desc: 'Low-voltage LED landscape lighting, outdoor speakers and entertainment systems.', items: ['Landscape lighting', 'Wall sconces', 'Outdoor sound', 'Outdoor TV'] },
-    { id: 'walls', name: 'Retaining walls & seat walls', img: 'svc-walls', desc: 'Segmental block and veneer walls, curved seat walls and raised planters.', items: ['Retaining walls', 'Seat walls', 'Raised beds'] },
-    { id: 'wellness', name: 'Saunas, hot tubs & wellness', img: 'svc-wellness', desc: 'Cedar barrel and cube saunas, hot tubs and wellness walkways.', items: ['Cube saunas', 'Barrel saunas', 'Hot tubs', 'Wellness walkways'] },
-    { id: 'fire', name: 'Fire features', img: 'svc-fire', desc: 'Gas fire tables, fire pits and lounge layouts built around them.', items: ['Fire tables', 'Fire pits', 'Lounge layouts'] },
-    { id: 'turf', name: 'Turf, planting & irrigation', img: 'svc-turf', promo: 'night', desc: 'Drought-tolerant planting, artificial turf and smart irrigation controllers.', items: ['Artificial turf', 'Drought-tolerant planting', 'Smart irrigation', 'Sod'] },
-    { id: 'design', name: '2D & 3D design', svg: true, desc: 'Scaled 2D site plans and 3D renderings, revised with you until it feels right. Renderings are always labeled as concepts.', items: ['2D site plans', '3D renderings', 'Interactive revisions'] }
+    { id: 'water', name: 'Water Features', img: 'svc-water', promo: 'build', desc: 'Waterfalls, koi ponds, water walls and pondless streams, designed as part of your complete outdoor space.', items: ['Waterfalls', 'Koi ponds', 'Water walls', 'Pondless streams', 'Fountains'] },
+    { id: 'kitchen', name: 'Pavilions & Outdoor Kitchens', img: 'svc-pavilion', desc: 'Custom pavilions, louvered pergolas and outdoor kitchens built for how you cook and host.', items: ['Outdoor kitchens', 'Louvered pergolas', 'Pavilions', 'Bar seating'] },
+    { id: 'pavers', name: 'Pavers & Decorative Concrete', img: 'svc-pavers', promo: 'walk', desc: 'Paver patios and driveways, porcelain, stamped and stained concrete, and walkways.', items: ['Paver patios', 'Driveways', 'Porcelain tile', 'Stamped concrete', 'Walkways'] },
+    { id: 'lighting', name: 'Lighting, Audio & Video', img: 'svc-lighting', desc: 'Low-voltage LED landscape lighting, outdoor speakers and entertainment systems.', items: ['Landscape lighting', 'Wall sconces', 'Outdoor sound', 'Outdoor TV'] },
+    { id: 'walls', name: 'Retaining Walls & Seat Walls', img: 'svc-walls', desc: 'Segmental block and veneer walls, curved seat walls and raised planters.', items: ['Retaining walls', 'Seat walls', 'Raised beds'] },
+    { id: 'wellness', name: 'Saunas, Hot Tubs & Wellness', img: 'svc-wellness', desc: 'Cedar barrel and cube saunas, hot tubs and wellness walkways.', items: ['Cube saunas', 'Barrel saunas', 'Hot tubs', 'Wellness walkways'] },
+    { id: 'fire', name: 'Fire Features', img: 'svc-fire', desc: 'Gas fire tables, fire pits and lounge layouts built around them.', items: ['Fire tables', 'Fire pits', 'Lounge layouts'] },
+    { id: 'turf', name: 'Turf, Planting & Irrigation', img: 'svc-turf', promo: 'night', desc: 'Drought-tolerant planting, artificial turf and smart irrigation controllers.', items: ['Artificial turf', 'Drought-tolerant planting', 'Smart irrigation', 'Sod'] },
+    { id: 'design', name: '2D & 3D Design', svg: true, desc: 'Scaled 2D site plans and 3D renderings, revised with you until it feels right. Renderings are always labeled as concepts.', items: ['2D site plans', '3D renderings', 'Interactive revisions'] }
   ];
 
   /* ---------- Router ---------- */
@@ -808,14 +843,14 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
   /* ---------- 3D Before You Build (reels and slides from the social campaign; files in video/ and img/3d-*) ---------- */
   const DISCLOSE_3D = 'Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.';
   const promoVideos = {
-    seeday: { src: 'video/3d-see-it-first-day.mp4', poster: 'img/3d-see-it-first-day-cover.jpg', len: 19, title: 'We built this backyard in 3D first', text: 'The water wall, the fire lounge, the spa and sauna deck, every planter and path: placed and walked through before we broke ground.' },
-    build: { src: 'video/3d-before-you-build.mp4', poster: 'img/3d-before-you-build-cover.jpg', len: 19, title: 'We built this backyard in 3D first', text: 'The water wall, the fire lounge, the spa and sauna deck, every planter and path: placed and walked through before we broke ground.' },
-    walk: { src: 'video/3d-walk-your-yard.mp4', poster: 'img/3d-walk-your-yard-cover.jpg', len: 13, title: 'Walk your yard in 3D before a single paver is laid', text: 'From the side yard to the covered patio, you see the space, the walkways and the water feature first. Then we build it.' },
-    night: { src: 'video/3d-day-to-night.mp4', poster: 'img/3d-day-to-night-cover.jpg', len: 12, title: 'Same yard, every hour of the day', text: 'Bright daylight, golden hour and after dark with the fire lit, all in 3D before we build. The last shot is the finished yard at dusk.' }
+    seeday: { src: 'video/3d-see-it-first-day.mp4', poster: 'img/3d-see-it-first-day-cover.jpg', len: 19, title: 'We Built This Backyard in 3D First', text: 'The water wall, the fire lounge, the spa and sauna deck, every planter and path: placed and walked through before we broke ground.' },
+    build: { src: 'video/3d-before-you-build.mp4', poster: 'img/3d-before-you-build-cover.jpg', len: 19, title: 'We Built This Backyard in 3D First', text: 'The water wall, the fire lounge, the spa and sauna deck, every planter and path: placed and walked through before we broke ground.' },
+    walk: { src: 'video/3d-walk-your-yard.mp4', poster: 'img/3d-walk-your-yard-cover.jpg', len: 13, title: 'Walk Your Yard in 3D Before a Single Paver Is Laid', text: 'From the side yard to the covered patio, you see the space, the walkways and the water feature first. Then we build it.' },
+    night: { src: 'video/3d-day-to-night.mp4', poster: 'img/3d-day-to-night-cover.jpg', len: 12, title: 'Same Yard, Every Hour of the Day', text: 'Bright daylight, golden hour and after dark with the fire lit, all in 3D before we build. The last shot is the finished yard at dusk.' }
   };
   const promoRow = k => { const v = promoVideos[k]; return `<div class="svc-3d"><button type="button" class="svc-3d-thumb" data-video="${k}" aria-label="Watch the 3D walkthrough, ${v.len} seconds"><img src="${v.poster}" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 4v16l14-8z"/></svg></span></button>
     <div><span class="k">Free 3D design</span><p>See your yard before we build it.</p><button type="button" class="link-btn" data-video="${k}">Watch the 3D walkthrough · ${v.len} s</button></div></div>`; };
-  const p3Slides = ['The side yard, designed in 3D and built for real', 'The water wall', 'The fire lounge', 'The spa deck', 'The sauna', 'The covered patio', 'The turf yard'];
+  const p3Slides = ['The Side Yard, Designed in 3D and Built for Real', 'The Water Wall', 'The Fire Lounge', 'The Spa Deck', 'The Sauna', 'The Covered Patio', 'The Turf Yard'];
   const P3 = {
     // The band plays the "We built this yard in 3D first" reel muted; Watch with sound opens the same reel with sound.
     day: { loop: 'video/3d-see-it-first-day.mp4', poster: 'img/3d-see-it-first-day-cover.jpg', reel: 'seeday', slide: i => `img/3d-dvb-day-${i}.jpg` },
@@ -862,7 +897,7 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
   /* ---------- Gallery ---------- */
   const GAL_CATS = [['all', 'All'], ['water', 'Water features'], ['pavers', 'Patios & pavers'], ['kitchens', 'Kitchens & pavilions'], ['fire', 'Fire & lighting'], ['wellness', 'Saunas & hot tubs'], ['planting', 'Planting & turf'], ['3d', '3D design vs built']];
   const GAL_ALIAS = { landscaping: 'planting', planting: 'planting', water: 'water', pavers: 'pavers', retaining: 'pavers', kitchens: 'kitchens', pergolas: 'kitchens', fire: 'fire', sauna: 'wellness', turf: 'planting', highlights: 'all', fencing: 'all' };
-  const gallery = [{"img":"wf-creek-firebowl","cap":"Fire Bowl Creek","cats":["water","fire"],"project":"creek","w":1050,"h":1400},{"img":"wf-creek-falls","cap":"Lavender Creek","cats":["water","planting"],"project":"creek","w":1050,"h":1400},{"img":"wf-waterwall","cap":"Moonlit Water Wall","cats":["water","fire"],"project":"wall","w":1400,"h":934},{"img":"wf-koi","cap":"Palm Koi Pond","cats":["water"],"project":"koi","w":1400,"h":934},{"img":"pj-creek-1","cap":"Gravel fire-bowl court","cats":["fire","pavers"],"project":"creek","w":1000,"h":750},{"img":"svc-pavilion","cap":"Timber pavilion and outdoor kitchen","cats":["kitchens"],"project":"creek","w":1000,"h":750},{"img":"wf-boulder-falls","cap":"Boulder Falls","cats":["water"],"project":null,"w":1400,"h":1050},{"img":"pj-well-1","cap":"Hot tub on a composite deck","cats":["wellness"],"project":"well","w":1000,"h":667},{"img":"pj-koi-1","cap":"Koi pond with boulder waterfalls","cats":["water"],"project":"koi","w":1000,"h":667},{"img":"svc-fire","cap":"Gas fire lounge","cats":["fire"],"project":"well","w":1000,"h":667},{"img":"pj-hidden-1","cap":"Outdoor kitchen and bar","cats":["kitchens"],"project":"hidden","w":1000,"h":667},{"img":"wf-pond-garden","cap":"Garden Pond","cats":["water","planting"],"project":null,"w":1400,"h":1050},{"img":"pj-wall-1","cap":"Water wall garden","cats":["water"],"project":"wall","w":1000,"h":667},{"img":"svc-wellness","cap":"Cube sauna at night","cats":["wellness","fire"],"project":"well","w":1000,"h":667},{"img":"pj-luxe-1","cap":"Louvered pergola lounge","cats":["kitchens","pavers"],"project":"luxe","w":1000,"h":667},{"img":"wf-boulder-night","cap":"Lantern Falls","cats":["water","fire"],"project":null,"w":1390,"h":1042},{"img":"pj-creek-2","cap":"Pavilion bar and kitchen","cats":["kitchens"],"project":"creek","w":1000,"h":750},{"img":"svc-turf","cap":"Turf and covered patio","cats":["planting","pavers"],"project":null,"w":1000,"h":667},{"img":"wf-modern","cap":"Scupper Water Wall","cats":["water"],"project":"hidden","w":1400,"h":934},{"img":"pj-hidden-2","cap":"Cedar barrel sauna","cats":["wellness"],"project":"hidden","w":1000,"h":667},{"img":"pj-creek-3","cap":"Pondless stream and waterfalls","cats":["water","planting"],"project":"creek","w":750,"h":1000},{"img":"svc-pavers","cap":"Paver patio","cats":["pavers"],"project":"luxe","w":1000,"h":667},{"img":"pj-wall-2","cap":"Water wall at dusk","cats":["water","fire"],"project":"wall","w":1000,"h":667},{"img":"svc-kitchen","cap":"Kitchen under a louvered pergola","cats":["kitchens"],"project":"hidden","w":1000,"h":667},{"img":"wf-stream","cap":"Garden Stream","cats":["water","planting"],"project":null,"w":1050,"h":1400},{"img":"pj-well-2","cap":"Porcelain paver lounge","cats":["pavers","fire"],"project":"well","w":1000,"h":667},{"img":"svc-walls","cap":"Seat wall and pavers","cats":["pavers","planting"],"project":null,"w":1000,"h":750},{"img":"pj-creek-4","cap":"Stone-veneer bar with a beer tap","cats":["kitchens"],"project":"creek","w":750,"h":1000},{"img":"wf-stonewall","cap":"Ledgestone Spill Wall","cats":["water","fire"],"project":"well","w":1400,"h":934},{"img":"pj-koi-2","cap":"Koi pond shoreline","cats":["water","planting"],"project":"koi","w":1000,"h":667},{"img":"svc-lighting","cap":"Fire table and landscape lighting","cats":["fire"],"project":null,"w":1000,"h":667},{"img":"pj-luxe-2","cap":"Pergola dining patio","cats":["kitchens","pavers"],"project":"luxe","w":1000,"h":667},{"img":"pt-pavers","cap":"Paver walkway","cats":["pavers"],"project":null,"w":1000,"h":667},{"img":"pj-creek-5","cap":"Flagstone path","cats":["pavers","planting"],"project":"creek","w":750,"h":1000},{"img":"pt-urn","cap":"Lit agave urn","cats":["fire","planting"],"project":"wall","w":1000,"h":667},{"img":"learn-citrus","cap":"Citrus and ferns","cats":["planting"],"project":"wall","w":1000,"h":667},{"img":"learn-tropical","cap":"Tropical planting by the pond","cats":["planting","water"],"project":"koi","w":1000,"h":667},{"img":"pj-creek-6","cap":"Tiered fountain","cats":["water","planting"],"project":"creek","w":750,"h":1000},{"img":"learn-mossrock","cap":"Moss rock and grasses","cats":["planting"],"project":null,"w":1000,"h":667},{"img":"learn-feathergrass","cap":"Uplit feather grass","cats":["planting","fire"],"project":null,"w":1000,"h":667},{"img":"learn-sconce","cap":"Wall sconces on a water wall","cats":["fire","water"],"project":"wall","w":1000,"h":667},{"img":"learn-bougainvillea","cap":"Bougainvillea trellis","cats":["planting"],"project":null,"w":1000,"h":667},{"img":"learn-foxtail","cap":"Foxtail fern and boulders","cats":["planting"],"project":null,"w":750,"h":1000},{"img":"3d-dvb-dusk-1","cap":"The side yard: 3D design and built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-2","cap":"The water wall: 3D design and built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-3","cap":"The fire lounge: 3D design and built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-4","cap":"The spa deck: 3D design and built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-5","cap":"The sauna: 3D design and built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-6","cap":"The covered patio: 3D design and built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-7","cap":"The turf yard: 3D design and built","cats":["3d"],"project":null,"w":720,"h":900}];
+  const gallery = [{"img":"wf-creek-firebowl","cap":"Fire Bowl Creek","cats":["water","fire"],"project":"creek","w":1050,"h":1400},{"img":"wf-creek-falls","cap":"Lavender Creek","cats":["water","planting"],"project":"creek","w":1050,"h":1400},{"img":"wf-waterwall","cap":"Moonlit Water Wall","cats":["water","fire"],"project":"wall","w":1400,"h":934},{"img":"wf-koi","cap":"Palm Koi Pond","cats":["water"],"project":"koi","w":1400,"h":934},{"img":"wf-three-column-wall","cap":"Three-Column Water Wall","cats":["water"],"project":"well","w":1400,"h":866},{"img":"pj-creek-1","cap":"Gravel Fire-Bowl Court","cats":["fire","pavers"],"project":"creek","w":1000,"h":750},{"img":"svc-pavilion","cap":"Timber Pavilion and Outdoor Kitchen","cats":["kitchens"],"project":"creek","w":1000,"h":750},{"img":"wf-boulder-falls","cap":"Boulder Falls","cats":["water"],"project":null,"w":1400,"h":1050},{"img":"pj-well-1","cap":"Hot Tub on a Composite Deck","cats":["wellness"],"project":"well","w":1000,"h":667},{"img":"pj-koi-1","cap":"Koi Pond with Boulder Waterfalls","cats":["water"],"project":"koi","w":1000,"h":667},{"img":"svc-fire","cap":"Gas Fire Lounge","cats":["fire"],"project":"well","w":1000,"h":667},{"img":"pj-hidden-1","cap":"Outdoor Kitchen and Bar","cats":["kitchens"],"project":"hidden","w":1000,"h":667},{"img":"wf-pond-garden","cap":"Garden Pond","cats":["water","planting"],"project":null,"w":1400,"h":1050},{"img":"pj-wall-1","cap":"Water Wall Garden","cats":["water"],"project":"wall","w":1000,"h":667},{"img":"svc-wellness","cap":"Cube Sauna at Night","cats":["wellness","fire"],"project":"well","w":1000,"h":667},{"img":"pj-luxe-1","cap":"Louvered Pergola Lounge","cats":["kitchens","pavers"],"project":"luxe","w":1000,"h":667},{"img":"wf-boulder-night","cap":"Lantern Falls","cats":["water","fire"],"project":null,"w":1390,"h":1042},{"img":"pj-creek-2","cap":"Pavilion Bar and Kitchen","cats":["kitchens"],"project":"creek","w":1000,"h":750},{"img":"svc-turf","cap":"Turf and Covered Patio","cats":["planting","pavers"],"project":null,"w":1000,"h":667},{"img":"wf-modern","cap":"Scupper Water Wall","cats":["water"],"project":"hidden","w":1400,"h":934},{"img":"pj-hidden-2","cap":"Cedar Barrel Sauna","cats":["wellness"],"project":"hidden","w":1000,"h":667},{"img":"pj-creek-3","cap":"Pondless Stream and Waterfalls","cats":["water","planting"],"project":"creek","w":750,"h":1000},{"img":"svc-pavers","cap":"Paver Patio","cats":["pavers"],"project":"luxe","w":1000,"h":667},{"img":"pj-wall-2","cap":"Water Wall at Dusk","cats":["water","fire"],"project":"wall","w":1000,"h":667},{"img":"svc-kitchen","cap":"Kitchen Under a Louvered Pergola","cats":["kitchens"],"project":"hidden","w":1000,"h":667},{"img":"wf-stream","cap":"Garden Stream","cats":["water","planting"],"project":null,"w":1050,"h":1400},{"img":"pj-well-2","cap":"Porcelain Paver Lounge","cats":["pavers","fire"],"project":"well","w":1000,"h":667},{"img":"svc-walls","cap":"Seat Wall and Pavers","cats":["pavers","planting"],"project":null,"w":1000,"h":750},{"img":"pj-creek-4","cap":"Stone-Veneer Bar with a Beer Tap","cats":["kitchens"],"project":"creek","w":750,"h":1000},{"img":"wf-stonewall","cap":"Ledgestone Spill Wall","cats":["water","fire"],"project":"well","w":1400,"h":934},{"img":"pj-koi-2","cap":"Koi Pond Shoreline","cats":["water","planting"],"project":"koi","w":1000,"h":667},{"img":"svc-lighting","cap":"Fire Table and Landscape Lighting","cats":["fire"],"project":null,"w":1000,"h":667},{"img":"pj-luxe-2","cap":"Pergola Dining Patio","cats":["kitchens","pavers"],"project":"luxe","w":1000,"h":667},{"img":"pt-pavers","cap":"Paver Walkway","cats":["pavers"],"project":null,"w":1000,"h":667},{"img":"pj-creek-5","cap":"Flagstone Path","cats":["pavers","planting"],"project":"creek","w":750,"h":1000},{"img":"pt-urn","cap":"Lit Agave Urn","cats":["fire","planting"],"project":"wall","w":1000,"h":667},{"img":"learn-citrus","cap":"Citrus and Ferns","cats":["planting"],"project":"wall","w":1000,"h":667},{"img":"learn-tropical","cap":"Tropical Planting by the Pond","cats":["planting","water"],"project":"koi","w":1000,"h":667},{"img":"pj-creek-6","cap":"Tiered Fountain","cats":["water","planting"],"project":"creek","w":750,"h":1000},{"img":"learn-mossrock","cap":"Moss Rock and Grasses","cats":["planting"],"project":null,"w":1000,"h":667},{"img":"learn-feathergrass","cap":"Uplit Feather Grass","cats":["planting","fire"],"project":null,"w":1000,"h":667},{"img":"learn-sconce","cap":"Wall Sconces on a Water Wall","cats":["fire","water"],"project":"wall","w":1000,"h":667},{"img":"learn-bougainvillea","cap":"Bougainvillea Trellis","cats":["planting"],"project":null,"w":1000,"h":667},{"img":"learn-foxtail","cap":"Foxtail Fern and Boulders","cats":["planting"],"project":null,"w":750,"h":1000},{"img":"3d-dvb-dusk-1","cap":"The Side Yard: 3D Design and Built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-2","cap":"The Water Wall: 3D Design and Built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-3","cap":"The Fire Lounge: 3D Design and Built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-4","cap":"The Spa Deck: 3D Design and Built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-5","cap":"The Sauna: 3D Design and Built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-6","cap":"The Covered Patio: 3D Design and Built","cats":["3d"],"project":null,"w":720,"h":900},{"img":"3d-dvb-dusk-7","cap":"The Turf Yard: 3D Design and Built","cats":["3d"],"project":null,"w":720,"h":900}];
   let galFilter = 'all';
   function setGalleryFilter(f) { galFilter = GAL_CATS.some(([k]) => k === f) ? f : 'all'; renderGallery(); }
   function renderGallery() {
@@ -903,10 +938,21 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
       <div style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-primary" href="tel:+12096464046">Call about a project like this</a></div></div>`);
   }
 
+  function openPost(id) {
+    if (id === 'lisa') {
+      openDlg(`<div class="dlg-img"><img src="img/${lisa.img}.jpg" alt="Moonlit Water Wall, a lit stucco and ledgestone water wall at dusk"></div><div class="dlg-body"><p class="eyebrow">${esc(lisa.tag)}</p><h2 id="dlg-title">${esc(lisa.title)}</h2>
+        <p style="font-weight:700">${esc(lisa.byline)}</p><div class="prose-col">${lisa.sections.map(([h, t]) => `${h ? `<h3>${esc(h)}</h3>` : ''}<p>${esc(t)}</p>`).join('')}</div>
+        <div class="dlg-gallery">${lisa.gallery.map(i => `<img src="img/${i}.jpg" alt="Green Lion Landscape water feature project" loading="lazy">`).join('')}</div>
+        <p class="note">Project photos are starting points for a conversation, not promises that the same design suits every property.</p>
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-primary" href="#services" data-focus="svc-water">Explore water features</a><a class="btn btn-ghost" href="tel:+12096464046">Call to schedule</a></div></div>`);
+    }
+  }
+
   /* ---------- Global clicks ---------- */
   document.addEventListener('click', e => {
     const vd = e.target.closest('[data-video]'); if (vd) { e.preventDefault(); openVideo(vd.dataset.video); return; }
     const ph = e.target.closest('[data-photo]'); if (ph) { e.preventDefault(); openPhoto(ph.dataset.photo); return; }
+    const po = e.target.closest('[data-post]'); if (po) { openPost(po.dataset.post); return; }
     const pj = e.target.closest('[data-project]'); if (pj) { e.preventDefault(); openProject(pj.dataset.project); return; }
     const cp = e.target.closest('[data-copy]');
     if (cp) { e.preventDefault(); e.stopPropagation(); const v = cp.dataset.copy; const p = navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(v) : Promise.reject(); p.then(() => toast('Phone number copied')).catch(() => toast('Call ' + v)); return; }
