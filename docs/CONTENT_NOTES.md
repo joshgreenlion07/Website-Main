@@ -60,7 +60,7 @@ At the owner's request, before pointing greenlionlandscape.com at this site:
 - **My Project** links to Green Lion Area Planner in a new tab. The demo client portal was removed.
 - **Lisa's article** is approved, and the draft label is gone.
 - **SEO:** the page title matches the old site ("Landscape Contractor Modesto, CA | Green Lion Landscape"). It also has a canonical URL, social preview tags, `robots.txt` and `sitemap.xml`.
-- **Redirects:** `vercel.json` sends all 27 page addresses of the old site to the matching view, service card or gallery filter. Fencing and maintenance pages go to Services, because this site has no fencing or maintenance service yet. The About and Accessibility pages go to Home.
+- **Redirects:** `vercel.json` sends all 27 page addresses of the old site to the matching view, service card or gallery filter. On Nov 20, 2026 it also gained the 29 older addresses Google still showed in search, which were returning 404: `/inspirational-waterscapes` (the top page, about 5,100 impressions over 16 months), `/portfolio` and its sub-pages, `/contact-us`, `/contact`, the service and project pages, and the blog posts. `trailingSlash: false` makes `/portfolio/` redirect the same way as `/portfolio`. Fencing and maintenance pages go to Services, because this site has no fencing or maintenance service yet. The About and Accessibility pages go to Home.
 
 ### DNS at Squarespace
 
