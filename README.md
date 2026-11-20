@@ -34,13 +34,15 @@ Every booking button is a **Call** button (`tel:+12096464046`), and the header k
 
 | View | What it does |
 | --- | --- |
-| **Home** | A water-feature hero with a swipeable gallery that leads with *Fire Bowl Creek*, *Lavender Creek*, *Moonlit Water Wall* and *Palm Koi Pond*. Then the *3D Before You Build* band (free 3D design offer, the *We built this yard in 3D first* reel on a silent loop with a Daytime / Dusk switch and a design-vs-built slide gallery), a *What we install* showcase (custom water features, landscaping, pavers, outdoor kitchens and synthetic grass, each linking to the Gallery), Lisa's Design Notebook article *Water Features Are Taking Over*, one short Journal lesson with the frost check, other services, recent projects and a design consultation call to action. |
-| **Services** | The five-step process, the service categories and the project scopes. No prices are shown. Water features, Pavers and Turf & planting each carry a free 3D design row that opens a 3D walkthrough reel. |
-| **Gallery** | 54 photos of Green Lion work in a grid, with filters for water features, patios and pavers, kitchens and pavilions, fire and lighting, saunas and hot tubs, planting and turf, and 3D design vs built. Tap a photo for a larger view, its project and a Call button. |
+| **Home** | A water-feature hero with a swipeable gallery that leads with *Fire Bowl Creek*, *Lavender Creek*, *Moonlit Water Wall* and *Palm Koi Pond*. Then the *3D Before You Build* band (free 3D design offer, the daytime *We built this yard in 3D first* reel on a silent loop and a design-vs-built slide gallery), a *What we install* showcase (custom water features, landscaping, pavers, outdoor kitchens and synthetic grass, each linking to the Gallery), Lisa's Design Notebook article *Water Features Are Taking Over*, one short Journal lesson with the frost check, other services, recent projects and a design consultation call to action. |
+| **Services** | The five-step process; *From a Measured Plan to Your Yard in 3D* (one client's scaled site plan and six 3D views of the same yard, with no client details); the service categories; and the project scopes. No prices are shown. Water features, Pavers and Turf & planting each carry a free 3D design row that opens a 3D walkthrough reel. |
+| **Gallery** | 51 photos of Green Lion work in a grid, with filters for water features, patios and pavers, kitchens and pavilions, fire and lighting, saunas and hot tubs, planting and turf, and 3D design vs built. Tap a photo for a larger view, its project and a Call button. |
 
 ## Going live
 
 `vercel.json` sends the 27 page addresses of the old site (for example `/service-pavers.html` and `/gallery-water.html`) to the matching part of this site with permanent redirects. `robots.txt` and `sitemap.xml` point search engines at https://www.greenlionlandscape.com/. The domain's DNS is at Squarespace; see `docs/CONTENT_NOTES.md` for the records.
+
+Photos are daytime only. Night and dusk shots were swapped for daytime photos of the same subject (see `docs/CONTENT_NOTES.md`).
 
 ## Project structure
 

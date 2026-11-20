@@ -12,6 +12,33 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa's Design Notebook article **"Water Features Are Taking Over"** was rewritten on Nov 20, 2026 at the owner's request. It covers nature, comfort and peace in the backyard, and Green Lion's passion for building these escapes. It's written in the team's voice, but it runs under Lisa Taylor's byline, so **Lisa should read it**. Her earlier article, approved on Nov 18, is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
 
+## Daytime photos only (Nov 20, 2026)
+
+At the owner's request the site shows no night or dusk photos. Each one was swapped for a daytime photo of the same subject, or removed where none exists:
+
+| Was (night or dusk) | Now (daytime) |
+| --- | --- |
+| Moonlit Water Wall, lit at dusk | The same water wall by day, with the leaping-frog sculptures (`wf-waterwall-day`, Aug 2026 client photography) |
+| Water Wall Garden, wide at dusk | The same yard, wide, by day (`pj-wall-wide`) |
+| Lit agave urn | The same urn by day (`learn-agave`) |
+| Lantern Falls with underwater lights | The same boulder falls by day (`wf-lantern-falls`, Inspirational Waterscapes IMG_0174) |
+| Ledgestone Spill Wall at night | The same three-column wall by day (`wf-three-column-wall`, E9A9118) |
+| Gas fire lounge at night | The same lounge by day (`svc-fire-day`, E9A9130) |
+| Cube sauna at night | The same sauna by day (`svc-wellness-day`, E9A9142) |
+| Fire table and lighting at night | Removed; the daytime lounge is already in the Gallery |
+| Uplit feather grass | Removed from the Gallery. The frost check's feather grass row uses daytime blue fescue (`learn-bluefescue`). |
+| Dusk 3D reels and slides, and the day-to-night reel | Removed with the Daytime / Dusk switch. The 3D band, the slides and the service reels are daytime only. |
+
+The working titles *Moonlit Water Wall* and *Lantern Falls* are kept; their captions now describe the daytime photos.
+
+## Services: from a measured plan to 3D (Nov 20, 2026)
+
+The Services page has a *From a Measured Plan to Your Yard in 3D* section after *How It Works*. It shows one client's yard with the owner's details removed:
+
+- **The plan** (`design-plan`) is the *Site Development Plan* from the project's design set (Oct 2025). It's cropped to remove the title block, which holds the client's names, address, the design team's credits and the plan index. The house is shown only as a generic "Owner's House" roof, with no rooms. The plan keeps the yard dimensions, the lettered features, the plant legend and the hardscape materials. The same image replaces the sample drawing on the *2D & 3D Design* service card.
+- **The 3D** (`design-3d-1` to `-6`) is six daytime renderings of the same yard from that design set: the view from above, the fire pit lounge, the hot tub and pergola fireplace, the water feature wall, the outdoor kitchen and the side yard. They're labeled as design concepts. The built water feature differs from the 3D concept.
+- Tapping the plan or a render opens it larger. No client name, address or street appears anywhere on the site.
+
 ## Home page updates (Nov 20, 2026)
 
 - **Landscape Lighting:** the service is no longer *Lighting, Audio & Video*. Audio and video are out at the owner's request. It now shows a close-up of a lit spotlight among yucca blades (`svc-lighting-closeup`, from the Aug 2026 client photography).
@@ -58,15 +85,15 @@ At the owner's request:
 
 Added November 18, 2026 with the owner's approval of the free 3D design offer.
 
-- **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Call to book your free 3D design*, the *We built this yard in 3D first* reel playing silently on a loop (the daytime version by default; the owner chose it on Nov 20, 2026), a Daytime / Dusk switch that swaps the reel and the slides, and slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the same reel with sound.
-- **Services:** Water features, Pavers & decorative concrete, and Turf, planting & irrigation each have a free 3D design row. It opens one reel in a dialog: water features get *We built this backyard in 3D first* (19 s), pavers get *Walk your yard in 3D* (13 s), and turf and planting get *Same yard, every hour of the day* (12 s). Their booking button reads *Book your 3D design consultation*.
+- **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Call to book your free 3D design*, the *We built this yard in 3D first* reel playing silently on a loop (the daytime version, chosen by the owner on Nov 20, 2026), and the daytime slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the same reel with sound.
+- **Services:** Water features, Pavers & decorative concrete, and Turf, planting & irrigation each have a free 3D design row that opens one reel in a dialog. Water features get *We Built This Backyard in 3D First* (19 s, daytime), pavers get *Walk Your Yard in 3D* (13 s) and turf and planting get *How It Works* (13 s, daytime). Their button reads *Call to book your free 3D design*.
 - The disclosure line sits under the home video and in every video dialog: *Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.* The slides are still photos and 3D renders labeled *3D design* and *Built*.
 - No client names appear in the copy, the slides or the reels.
 - The 3D buttons call (209) 646-4046.
-- Every reel on the site stops just before its end card, with a half-second fade. The end cards in the social files still show the old number, (209) 585-9767, and the page has its own Call button anyway. The band's daytime reel (`video/3d-see-it-first-day.mp4`, from `post1d_final.mp4`, the same file as the Drive daytime reel) is 18.8 s. The pop-up reels with sound are 19 s (water features, dusk), 13 s (pavers) and 12 s (turf and planting).
+- Every reel on the site stops just before its end card, with a half-second fade. The end cards in the social files still show the old number, (209) 585-9767, and the page has its own Call button anyway. The band's daytime reel (`video/3d-see-it-first-day.mp4`, from `post1d_final.mp4`, the same file as the Drive daytime reel) is 18.8 s. The pop-up reels with sound are 19 s (water features), 13 s (pavers) and 13 s (turf and planting). All of them are daytime.
 - When the social media files are re-exported with (209) 646-4046, the full reels can go back in. Carousel slide 8 shows the old number too, and the site doesn't use it.
 - The loop plays only while it is on screen, and does not autoplay for visitors who ask for reduced motion (they get play controls).
-- Not used yet: the spa and sauna reel, the *see it before ground* daytime reel and carousel slide 8 (the end card).
+- Not used: the spa and sauna reel, the dusk versions of the reels and carousel, the day-to-night reel (it ends after dark) and carousel slide 8 (the end card).
 
 ## Changes made for brand compliance
 
@@ -103,12 +130,12 @@ Exported from the Green Lion shared drive at web size (JPEG, quality 72). The RA
 | --- | --- | --- |
 | `wf-koi`, `wf-stonewall`, `wf-three-column-wall`, `pj-koi-*`, `pj-well-*`, `learn-tropical`, `svc-lighting`, `svc-wellness`, `svc-fire` | Branding › Photos RAW | Feb 2026 |
 | `wf-waterwall`, `pj-wall-*`, `learn-citrus`, `learn-agave`, `learn-feathergrass`, `learn-mossrock`, `learn-spotlight`, `learn-sconce`, `svc-lighting-closeup`, `learn-blueflowers`, `pt-urn`, `pt-fixture` | Completed client project photography | Aug 2026 |
-| `wf-boulder-night`, `wf-modern`, `svc-water` | Look Book › Inspirational Waterscapes | 2025 |
+| `wf-lantern-falls` (IMG_0174, daytime), `wf-modern`, `svc-water` | Look Book › Inspirational Waterscapes | 2025 |
 | `pj-hidden-*`, `svc-kitchen`, `svc-turf`, `svc-retaining` (E9A5259) | Look Book › Hidden Resort | 2025 |
 | `pj-luxe-*`, `svc-pavers`, `learn-bougainvillea`, `pt-pavers` | Look Book › Luxe Lounge | 2025 |
 | `wf-boulder-falls` (IMG_0397), `wf-pond-garden` (IMG_1815), `wf-stream` (IMG_6162), `lisa-stream` (IMG_6163), `learn-foxtail` (IMG_0848), `svc-walls` (IMG_1810) | CreatorLab drive › Branding | Added Oct 29, 2026 |
 | `wf-creek-falls` (IMG_6484), `lisa-waterfall` (IMG_6463), `wf-creek-firebowl` (IMG_6376), `pj-creek-1` (IMG_6379), `pj-creek-2` (IMG_6381), `pj-creek-3` (IMG_6483), `pj-creek-4` (IMG_6371), `pj-creek-5` (IMG_6358), `pj-creek-6` (IMG_6360), `svc-pavilion` (IMG_6382), `learn-lavender` (IMG_6463) | CreatorLab drive › Branding › Final Photos (edited and upscaled versions of real project photos) | Added Nov 13, 2026 |
-| `3d-*` images and `video/3d-*` reels (covers, design-vs-built slides 1 to 7, dusk and daytime) | Green Lion Landscape › 3D Before You Build, and its daytime subfolder | Reels and carousels made for social, Nov 2026. Reels re-encoded to 720 × 1280 H.264; slides resized to 720 × 900. |
+| `3d-*` images and `video/3d-*` reels (covers, daytime design-vs-built slides 1 to 7) | Green Lion Landscape › 3D Before You Build, and its daytime subfolder | Reels and carousels made for social, Nov 2026. Reels re-encoded to 720 × 1280 H.264; slides resized to 720 × 900. |
 
 `svc-walls` (IMG_1810) replaces the earlier Hidden Resort raised-bed shot. `svc-pavilion` replaces the Hidden Resort kitchen photo on the Services card; that photo is still used in the Hidden Resort project.
 
