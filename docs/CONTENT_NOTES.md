@@ -72,7 +72,7 @@ The 2026 guide asks for grounded claims, no unapproved pricing and only the curr
 | Decision | What conflicts | Prototype today |
 | --- | --- | --- |
 | Phone number | The older *Website Marketing* brief listed (209) 338-8766 and the 2026 guide used (209) 585-9767. On Nov 18, 2026 the owner changed the number to (209) 646-4046. | Uses (209) 646-4046 everywhere on the site. The 3D reels and carousel slide 8 still show the old number in their end cards until the social media files are re-exported (see below). |
-| Hero headline | The owner asked for "Central Valley's favorite water features". The guide says to keep claims grounded. Lisa's draft suggests "Water. Stone. Your backyard retreat." instead. | Shows the owner's headline. |
+| Hero headline | The owner asked for "Central Valley's Favorite Water Features" (title case since Nov 20, 2026, with the eyebrow "Water features · Modesto, Turlock, Tracy"). The guide says to keep claims grounded. Lisa's draft suggests "Water. Stone. Your backyard retreat." instead. | Shows the owner's headline. |
 | Bottom navigation | The UX spec's bottom nav is Home, Services, Call, My Project. The owner first asked for Home, Services, Inspire, Book, My Project. | Since Nov 18, 2026: Home, Services, Call (the raised circle), Gallery, My Project (opens Area Planner). The header Call button is still there too. |
 
 ## Placeholders to confirm before launch
