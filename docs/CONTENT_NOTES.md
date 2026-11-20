@@ -9,8 +9,14 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Project names, stories and features for the Look Book projects **Hidden Resort** and **Luxe Lounge**, from the Look Book creative brief.
 - The five-step process and the Essential / Signature / Luxury project scopes, from the Look Book creative brief. Dollar ranges have been removed (see below).
 - Service categories, from the *Website Marketing* content brief.
-- Lisa Taylor's article **"Are Water Features Taking Over Modesto Backyards?"**, from her design-notebook draft. The page shows an abridged version. Lisa approved it on Nov 18, 2026, so the draft label is gone.
+- Lisa Taylor's article **"Are Water Features Taking Over Modesto Backyards?"** was approved on Nov 18, 2026. On Nov 20, 2026 the owner replaced it on the home page with the *What we install* showcase. The article text is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
+
+## Home page updates (Nov 20, 2026)
+
+- **Hero text:** now about specialty water feature design and installation.
+- **What we install:** a showcase replaces Lisa's Design Notebook band. It has five photo tiles: custom water features, landscaping, pavers, outdoor kitchens and synthetic grass. Each tile opens the matching Gallery filter, and *See more in our gallery* opens the full Gallery.
+- **Gallery filters:** landscaping and synthetic grass both open the *Planting & turf* filter.
 
 ## Going live (Nov 18, 2026)
 
