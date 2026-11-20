@@ -8,6 +8,16 @@
       "permanent": true
     },
     {
+      "source": "/services/index.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/gallery/index.html",
+      "destination": "/gallery",
+      "permanent": true
+    },
+    {
       "source": "/about.html",
       "destination": "/",
       "permanent": true
@@ -24,127 +34,127 @@
     },
     {
       "source": "/services.html",
-      "destination": "/#services",
+      "destination": "/services",
       "permanent": true
     },
     {
       "source": "/waterscapes.html",
-      "destination": "/#svc-water",
+      "destination": "/services#svc-water",
       "permanent": true
     },
     {
       "source": "/portfolio.html",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/service-pavers.html",
-      "destination": "/#svc-pavers",
+      "destination": "/services#svc-pavers",
       "permanent": true
     },
     {
       "source": "/service-fire.html",
-      "destination": "/#svc-fire",
+      "destination": "/services#svc-fire",
       "permanent": true
     },
     {
       "source": "/service-kitchens.html",
-      "destination": "/#svc-kitchen",
+      "destination": "/services#svc-kitchen",
       "permanent": true
     },
     {
       "source": "/service-pergolas.html",
-      "destination": "/#svc-kitchen",
+      "destination": "/services#svc-kitchen",
       "permanent": true
     },
     {
       "source": "/service-lighting.html",
-      "destination": "/#svc-lighting",
+      "destination": "/services#svc-lighting",
       "permanent": true
     },
     {
       "source": "/service-retaining.html",
-      "destination": "/#svc-walls",
+      "destination": "/services#svc-walls",
       "permanent": true
     },
     {
       "source": "/service-sauna.html",
-      "destination": "/#svc-wellness",
+      "destination": "/services#svc-wellness",
       "permanent": true
     },
     {
       "source": "/service-turf.html",
-      "destination": "/#svc-turf",
+      "destination": "/services#svc-turf",
       "permanent": true
     },
     {
       "source": "/service-fencing.html",
-      "destination": "/#services",
+      "destination": "/services",
       "permanent": true
     },
     {
       "source": "/service-maintenance.html",
-      "destination": "/#services",
+      "destination": "/services",
       "permanent": true
     },
     {
       "source": "/gallery-highlights.html",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/gallery-water.html",
-      "destination": "/#gallery-water",
+      "destination": "/gallery#water",
       "permanent": true
     },
     {
       "source": "/gallery-pavers.html",
-      "destination": "/#gallery-pavers",
+      "destination": "/gallery#pavers",
       "permanent": true
     },
     {
       "source": "/gallery-retaining.html",
-      "destination": "/#gallery-retaining",
+      "destination": "/gallery#retaining",
       "permanent": true
     },
     {
       "source": "/gallery-kitchens.html",
-      "destination": "/#gallery-kitchens",
+      "destination": "/gallery#kitchens",
       "permanent": true
     },
     {
       "source": "/gallery-pergolas.html",
-      "destination": "/#gallery-pergolas",
+      "destination": "/gallery#pergolas",
       "permanent": true
     },
     {
       "source": "/gallery-fire.html",
-      "destination": "/#gallery-fire",
+      "destination": "/gallery#fire",
       "permanent": true
     },
     {
       "source": "/gallery-sauna.html",
-      "destination": "/#gallery-sauna",
+      "destination": "/gallery#sauna",
       "permanent": true
     },
     {
       "source": "/gallery-turf.html",
-      "destination": "/#gallery-turf",
+      "destination": "/gallery#turf",
       "permanent": true
     },
     {
       "source": "/gallery-fencing.html",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/inspirational-waterscapes",
-      "destination": "/#gallery-water",
+      "destination": "/gallery#water",
       "permanent": true
     },
     {
       "source": "/portfolio",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
@@ -159,12 +169,12 @@
     },
     {
       "source": "/commercial-services",
-      "destination": "/#services",
+      "destination": "/services",
       "permanent": true
     },
     {
       "source": "/residential-services",
-      "destination": "/#services",
+      "destination": "/services",
       "permanent": true
     },
     {
@@ -184,112 +194,112 @@
     },
     {
       "source": "/pathwaysandpatios",
-      "destination": "/#svc-pavers",
+      "destination": "/services#svc-pavers",
       "permanent": true
     },
     {
       "source": "/turf",
-      "destination": "/#svc-turf",
+      "destination": "/services#svc-turf",
       "permanent": true
     },
     {
       "source": "/customfirepitsandoutdoorkitchens",
-      "destination": "/#svc-fire",
+      "destination": "/services#svc-fire",
       "permanent": true
     },
     {
       "source": "/outdoorlighting",
-      "destination": "/#svc-lighting",
+      "destination": "/services#svc-lighting",
       "permanent": true
     },
     {
       "source": "/3d-virtual-designs",
-      "destination": "/#design-case",
+      "destination": "/services#design-case",
       "permanent": true
     },
     {
       "source": "/luxe-lounge",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/hidden-resort",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/palmstone-escape",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/portfolio-highlight-1",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/portfolio-highlight-2",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/portfolio-highlight-3",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/portfolio/pavers",
-      "destination": "/#gallery-pavers",
+      "destination": "/gallery#pavers",
       "permanent": true
     },
     {
       "source": "/portfolio/synthetic-grass-putting-greens",
-      "destination": "/#gallery-turf",
+      "destination": "/gallery#turf",
       "permanent": true
     },
     {
       "source": "/portfolio/outdoor-kitchens",
-      "destination": "/#gallery-kitchens",
+      "destination": "/gallery#kitchens",
       "permanent": true
     },
     {
       "source": "/portfolio/water-features",
-      "destination": "/#gallery-water",
+      "destination": "/gallery#water",
       "permanent": true
     },
     {
       "source": "/portfolio/retaining-walls",
-      "destination": "/#gallery-retaining",
+      "destination": "/gallery#retaining",
       "permanent": true
     },
     {
       "source": "/portfolio/:path*",
-      "destination": "/#gallery",
+      "destination": "/gallery",
       "permanent": true
     },
     {
       "source": "/blog/small-backyard-big-luxury-sauna-amp-hot-tub-installations-in-the-central-valley",
-      "destination": "/#svc-wellness",
+      "destination": "/services#svc-wellness",
       "permanent": true
     },
     {
       "source": "/blog/transforming-central-valley-backyards-with-modern-pergolas-and-outdoor-living-spaces",
-      "destination": "/#svc-kitchen",
+      "destination": "/services#svc-kitchen",
       "permanent": true
     },
     {
       "source": "/blog/creating-a-home-oasis-the-benefits-of-custom-waterscapes-in-your-backyard",
-      "destination": "/#svc-water",
+      "destination": "/services#svc-water",
       "permanent": true
     },
     {
       "source": "/blog/bringing-tranquility-home-custom-koi-ponds-amp-water-features-in-the-central-valley",
-      "destination": "/#svc-water",
+      "destination": "/services#svc-water",
       "permanent": true
     },
     {
       "source": "/blog/elevating-outdoor-living-how-pavers-amp-porcelain-tile-create-an-upscale-backyard",
-      "destination": "/#svc-pavers",
+      "destination": "/services#svc-pavers",
       "permanent": true
     },
     {

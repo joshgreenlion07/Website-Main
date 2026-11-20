@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="{{description}}">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} [hidden]{display:none!important}</style>
+<title>{{title}}</title>
+<link rel="canonical" href="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Green Lion Landscape">
+<meta property="og:title" content="{{og_title}}">
+<meta property="og:description" content="{{og_description}}">
+<meta property="og:url" content="{{url}}">
+<meta property="og:image" content="https://www.greenlionlandscape.com/img/{{og_image}}.jpg">
+<link rel="icon" href="/img/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="apple-touch-icon" href="/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Tinos and Arimo are the Google Fonts releases of the Liberation Serif / Liberation Sans designs named in the 2026 brand guide -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&family=Tinos:ital,wght@0,400;0,700;1,400&display=swap">
+<link rel="stylesheet" href="/assets/site.css?v={{css_version}}">
+</head>
+<body data-page="{{page}}">
+{{header}}
+
+<div class="scroller" id="scroller">
+<main id="main">
+{{main}}
+</main>
+
+{{footer}}
+</div>
+
+{{tail}}
+<script src="/assets/site.js?v={{js_version}}"></script>
+</body>
+</html>

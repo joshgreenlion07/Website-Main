@@ -12,6 +12,15 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa's Design Notebook article **"Water Features Are Taking Over"** was rewritten on Nov 20, 2026 at the owner's request. It covers nature, comfort and peace in the backyard, and Green Lion's passion for building these escapes. It's written in the team's voice, but it runs under Lisa Taylor's byline, so **Lisa should read it**. Her earlier article, approved on Nov 18, is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
 
+## Real pages (Nov 20, 2026)
+
+The site was one page with hash views, so search engines saw a single address. It is now three real pages that share one layout, header, footer and tab bar: Home (`/`), Services (`/services`) and Gallery (`/gallery`). Each has its own title, description, canonical link and social preview, and `sitemap.xml` lists all three. The content and design are unchanged.
+
+- **Titles.** Home keeps the old site's title. Services: "Landscaping & Water Feature Services | Green Lion Landscape". Gallery: "Water Feature & Landscaping Gallery | Green Lion Landscape".
+- **Redirects.** The old-site addresses in `vercel.json` now point at the real pages, for example `/inspirational-waterscapes` to `/gallery#water` and `/3d-virtual-designs` to `/services#design-case`. Old one-page links such as `/#services` and `/#gallery-water` are forwarded by the home page script, because the part after `#` never reaches the server.
+- **Icon.** A lion favicon (`favicon.ico`, `img/favicon-192.png`) and an Apple touch icon, cut from the approved Lionhead logo on Charcoal. Search results show this icon next to the site name.
+- **How to edit.** See "Edit and build" in the README: edit `src/` and `assets/`, then run `python3 tools/build.py`.
+
 ## Daytime photos only (Nov 20, 2026)
 
 At the owner's request the site shows no night or dusk photos. Each one was swapped for a daytime photo of the same subject, or removed where none exists:

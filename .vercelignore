@@ -1,0 +1,3 @@
+# Source and tooling for the built pages; Vercel only needs the built files.
+/src
+/tools
