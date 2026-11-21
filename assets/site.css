@@ -628,3 +628,19 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
 @media (min-width: 960px) { .cl-whole-grid { grid-template-columns: 1fr 1.1fr; gap: 3.5rem; } }
 .cl-faq { display: grid; justify-items: center; }
 .cl-faq .cp-faq-list { width: 100%; }
+
+/* Phones: a heavier, clearer bottom tab bar (owner request, Nov 21, 2026). A Leaf green top rule matches the header's,
+   the bar sits a shade darker than the page's Charcoal so it reads as its own layer, and the strip under it (the
+   iPhone home-indicator area) takes the bar's color so the bar runs to the bottom edge. */
+@media (max-width: 767px) {
+  :root { --tabbar-h: 76px; }
+  html { background: #151816; }
+  .tabbar { background: #151816; border-top: 3px solid var(--leaf); box-shadow: 0 -10px 24px rgba(0, 0, 0, .28); }
+  .tabbar a { gap: 4px; color: #E4DFD3; font-size: .78rem; letter-spacing: .01em; }
+  .tabbar a svg { width: 27px; height: 27px; }
+  .tabbar a[aria-current="page"] { color: var(--lime); }
+  .tabbar a[aria-current="page"] svg { box-sizing: content-box; padding: 4px 16px; border-radius: 999px; background: rgba(125, 192, 15, .2); }
+  .tabbar .tab-call { color: #F5F2EA; }
+  .tabbar .tab-call .orb { width: 62px; height: 62px; margin-top: -30px; border-color: #151816; box-shadow: 0 4px 16px rgba(125, 192, 15, .45); }
+  .tabbar .tab-call .orb svg { width: 28px; height: 28px; }
+}
