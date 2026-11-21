@@ -144,8 +144,8 @@
 
   /* ---------- 3D Before You Build (reels and slides from the social campaign; files in video/ and img/3d-*) ---------- */
   const DISCLOSE_3D = 'Real Green Lion project. 3D design from our own Green Lion Growth Studio; photo motion, voice and music made with AI tools.';
-  // The credit line carries the Green Lion Growth Studio mark: the lion on a Charcoal plate with the studio name, as in Growth Studio's own header.
-  const GS_MARK = '<span class="gs-mark" aria-hidden="true"><img src="/img/lion-emblem.png" alt="" width="30" height="20"><span><b>Green Lion</b><small>Growth Studio</small></span></span>';
+  // The credit line carries the Green Lion Growth Studio wordmark (stacked, on Charcoal), from the Growth-Studio repo's brand/wordmark folder.
+  const GS_MARK = '<img class="gs-wordmark" src="/img/growth-studio-wordmark.svg" alt="Green Lion Growth Studio" width="115" height="44">';
   const disclose3d = (cls = 'p3-disclose') => `<p class="${cls} gs-credit">${GS_MARK}<span>${esc(DISCLOSE_3D)}</span></p>`;
   const promoVideos = {
     seeday: { src: '/video/3d-see-it-first-day.mp4', poster: '/img/3d-see-it-first-day-cover.jpg', len: 19, title: 'We Built This Backyard in 3D First', text: 'The water wall, the fire lounge, the spa and sauna deck, every planter and path: placed and walked through before we broke ground.' },

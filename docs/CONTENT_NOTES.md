@@ -14,7 +14,7 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 
 ## Growth Studio credit (Nov 21, 2026)
 
-At the owner's request, the 3D disclosure line now credits the in-house studio: *Real Green Lion project. 3D design from our own Green Lion Growth Studio; photo motion, voice and music made with AI tools.* It sits beside the Green Lion Growth Studio mark (the lion emblem on a Charcoal plate with "Green Lion" over "Growth Studio") under the home 3D video, in every 3D video dialog and on the 3D photos in the Gallery. Growth Studio has no separate logo file, so the mark copies the app's own header lockup; swap in a logo file here if one is made.
+At the owner's request, the 3D disclosure line now credits the in-house studio: *Real Green Lion project. 3D design from our own Green Lion Growth Studio; photo motion, voice and music made with AI tools.* It sits beside the Green Lion Growth Studio wordmark (`img/growth-studio-wordmark.svg`, the stacked on-Charcoal version) under the home 3D video, in every 3D video dialog and on the 3D photos in the Gallery. The wordmark comes from the Growth-Studio repo, `brand/wordmark/` at commit d9cf43f, where the README sets its rules: Charcoal or Warm white only, never over photos, the stacked version below about 40 px tall. The Green Lion Landscape logo stays the main site logo.
 
 ## Link previews and icons (Nov 21, 2026)
 
