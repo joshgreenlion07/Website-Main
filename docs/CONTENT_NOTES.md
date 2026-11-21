@@ -12,6 +12,24 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa's Design Notebook article **"Water Features Are Taking Over"** was rewritten on Nov 20, 2026 at the owner's request. It covers nature, comfort and peace in the backyard, and Green Lion's passion for building these escapes. It's written in the team's voice, but it runs under Lisa Taylor's byline, so **Lisa should read it**. Her earlier article, approved on Nov 18, is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
 
+## Link previews and icons (Nov 21, 2026)
+
+Every page now has its own link preview for texts and social apps: a 1200 x 630 image with the logo, the page's heading, its own photo and the phone number, and a preview title that matches the heading.
+
+| Page | Preview heading | Photo |
+| --- | --- | --- |
+| Home | Central Valley's Favorite Water Features | Fire Bowl Creek |
+| Services | Outdoor Living. Beautifully Built. | Boulder falls and the timber pavilion |
+| Gallery | Our Work | Four-photo mosaic |
+| Water Features | Custom Water Features in the Central Valley | Lantern Falls |
+| Tracy | Modern Water Features for Tracy Homes | Scupper water wall |
+| Modesto | Koi Ponds and Pondless Waterfalls in Modesto | Palm Koi Pond |
+| Turlock | Water Features in Turlock | Planted pond and the ledgestone water wall |
+
+The pages also carry the image size and alt text, an X (Twitter) large-image card, a Charcoal theme color and a web manifest. The favicon is the Lionhead on Charcoal, a little larger in the square so it reads at tab size, with 32, 192 and 512 px versions and a maskable icon for Android. Old icon addresses redirect to the new files.
+
+Phones and apps cache previews. iMessage keeps an old preview for a link it has already shown, and Facebook can be refreshed with its Sharing Debugger ("Scrape Again").
+
 ## Water feature city pages (Nov 21, 2026)
 
 Four new pages, built from the local search plan: a hub at `/water-features` and one page each for Tracy, Modesto and Turlock. Each city page has its own look while sharing the header, footer and tab bar:
@@ -43,7 +61,7 @@ The site was one page with hash views, so search engines saw a single address. I
 
 - **Titles.** Home keeps the old site's title. Services: "Landscaping & Water Feature Services | Green Lion Landscape". Gallery: "Water Feature & Landscaping Gallery | Green Lion Landscape".
 - **Redirects.** The old-site addresses in `vercel.json` now point at the real pages, for example `/inspirational-waterscapes` to `/gallery#water` and `/3d-virtual-designs` to `/services#design-case`. Old one-page links such as `/#services` and `/#gallery-water` are forwarded by the home page script, because the part after `#` never reaches the server.
-- **Icon.** A lion favicon (`favicon.ico`, `img/favicon-192.png`) and an Apple touch icon, cut from the approved Lionhead logo on Charcoal. Search results show this icon next to the site name.
+- **Icon.** A lion favicon cut from the approved Lionhead logo on Charcoal (see "Link previews and icons" below for the current files).
 - **How to edit.** See "Edit and build" in the README: edit `src/` and `assets/`, then run `python3 tools/build.py`.
 
 ## Daytime photos only (Nov 20, 2026)

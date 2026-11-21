@@ -1,0 +1,27 @@
+{
+  "name": "Green Lion Landscape",
+  "short_name": "Green Lion",
+  "description": "Custom landscaping, design and water features in Modesto, Turlock, Tracy and the Central Valley.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#202321",
+  "theme_color": "#202321",
+  "icons": [
+    {
+      "src": "/img/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/img/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

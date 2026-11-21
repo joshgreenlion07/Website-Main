@@ -29,7 +29,9 @@ python3 tools/build.py          # writes every page (index.html, services/index.
 python3 tools/build.py --check  # fails if a built file is out of date
 ```
 
-To add a page, add its content file to `src/pages/` and an entry to `PAGES`; the sitemap picks it up. `.vercelignore` keeps `src/` and `tools/` off the live site.
+To add a page, add its content file to `src/pages/` and an entry to `PAGES` (with its `share` eyebrow, heading and photos); the sitemap picks it up.
+
+Link previews: each page has its own 1200 x 630 share image in `img/share/` with the page's heading and photo, plus Open Graph and X (Twitter) card tags. After changing a heading or share photo, run `python3 tools/share_images.py`, then `python3 tools/build.py`. The image address carries a version, so texts and social apps fetch the new image instead of a cached one. `.vercelignore` keeps `src/` and `tools/` off the live site.
 
 ## Brand
 
@@ -76,7 +78,10 @@ assets/site.css       Styles for every page
 assets/site.js        Script for every page: data, carousel, gallery, dialogs
 src/                  Page sources and shared layout (not deployed)
 tools/build.py        Builds the pages and sitemap.xml from src/ (not deployed)
-favicon.ico           Lion icon (also img/favicon-192.png, img/apple-touch-icon.png)
+favicon.ico           Lion icon; img/icons/ has the 32, 192 and 512 px icons, the Apple touch icon and a maskable icon
+site.webmanifest      Name, colors and icons for phones that save the site
+img/share/            Link-preview images, one per page (1200 x 630)
+tools/share_images.py Makes img/share/*.jpg and the icons (needs the Liberation fonts)
 img/                  Web-sized photos and logo crops (3d-* are the 3D promo slides and reel covers)
 video/                Web-sized 3D promo reels (H.264, 720 × 1280)
 vercel.json           Redirects from the old site's pages to the new pages

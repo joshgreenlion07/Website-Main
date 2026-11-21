@@ -38,6 +38,16 @@
       "permanent": true
     },
     {
+      "source": "/img/favicon-192.png",
+      "destination": "/img/icons/icon-192.png",
+      "permanent": true
+    },
+    {
+      "source": "/img/apple-touch-icon.png",
+      "destination": "/img/icons/apple-touch-icon.png",
+      "permanent": true
+    },
+    {
       "source": "/about.html",
       "destination": "/",
       "permanent": true
