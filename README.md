@@ -59,7 +59,7 @@ Every booking button is a **Call** button (`tel:+12096464046`), and the header k
 | **Tracy** `/water-features/tracy` | Modern water features with an upscale look: a full-width photo hero, water walls, scuppers and fire-and-water, a charcoal whole-yard band, a gallery and seven local questions (wind, HOA approval, water use, permits, mosquitoes, plants, cost). |
 | **Modesto** `/water-features/modesto` | Ponds and pondless waterfalls with a warm, natural look: rounded photos, a pond-or-pondless comparison, what we build, a gallery, a deep green "around the water" band and eight local questions (water rules, watering days, the turf rebate, soil, mosquitoes, winter, cost). |
 | **Turlock** `/water-features/turlock` | Both styles with an elegant, centered look: natural and modern paths side by side, a mixed gallery, the whole yard, and six local questions (style, watering days, water use, mosquitoes, permits, cost). |
-| **Gallery** `/gallery` | 51 photos of Green Lion work in a grid, with filters for water features, patios and pavers, kitchens and pavilions, fire and lighting, saunas and hot tubs, planting and turf, and 3D design vs built. Tap a photo for a larger view, its project and a Call button. |
+| **Gallery** `/gallery` | 53 photos of Green Lion work in a grid, with filters for water features, patios and pavers, kitchens and pavilions, fire and lighting, saunas and hot tubs, planting and turf, and 3D design vs built. Tap a photo for a larger view, its project and a Call button. |
 
 ## Going live
 
