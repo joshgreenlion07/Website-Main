@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Build the static pages of greenlionlandscape.com from src/.
 
-    python3 tools/build.py          write index.html, services/index.html, gallery/index.html and sitemap.xml
+    python3 tools/build.py          write every page in PAGES (index.html, services/index.html, ...) and sitemap.xml
     python3 tools/build.py --check  exit 1 if any built file is out of date (run before committing)
 
 Every page shares src/_layout.html, the header, footer and tab bar partials, /assets/site.css and
@@ -9,6 +9,7 @@ Every page shares src/_layout.html, the header, footer and tab bar partials, /as
 so Vercel serves them as plain static files with no build step. Edit src/, never the built files.
 """
 import hashlib
+import json
 import re
 import sys
 from pathlib import Path
@@ -42,6 +43,46 @@ PAGES = [
         'og_description': 'Real Green Lion water features, patios, kitchens and planting around Modesto and the Central Valley.',
         'og_image': 'wf-three-column-wall',
     },
+    {
+        'page': 'water-features', 'nav': 'services', 'out': 'water-features/index.html', 'path': '/water-features',
+        'title': 'Custom Water Features in the Central Valley | Green Lion',
+        'description': 'Waterfalls, koi ponds, pondless streams and water walls designed and built by Green Lion Landscape for Modesto, Turlock, Tracy and the Central Valley.',
+        'og_title': 'Custom water features by Green Lion Landscape',
+        'og_description': 'Waterfalls, koi ponds, pondless streams and water walls for Modesto, Turlock and Tracy. Call (209) 646-4046.',
+        'og_image': 'wf-lantern-falls',
+        'crumbs': [('Home', '/'), ('Water Features', '/water-features')],
+        'service_area': ['Modesto, CA', 'Turlock, CA', 'Tracy, CA'],
+    },
+    {
+        'page': 'tracy', 'nav': 'services', 'out': 'water-features/tracy/index.html', 'path': '/water-features/tracy',
+        'title': 'Modern Water Features in Tracy, CA | Green Lion Landscape',
+        'description': 'Water walls, scuppers and spillways for Tracy and Mountain House homes, designed with the whole yard. Answers on wind, HOA approval and permits.',
+        'og_title': 'Modern water features in Tracy, CA',
+        'og_description': 'Water walls, scuppers and spillways designed with the whole yard by Green Lion Landscape. Call (209) 646-4046.',
+        'og_image': 'wf-modern',
+        'crumbs': [('Home', '/'), ('Water Features', '/water-features'), ('Tracy', '/water-features/tracy')],
+        'service_area': ['Tracy, CA', 'Mountain House, CA'],
+    },
+    {
+        'page': 'modesto', 'nav': 'services', 'out': 'water-features/modesto/index.html', 'path': '/water-features/modesto',
+        'title': 'Koi Ponds & Pondless Waterfalls in Modesto, CA | Green Lion',
+        'description': 'Koi ponds, pondless waterfalls and boulder streams built in Modesto by Green Lion Landscape. Pond or pondless, watering days, the turf rebate and more.',
+        'og_title': 'Koi ponds and pondless waterfalls in Modesto',
+        'og_description': 'Boulder waterfalls, pondless streams and koi ponds by Green Lion Landscape. Call (209) 646-4046.',
+        'og_image': 'wf-koi',
+        'crumbs': [('Home', '/'), ('Water Features', '/water-features'), ('Modesto', '/water-features/modesto')],
+        'service_area': ['Modesto, CA'],
+    },
+    {
+        'page': 'turlock', 'nav': 'services', 'out': 'water-features/turlock/index.html', 'path': '/water-features/turlock',
+        'title': 'Water Features in Turlock, CA | Green Lion Landscape',
+        'description': 'Natural ponds and streams or modern water walls for Turlock homes, designed with the whole yard. Answers on watering days, mosquitoes and permits.',
+        'og_title': 'Water features in Turlock, CA',
+        'og_description': 'Natural ponds and streams or modern water walls, designed with the whole yard by Green Lion Landscape. Call (209) 646-4046.',
+        'og_image': 'wf-pond-garden',
+        'crumbs': [('Home', '/'), ('Water Features', '/water-features'), ('Turlock', '/water-features/turlock')],
+        'service_area': ['Turlock, CA'],
+    },
 ]
 
 BANNER = '<!-- Built by tools/build.py from src/. Edit src/ and run: python3 tools/build.py -->'
@@ -60,12 +101,32 @@ def mark_current(html, page):
     return re.sub(r'data-nav="(\w+)"', lambda m: m.group(0) + (' aria-current="page"' if m.group(1) == page else ''), html)
 
 
+def structured_data(p):
+    """Breadcrumbs and the water-feature service for the hub and city pages (schema.org JSON-LD)."""
+    if 'crumbs' not in p:
+        return ''
+    graph = [{
+        '@type': 'BreadcrumbList',
+        'itemListElement': [{'@type': 'ListItem', 'position': i + 1, 'name': n, 'item': SITE + u} for i, (n, u) in enumerate(p['crumbs'])],
+    }, {
+        '@type': 'Service',
+        'name': 'Water feature design and installation',
+        'serviceType': 'Water feature installation',
+        'url': SITE + p['path'],
+        'areaServed': [{'@type': 'City', 'name': c} for c in p['service_area']],
+        'provider': {'@type': 'HomeAndConstructionBusiness', 'name': 'Green Lion Landscape', 'telephone': '+1-209-646-4046', 'url': SITE + '/'},
+    }]
+    data = json.dumps({'@context': 'https://schema.org', '@graph': graph}, indent=None, separators=(',', ':'))
+    return '<script type="application/ld+json">' + data.replace('</', '<\\/') + '</script>\n'
+
+
 def render(p):
     layout = (SRC / '_layout.html').read_text()
     parts = {
-        'header': mark_current((SRC / '_header.html').read_text().rstrip('\n'), p['page']),
+        'header': mark_current((SRC / '_header.html').read_text().rstrip('\n'), p.get('nav', p['page'])),
         'footer': (SRC / '_footer.html').read_text().rstrip('\n'),
-        'tail': mark_current((SRC / '_tail.html').read_text().rstrip('\n'), p['page']),
+        'tail': mark_current((SRC / '_tail.html').read_text().rstrip('\n'), p.get('nav', p['page'])),
+        'structured_data': structured_data(p),
         'main': (SRC / 'pages' / f"{p['page']}.html").read_text().rstrip('\n'),
         'url': SITE + p['path'],
         'page': p['page'],

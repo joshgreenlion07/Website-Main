@@ -12,6 +12,31 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa's Design Notebook article **"Water Features Are Taking Over"** was rewritten on Nov 20, 2026 at the owner's request. It covers nature, comfort and peace in the backyard, and Green Lion's passion for building these escapes. It's written in the team's voice, but it runs under Lisa Taylor's byline, so **Lisa should read it**. Her earlier article, approved on Nov 18, is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
 
+## Water feature city pages (Nov 21, 2026)
+
+Four new pages, built from the local search plan: a hub at `/water-features` and one page each for Tracy, Modesto and Turlock. Each city page has its own look while sharing the header, footer and tab bar:
+
+- **Tracy** (`/water-features/tracy`): modern and upscale. A full-width photo hero, square corners, large serif type and a charcoal band. Leads with water walls, scuppers and fire and water.
+- **Modesto** (`/water-features/modesto`): natural and warm. Rounded, overlapping photos, a pond-or-pondless comparison and a deep green "around the water" band. Leads with ponds and pondless waterfalls.
+- **Turlock** (`/water-features/turlock`): elegant and balanced. A centered charcoal hero with the natural and modern styles side by side.
+
+Every city page ends with the whole yard (pavers, lighting, planting and the 3D), local questions, a call band and links to the other cities. The footer now lists the three cities. Home's "Explore water features" button, the "Custom Water Features" tile and the Services water card link to the hub.
+
+**Local facts, checked on Nov 21, 2026 against the official pages linked on each page:**
+
+- Modesto: the November 1 to March 31 watering days and hours; recirculating ornamental fountains are allowed; drip may run any time; the Turf Replacement Program pays $2 per sq ft, up to $6,000 per home per fiscal year (July 1, 2026 to June 30, 2027), for products only, after a pre-inspection.
+- Turlock: watering days for both seasons, before 9 a.m. and after 9 p.m., none within 48 hours after rain; drip exempt unless Stage 4. The Turlock Mosquito Abatement District gives mosquitofish for ornamental ponds, usually May to October, (209) 634-1234.
+- San Joaquin County Mosquito and Vector Control District: free mosquitofish delivery for water features and ponds (its 2021 notice).
+- Mountain House: the Master Restrictions include architectural controls for changes to homes and landscaping.
+
+**Left out on purpose:** Tracy's city website blocks automated readers, so Tracy's watering stage and days, its lawn rebate and its pond permit depth are not on the page. Pond permit rules for Modesto and Turlock were not found either. The pages say Green Lion checks permit needs for each project. Re-check the Modesto rebate each July and the watering schedules each season.
+
+**Prices:** none are published. Per the owner (Nov 21, 2026), design is priced by the size of the yard, not every project needs one, and the 3D is free. The cost answers say that and promise a written price after the site visit.
+
+**Photos:** Green Lion projects from around the Central Valley. Captions don't name a city, except the Moonlit Water Wall (Modesto, 2026). Swap in local projects once the owner names which jobs were in each city (no addresses or client names).
+
+**Redirects:** `/inspirational-waterscapes` (the old site's top page), `/waterscapes.html` and the two water-feature blog posts now go to `/water-features`.
+
 ## Real pages (Nov 20, 2026)
 
 The site was one page with hash views, so search engines saw a single address. It is now three real pages that share one layout, header, footer and tab bar: Home (`/`), Services (`/services`) and Gallery (`/gallery`). Each has its own title, description, canonical link and social preview, and `sitemap.xml` lists all three. The content and design are unchanged.

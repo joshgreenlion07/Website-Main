@@ -69,7 +69,7 @@
     gallery: ['wf-waterwall-day', 'wf-three-column-wall']
   };
   const services = [
-    { id: 'water', name: 'Water Features', img: 'svc-water', promo: 'seeday', desc: 'Waterfalls, koi ponds, water walls and pondless streams, designed as part of your complete outdoor space.', items: ['Waterfalls', 'Koi ponds', 'Water walls', 'Pondless streams', 'Fountains'] },
+    { id: 'water', name: 'Water Features', img: 'svc-water', promo: 'seeday', more: ['/water-features', 'Water features in Modesto, Turlock and Tracy'], desc: 'Waterfalls, koi ponds, water walls and pondless streams, designed as part of your complete outdoor space.', items: ['Waterfalls', 'Koi ponds', 'Water walls', 'Pondless streams', 'Fountains'] },
     { id: 'kitchen', name: 'Pavilions & Outdoor Kitchens', img: 'svc-pavilion', desc: 'Custom pavilions, louvered pergolas and outdoor kitchens built for how you cook and host.', items: ['Outdoor kitchens', 'Louvered pergolas', 'Pavilions', 'Bar seating'] },
     { id: 'pavers', name: 'Pavers & Decorative Concrete', img: 'svc-pavers', promo: 'walk', desc: 'Paver patios and driveways, porcelain, stamped and stained concrete, and walkways.', items: ['Paver patios', 'Driveways', 'Porcelain tile', 'Stamped concrete', 'Walkways'] },
     { id: 'lighting', name: 'Landscape Lighting', img: 'svc-lighting-closeup', desc: 'Low-voltage LED landscape lighting: spotlights, uplights and wall sconces that show off your yard after dark.', items: ['Spotlights', 'Uplighting', 'Wall sconces', 'Path lights'] },
@@ -177,6 +177,7 @@
   if (svcGrid) svcGrid.innerHTML = services.map(s => `
     <article class="svc" id="svc-${s.id}"><div class="img"><img src="/img/${s.img}.jpg" alt="${esc(s.name)}" loading="lazy"></div>
       <div class="body"><h3>${esc(s.name)}</h3><p>${esc(s.desc)}</p><ul>${s.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>
+        ${s.more ? `<a class="svc-more" href="${s.more[0]}">${esc(s.more[1])} <span aria-hidden="true">→</span></a>` : ''}
         ${s.promo ? promoRow(s.promo) : ''}
         <div class="actions"><a class="btn btn-primary btn-sm" href="tel:+12096464046">${s.promo ? 'Call to book your free 3D design' : 'Call to schedule'}</a></div></div></article>`).join('');
   if (PAGE === 'services') scrollToHash();
@@ -244,7 +245,7 @@
         <p style="font-weight:700">${esc(lisa.byline)}</p><div class="prose-col">${lisa.sections.map(([h, t]) => `${h ? `<h3>${esc(h)}</h3>` : ''}<p>${esc(t)}</p>`).join('')}</div>
         <div class="dlg-gallery">${lisa.gallery.map(i => `<img src="/img/${i}.jpg" alt="Green Lion Landscape water feature project" loading="lazy">`).join('')}</div>
         <p class="note">Project photos are starting points for a conversation, not promises that the same design suits every property.</p>
-        <div style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-primary" href="/services#svc-water">Explore water features</a><a class="btn btn-ghost" href="tel:+12096464046">Call to schedule</a></div></div>`);
+        <div style="display:flex;gap:.5rem;flex-wrap:wrap"><a class="btn btn-primary" href="/water-features">Explore water features</a><a class="btn btn-ghost" href="tel:+12096464046">Call to schedule</a></div></div>`);
     }
   }
 
