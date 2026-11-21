@@ -644,3 +644,9 @@ dialog::backdrop { background: rgba(32, 35, 33, .65); }
   .tabbar .tab-call .orb { width: 62px; height: 62px; margin-top: -30px; border-color: #151816; box-shadow: 0 4px 16px rgba(125, 192, 15, .45); }
   .tabbar .tab-call .orb svg { width: 28px; height: 28px; }
 }
+
+/* My Project is out of the navigation for now (owner request, Nov 21, 2026). On phones Gallery spans the last two
+   columns, so the Call orb stays centered with Home and Services on its left. */
+@media (max-width: 767px) {
+  .tabbar ul li:last-child { grid-column: 4 / span 2; }
+}
