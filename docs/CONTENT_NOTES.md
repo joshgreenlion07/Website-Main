@@ -12,6 +12,10 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa's Design Notebook article **"Water Features Are Taking Over"** was rewritten on Nov 20, 2026 at the owner's request. It covers nature, comfort and peace in the backyard, and Green Lion's passion for building these escapes. It's written in the team's voice, but it runs under Lisa Taylor's byline, so **Lisa should read it**. Her earlier article, approved on Nov 18, is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
 
+## Brighter three-column water wall (Nov 21, 2026)
+
+The owner sent a brighter photo of the three-column stucco and ledgestone water wall (blue sky, lit stone). It replaces `img/wf-three-column-wall.jpg` everywhere that file is used: the home showcase tile and hero gallery (Ledgestone Spill Wall), Lisa's article gallery, the Gallery page, the Tracy and Turlock pages and the Gallery link preview. It is 1400 × 933. The 3D comparison slide `3d-dvb-day-2` shows the same wall from a separate, already bright photo and was left as it is.
+
 ## Growth Studio credit (Nov 21, 2026)
 
 At the owner's request, the 3D disclosure line now credits the in-house studio: *Real Green Lion project. 3D design from our own Green Lion Growth Studio; photo motion, voice and music made with AI tools.* It sits beside the Green Lion Growth Studio wordmark (`img/growth-studio-wordmark.svg`, the stacked on-Charcoal version) under the home 3D video, in every 3D video dialog and on the 3D photos in the Gallery. The wordmark comes from the Growth-Studio repo, `brand/wordmark/` at commit d9cf43f, where the README sets its rules: Charcoal or Warm white only, never over photos, the stacked version below about 40 px tall. The Green Lion Landscape logo stays the main site logo.
@@ -78,7 +82,7 @@ At the owner's request the site shows no night or dusk photos. Each one was swap
 | Water Wall Garden, wide at dusk | The same yard, wide, by day (`pj-wall-wide`) |
 | Lit agave urn | The same urn by day (`learn-agave`) |
 | Lantern Falls with underwater lights | The same boulder falls by day (`wf-lantern-falls`, Inspirational Waterscapes IMG_0174) |
-| Ledgestone Spill Wall at night | The same three-column wall by day (`wf-three-column-wall`, E9A9118) |
+| Ledgestone Spill Wall at night | The same three-column wall by day (`wf-three-column-wall`; since Nov 21, 2026 a brighter photo the owner supplied, replacing frame E9A9118) |
 | Gas fire lounge at night | The same lounge by day (`svc-fire-day`, E9A9130) |
 | Cube sauna at night | The same sauna by day (`svc-wellness-day`, E9A9142) |
 | Fire table and lighting at night | Removed; the daytime lounge is already in the Gallery |
