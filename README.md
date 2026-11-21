@@ -43,13 +43,13 @@ Details are in [`docs/BRAND.md`](docs/BRAND.md).
 
 ## Layout
 
-Navigation adapts by screen size, with the same tabs (**Home · Services · Call · Gallery · My Project**). On phones and tablets the raised circle in the middle of the tab bar is a **Call** button that dials (209) 646-4046:
+Navigation adapts by screen size, with the same tabs (**Home · Services · Call · Gallery**). On phones and tablets the raised circle in the middle of the tab bar is a **Call** button that dials (209) 646-4046:
 
 - **Phones (under 768 px):** a one-screen app. The header and bottom tab bar stay on screen and only the content scrolls.
 - **Tablets (768–1199 px):** a left side rail plus the fixed header.
 - **Desktop (1200 px and up):** a top nav with the full horizontal signature.
 
-Every booking button is a **Call** button (`tel:+12096464046`), and the header keeps a Call button too. **My Project** links to Green Lion Area Planner (https://area-planner-beta.vercel.app/) in a new tab, and so does the footer's **Vendor login**. The page uses a light beige background throughout; Deep green is kept for a few accent blocks. Each page has its own address, title, description and canonical link. Deep links: `/services#svc-pavers` (a service), `/services#design-case`, `/gallery#water` (a filtered gallery; also `#pavers`, `#kitchens`, `#landscaping`, `#turf`, `#3d`) and `/#contact`. Links from the old one-page version (`/#services`, `/#gallery-water`, `/#svc-pavers`) are forwarded to the new pages.
+Every booking button is a **Call** button (`tel:+12096464046`), and the header keeps a Call button too. **My Project** is out of the navigation for now (Nov 21, 2026); the footer still links to Green Lion Area Planner (https://area-planner-beta.vercel.app/) as **My Project** and **Vendor login**. The page uses a light beige background throughout; Deep green is kept for a few accent blocks. Each page has its own address, title, description and canonical link. Deep links: `/services#svc-pavers` (a service), `/services#design-case`, `/gallery#water` (a filtered gallery; also `#pavers`, `#kitchens`, `#landscaping`, `#turf`, `#3d`) and `/#contact`. Links from the old one-page version (`/#services`, `/#gallery-water`, `/#svc-pavers`) are forwarded to the new pages.
 
 | Page | What it does |
 | --- | --- |

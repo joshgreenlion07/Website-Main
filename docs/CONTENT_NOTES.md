@@ -12,6 +12,10 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa's Design Notebook article **"Water Features Are Taking Over"** was rewritten on Nov 20, 2026 at the owner's request. It covers nature, comfort and peace in the backyard, and Green Lion's passion for building these escapes. It's written in the team's voice, but it runs under Lisa Taylor's byline, so **Lisa should read it**. Her earlier article, approved on Nov 18, is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
 
+## My Project out of the navigation (Nov 21, 2026)
+
+At the owner's request, **My Project** is out of the phone tab bar, the tablet rail and the desktop top nav for now. The tabs are Home, Services, Call and Gallery; on phones Gallery takes the two right-hand slots so the Call orb stays centered. The footer keeps its My Project and Vendor login links to Area Planner. To bring the tab back, restore its link in `src/_header.html` and `src/_tail.html` and drop the `li:last-child` rule at the end of `assets/site.css`.
+
 ## Modern Wellness Yard final photos (Nov 21, 2026)
 
 The owner supplied the five final, edited photos of the Modern Wellness Yard. The project's photo set is now those five: the three-column water wall, the fire lounge, the cube sauna, the covered patio beside the water wall, and the turf side yard with the corten tree screen.
