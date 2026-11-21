@@ -31,7 +31,7 @@ python3 tools/build.py --check  # fails if a built file is out of date
 
 To add a page, add its content file to `src/pages/` and an entry to `PAGES` (with its `share` eyebrow, heading and photos); the sitemap picks it up.
 
-Link previews: each page has its own 1200 x 630 share image in `img/share/` with the page's heading and photo, plus Open Graph and X (Twitter) card tags. After changing a heading or share photo, run `python3 tools/share_images.py`, then `python3 tools/build.py`. The image address carries a version, so texts and social apps fetch the new image instead of a cached one. `.vercelignore` keeps `src/` and `tools/` off the live site.
+Link previews: each page has its own 1200 x 630 share image in `img/share/` with the page's heading and photo, plus Open Graph and X (Twitter) card tags. After changing a heading or share photo, run `python3 tools/share_images.py`, then `python3 tools/build.py`. The image address carries a version, so texts and social apps fetch the new image instead of a cached one. The icon addresses carry a version too, because Safari keeps old favicons; changing an icon changes its address on the next build. `.vercelignore` keeps `src/` and `tools/` off the live site.
 
 ## Brand
 
@@ -79,7 +79,7 @@ assets/site.js        Script for every page: data, carousel, gallery, dialogs
 src/                  Page sources and shared layout (not deployed)
 tools/build.py        Builds the pages and sitemap.xml from src/ (not deployed)
 favicon.ico           Lion icon; img/icons/ has the 32, 192 and 512 px icons, the Apple touch icon and a maskable icon
-site.webmanifest      Name, colors and icons for phones that save the site
+site.webmanifest      Name, colors and icons for phones that save the site (written by build.py)
 img/share/            Link-preview images, one per page (1200 x 630)
 tools/share_images.py Makes img/share/*.jpg and the icons (needs the Liberation fonts)
 img/                  Web-sized photos and logo crops (3d-* are the 3D promo slides and reel covers)

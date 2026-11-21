@@ -172,6 +172,10 @@ def icons():
         icon(size, scale).save(d / name, optimize=True)
         written.append(d / name)
     icon(256, .98).save(ROOT / 'favicon.ico', sizes=[(16, 16), (32, 32), (48, 48)])
+    # Root copies for browsers and apps that look for these addresses without reading the page.
+    for name in ('apple-touch-icon.png', 'apple-touch-icon-precomposed.png'):
+        icon(180, .86).save(ROOT / name, optimize=True)
+        written.append(ROOT / name)
     written.append(ROOT / 'favicon.ico')
     return written
 
