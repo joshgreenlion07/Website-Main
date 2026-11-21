@@ -12,9 +12,14 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa's Design Notebook article **"Water Features Are Taking Over"** was rewritten on Nov 20, 2026 at the owner's request. It covers nature, comfort and peace in the backyard, and Green Lion's passion for building these escapes. It's written in the team's voice, but it runs under Lisa Taylor's byline, so **Lisa should read it**. Her earlier article, approved on Nov 18, is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
 
-## My Project out of the navigation (Nov 21, 2026)
+## My Project coming-soon page (Nov 21, 2026)
 
-At the owner's request, **My Project** is out of the phone tab bar, the tablet rail and the desktop top nav for now. The tabs are Home, Services, Call and Gallery; on phones Gallery takes the two right-hand slots so the Call orb stays centered. The footer keeps its My Project and Vendor login links to Area Planner. To bring the tab back, restore its link in `src/_header.html` and `src/_tail.html` and drop the `li:last-child` rule at the end of `assets/site.css`.
+At the owner's request, the **My Project** tab is back in the phone tab bar, the tablet rail and the desktop top nav, and the footer's My Project link points to the same place: `/my-project`, a coming-soon page.
+
+- It reads "We're Building Something Awesome. We're designing it for the future. Soon you'll be able to track your project updates right here."
+- It has a Call button, and an "Explore the Site" section with tiles to Water Features, Services, the 3D design case and the Gallery, plus links to the three city pages.
+- It carries `noindex` and stays out of the sitemap, so it won't show in search results until the client portal is real. Its link preview has its own share image.
+- The footer's Vendor login still opens Area Planner.
 
 ## Modern Wellness Yard final photos (Nov 21, 2026)
 

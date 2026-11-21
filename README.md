@@ -43,13 +43,13 @@ Details are in [`docs/BRAND.md`](docs/BRAND.md).
 
 ## Layout
 
-Navigation adapts by screen size, with the same tabs (**Home · Services · Call · Gallery**). On phones and tablets the raised circle in the middle of the tab bar is a **Call** button that dials (209) 646-4046:
+Navigation adapts by screen size, with the same tabs (**Home · Services · Call · Gallery · My Project**). On phones and tablets the raised circle in the middle of the tab bar is a **Call** button that dials (209) 646-4046:
 
 - **Phones (under 768 px):** a one-screen app. The header and bottom tab bar stay on screen and only the content scrolls.
 - **Tablets (768–1199 px):** a left side rail plus the fixed header.
 - **Desktop (1200 px and up):** a top nav with the full horizontal signature.
 
-Every booking button is a **Call** button (`tel:+12096464046`), and the header keeps a Call button too. **My Project** is out of the navigation for now (Nov 21, 2026); the footer still links to Green Lion Area Planner (https://area-planner-beta.vercel.app/) as **My Project** and **Vendor login**. The page uses a light beige background throughout; Deep green is kept for a few accent blocks. Each page has its own address, title, description and canonical link. Deep links: `/services#svc-pavers` (a service), `/services#design-case`, `/gallery#water` (a filtered gallery; also `#pavers`, `#kitchens`, `#landscaping`, `#turf`, `#3d`) and `/#contact`. Links from the old one-page version (`/#services`, `/#gallery-water`, `/#svc-pavers`) are forwarded to the new pages.
+Every booking button is a **Call** button (`tel:+12096464046`), and the header keeps a Call button too. **My Project** opens `/my-project`, a coming-soon page ("We're Building Something Awesome") with links to the rest of the site; it is kept out of search results (`noindex`) and the sitemap. The footer's **Vendor login** still opens Green Lion Area Planner (https://area-planner-beta.vercel.app/). The page uses a light beige background throughout; Deep green is kept for a few accent blocks. Each page has its own address, title, description and canonical link. Deep links: `/services#svc-pavers` (a service), `/services#design-case`, `/gallery#water` (a filtered gallery; also `#pavers`, `#kitchens`, `#landscaping`, `#turf`, `#3d`) and `/#contact`. Links from the old one-page version (`/#services`, `/#gallery-water`, `/#svc-pavers`) are forwarded to the new pages.
 
 | Page | What it does |
 | --- | --- |
@@ -59,6 +59,7 @@ Every booking button is a **Call** button (`tel:+12096464046`), and the header k
 | **Tracy** `/water-features/tracy` | Modern water features with an upscale look: a full-width photo hero, water walls, scuppers and fire-and-water, a charcoal whole-yard band, a gallery and seven local questions (wind, HOA approval, water use, permits, mosquitoes, plants, cost). |
 | **Modesto** `/water-features/modesto` | Ponds and pondless waterfalls with a warm, natural look: rounded photos, a pond-or-pondless comparison, what we build, a gallery, a deep green "around the water" band and eight local questions (water rules, watering days, the turf rebate, soil, mosquitoes, winter, cost). |
 | **Turlock** `/water-features/turlock` | Both styles with an elegant, centered look: natural and modern paths side by side, a mixed gallery, the whole yard, and six local questions (style, watering days, water use, mosquitoes, permits, cost). |
+| **My Project** `/my-project` | Coming soon: "We're Building Something Awesome", a Call button, and tiles to Water Features, Services, the 3D design case and the Gallery, plus the three city pages. Not indexed by search engines. |
 | **Gallery** `/gallery` | 53 photos of Green Lion work in a grid, with filters for water features, patios and pavers, kitchens and pavilions, fire and lighting, saunas and hot tubs, planting and turf, and 3D design vs built. Tap a photo for a larger view, its project and a Call button. |
 
 ## Going live

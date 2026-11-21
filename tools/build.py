@@ -44,6 +44,14 @@ PAGES = [
         'share': {'eyebrow': 'Gallery', 'heading': 'Our Work', 'sub': 'Water features, patios, kitchens and planting around the Central Valley.', 'photos': [('wf-three-column-wall', .5, .5), ('wf-koi', .5, .5), ('svc-pavilion', .5, .5), ('pj-well-2', .5, .5)]},
     },
     {
+        'page': 'my-project', 'out': 'my-project/index.html', 'path': '/my-project', 'noindex': True,
+        'title': 'My Project: Coming Soon | Green Lion Landscape',
+        'description': "We're building something awesome: soon Green Lion customers will be able to track their project updates here.",
+        'og_title': "We're Building Something Awesome | Green Lion Landscape",
+        'og_description': "My Project is being designed. Soon you'll be able to track your project updates here. Call (209) 646-4046.",
+        'share': {'eyebrow': 'My Project', 'heading': "We're Building Something Awesome", 'sub': "Soon you'll be able to track your project updates here.", 'photos': [('design-3d-4', .5, .5)]},
+    },
+    {
         'page': 'water-features', 'nav': 'services', 'out': 'water-features/index.html', 'path': '/water-features',
         'title': 'Custom Water Features in the Central Valley | Green Lion',
         'description': 'Waterfalls, koi ponds, pondless streams and water walls designed and built by Green Lion Landscape for Modesto, Turlock, Tracy and the Central Valley.',
@@ -121,7 +129,7 @@ def attr(value):
 
 def mark_current(html, page):
     """Mark the nav links for this page with aria-current, so the right tab is lit without JavaScript."""
-    return re.sub(r'data-nav="(\w+)"', lambda m: m.group(0) + (' aria-current="page"' if m.group(1) == page else ''), html)
+    return re.sub(r'data-nav="([\w-]+)"', lambda m: m.group(0) + (' aria-current="page"' if m.group(1) == page else ''), html)
 
 
 def structured_data(p):
@@ -150,6 +158,7 @@ def render(p):
         'footer': (SRC / '_footer.html').read_text().rstrip('\n'),
         'tail': mark_current((SRC / '_tail.html').read_text().rstrip('\n'), p.get('nav', p['page'])),
         'structured_data': structured_data(p),
+        'robots': '\n<meta name="robots" content="noindex">' if p.get('noindex') else '',
         'main': (SRC / 'pages' / f"{p['page']}.html").read_text().rstrip('\n'),
         'url': SITE + p['path'],
         'page': p['page'],
@@ -173,7 +182,7 @@ def render(p):
 
 
 def sitemap():
-    urls = ''.join(f'  <url><loc>{SITE}{p["path"]}</loc></url>\n' for p in PAGES)
+    urls = ''.join(f'  <url><loc>{SITE}{p["path"]}</loc></url>\n' for p in PAGES if not p.get('noindex'))
     return f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n{urls}</urlset>\n'
 
 
