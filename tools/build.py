@@ -88,6 +88,29 @@ PAGES = [
 BANNER = '<!-- Built by tools/build.py from src/. Edit src/ and run: python3 tools/build.py -->'
 
 
+ICONS = ['favicon.ico', 'img/icons/icon-32.png', 'img/icons/icon-192.png', 'img/icons/icon-512.png',
+         'img/icons/icon-maskable-512.png', 'img/icons/apple-touch-icon.png']
+
+
+def icon_version():
+    """One version for all the icons. Browsers (Safari above all) keep old favicons, so a new icon gets a new address."""
+    h = hashlib.sha1()
+    for path in ICONS:
+        h.update((ROOT / path).read_bytes())
+    return h.hexdigest()[:10]
+
+
+def manifest():
+    v = icon_version()
+    icons = [{'src': f'/img/icons/icon-192.png?v={v}', 'sizes': '192x192', 'type': 'image/png'},
+             {'src': f'/img/icons/icon-512.png?v={v}', 'sizes': '512x512', 'type': 'image/png'},
+             {'src': f'/img/icons/icon-maskable-512.png?v={v}', 'sizes': '512x512', 'type': 'image/png', 'purpose': 'maskable'}]
+    data = {'name': 'Green Lion Landscape', 'short_name': 'Green Lion',
+            'description': 'Custom landscaping, design and water features in Modesto, Turlock, Tracy and the Central Valley.',
+            'start_url': '/', 'display': 'browser', 'background_color': '#202321', 'theme_color': '#202321', 'icons': icons}
+    return json.dumps(data, indent=2) + '\n'
+
+
 def version(path):
     return hashlib.sha1((ROOT / path).read_bytes()).hexdigest()[:10]
 
@@ -131,6 +154,7 @@ def render(p):
         'url': SITE + p['path'],
         'page': p['page'],
         'css_version': version('assets/site.css'),
+        'icon_version': icon_version(),
         'js_version': version('assets/site.js'),
     }
     for k in ('title', 'description', 'og_title', 'og_description'):
@@ -157,6 +181,7 @@ def main():
     check = '--check' in sys.argv
     outputs = {p['out']: render(p) for p in PAGES}
     outputs['sitemap.xml'] = sitemap()
+    outputs['site.webmanifest'] = manifest()
     stale = []
     for rel, text in outputs.items():
         f = ROOT / rel
