@@ -295,6 +295,13 @@ input[type="range"] { width: 100%; accent-color: var(--deep); height: 32px; }
 .p3-video { position: relative; width: min(100%, 300px); aspect-ratio: 9 / 16; border-radius: var(--r-lg); overflow: hidden; background: var(--charcoal); box-shadow: var(--shadow); }
 .p3-video video { display: block; width: 100%; height: 100%; object-fit: cover; }
 .p3-media .p3-disclose { text-align: center; width: min(100%, 300px); }
+/* Green Lion Growth Studio credit beside the 3D disclosure line. The lion stays on a Charcoal plate, its brand background. */
+.gs-credit { display: flex; align-items: center; gap: .65rem; }
+.p3-media .p3-disclose.gs-credit { text-align: left; width: min(100%, 380px); }
+.gs-mark { display: inline-flex; align-items: center; gap: .45rem; flex: none; background: var(--charcoal); color: #F5F2EA; border-radius: 6px; padding: .32rem .6rem .32rem .42rem; line-height: 1; }
+.gs-mark img { width: 30px; height: auto; }
+.gs-mark b { display: block; font-family: var(--sans); font-size: .72rem; font-weight: 700; letter-spacing: .01em; }
+.gs-mark small { display: block; margin-top: .14rem; font-size: .56rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #B6AEA1; }
 .seg button[aria-pressed="true"] { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
 .p3-gallery { border-top: 1px solid var(--line); padding: 1.25rem 0 1.25rem 1.25rem; display: grid; gap: .8rem; }
 .p3-gallery .head { display: flex; justify-content: space-between; align-items: end; gap: .5rem 1rem; flex-wrap: wrap; padding-right: 1.25rem; }

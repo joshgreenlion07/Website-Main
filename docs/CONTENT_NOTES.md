@@ -12,6 +12,10 @@ What in the prototype is real Green Lion content, what is sample data, what stil
 - Lisa's Design Notebook article **"Water Features Are Taking Over"** was rewritten on Nov 20, 2026 at the owner's request. It covers nature, comfort and peace in the backyard, and Green Lion's passion for building these escapes. It's written in the team's voice, but it runs under Lisa Taylor's byline, so **Lisa should read it**. Her earlier article, approved on Nov 18, is in git history (commit 3b626d6).
 - All photos are Green Lion projects. Nothing is AI-generated.
 
+## Growth Studio credit (Nov 21, 2026)
+
+At the owner's request, the 3D disclosure line now credits the in-house studio: *Real Green Lion project. 3D design from our own Green Lion Growth Studio; photo motion, voice and music made with AI tools.* It sits beside the Green Lion Growth Studio mark (the lion emblem on a Charcoal plate with "Green Lion" over "Growth Studio") under the home 3D video, in every 3D video dialog and on the 3D photos in the Gallery. Growth Studio has no separate logo file, so the mark copies the app's own header lockup; swap in a logo file here if one is made.
+
 ## Link previews and icons (Nov 21, 2026)
 
 Every page now has its own link preview for texts and social apps: a 1200 x 630 image with the logo, the page's heading, its own photo and the phone number, and a preview title that matches the heading.
@@ -139,7 +143,7 @@ Added November 18, 2026 with the owner's approval of the free 3D design offer.
 
 - **Home:** a band under the hero with the offer, the three steps (we map your yard, you walk through it in 3D, then we build it), *Call to book your free 3D design*, the *We built this yard in 3D first* reel playing silently on a loop (the daytime version, chosen by the owner on Nov 20, 2026), and the daytime slides 1 to 7 of the *Designed in 3D. Built for real.* carousel. *Watch with sound* opens the same reel with sound.
 - **Services:** Water features, Pavers & decorative concrete, and Turf, planting & irrigation each have a free 3D design row that opens one reel in a dialog. Water features get *We Built This Backyard in 3D First* (19 s, daytime), pavers get *Walk Your Yard in 3D* (13 s) and turf and planting get *How It Works* (13 s, daytime). Their button reads *Call to book your free 3D design*.
-- The disclosure line sits under the home video and in every video dialog: *Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.* The slides are still photos and 3D renders labeled *3D design* and *Built*.
+- The disclosure line sits under the home video and in every video dialog: *Real Green Lion project. 3D design from our own Green Lion Growth Studio; photo motion, voice and music made with AI tools.* The slides are still photos and 3D renders labeled *3D design* and *Built*.
 - No client names appear in the copy, the slides or the reels.
 - The 3D buttons call (209) 646-4046.
 - Every reel on the site stops just before its end card, with a half-second fade. The end cards in the social files still show the old number, (209) 585-9767, and the page has its own Call button anyway. The band's daytime reel (`video/3d-see-it-first-day.mp4`, from `post1d_final.mp4`, the same file as the Drive daytime reel) is 18.8 s. The pop-up reels with sound are 19 s (water features), 13 s (pavers) and 13 s (turf and planting). All of them are daytime.
