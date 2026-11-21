@@ -85,7 +85,7 @@ Web-sized crops used by the page are in `img/`: `logo-horizontal.png`, `logo-mas
 - Primary action: **Explore water features**. Secondary action: **Schedule your design consultation**.
 - Keep claims grounded. Avoid "best", guaranteed timelines and unapproved pricing.
 - Approved offer (owner, November 18, 2026): **a free 3D design** for water features, pavers and landscaping, big or small projects. Headline: *See your yard before we build it.* Action: **Book your 3D design consultation**.
-- Keep this line next to any 3D promo video: *Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.*
+- Keep this line next to any 3D promo video: *Real Green Lion project. 3D design from our own Green Lion Growth Studio; photo motion, voice and music made with AI tools.* Show it with the Green Lion Growth Studio wordmark (`img/growth-studio-wordmark.svg`, stacked, on Charcoal). The wordmark never replaces the Green Lion Landscape logo.
 - Brand name in prose: Green Lion Landscape. Formal name: Green Lion Landscape Inc.
 - CSLB #1150882. Phone (209) 646-4046 (changed by the owner on Nov 18, 2026; the guide itself still lists (209) 585-9767).
 

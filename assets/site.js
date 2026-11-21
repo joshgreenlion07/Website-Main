@@ -143,7 +143,10 @@
   if (svcStrip) svcStrip.innerHTML = services.filter(s => ['kitchen', 'pavers', 'lighting', 'walls'].includes(s.id)).map(s => `<a class="svc-tile" href="/services#svc-${s.id}"><img src="/img/${s.img}.jpg" alt="" loading="lazy"><span>${esc(s.name)} <span aria-hidden="true">→</span></span></a>`).join('');
 
   /* ---------- 3D Before You Build (reels and slides from the social campaign; files in video/ and img/3d-*) ---------- */
-  const DISCLOSE_3D = 'Real Green Lion project. 3D design from our planning software; photo motion, voice and music made with AI tools.';
+  const DISCLOSE_3D = 'Real Green Lion project. 3D design from our own Green Lion Growth Studio; photo motion, voice and music made with AI tools.';
+  // The credit line carries the Green Lion Growth Studio wordmark (stacked, on Charcoal), from the Growth-Studio repo's brand/wordmark folder.
+  const GS_MARK = '<img class="gs-wordmark" src="/img/growth-studio-wordmark.svg" alt="Green Lion Growth Studio" width="115" height="44">';
+  const disclose3d = (cls = 'p3-disclose') => `<p class="${cls} gs-credit">${GS_MARK}<span>${esc(DISCLOSE_3D)}</span></p>`;
   const promoVideos = {
     seeday: { src: '/video/3d-see-it-first-day.mp4', poster: '/img/3d-see-it-first-day-cover.jpg', len: 19, title: 'We Built This Backyard in 3D First', text: 'The water wall, the fire lounge, the spa and sauna deck, every planter and path: placed and walked through before we broke ground.' },
     walk: { src: '/video/3d-walk-your-yard.mp4', poster: '/img/3d-walk-your-yard-cover.jpg', len: 13, title: 'Walk Your Yard in 3D Before a Single Paver Is Laid', text: 'From the side yard to the covered patio, you see the space, the walkways and the water feature first. Then we build it.' },
@@ -205,7 +208,7 @@
     const g = gallery.find(x => x.img === id); if (!g) return;
     const prj = g.project && projects[g.project];
     openDlg(`<div class="dlg-photo"><img src="/img/${g.img}.jpg" alt="${esc(g.cap)}"></div><div class="dlg-body"><p class="eyebrow">${g.cats.includes('3d') ? '3D design and built' : esc(prj ? prj.name : 'Green Lion project')}</p><h2 id="dlg-title">${esc(g.cap)}</h2>
-      ${g.cats.includes('3d') ? `<p class="note">${esc(DISCLOSE_3D)}</p>` : ''}
+      ${g.cats.includes('3d') ? disclose3d('note') : ''}
       <div style="display:flex;gap:.5rem;flex-wrap:wrap">${prj ? `<button class="btn btn-ghost" type="button" data-project="${g.project}">See the whole project</button>` : ''}<a class="btn btn-primary" href="tel:+12096464046">Call about a project like this</a></div></div>`, 'photo-mode');
   }
   // /gallery#water, /gallery#pavers ... open the gallery filtered; old #gallery-water links still work.
@@ -228,7 +231,7 @@
     const v = promoVideos[k]; if (!v) return;
     if (p3v) p3v.pause();
     openDlg(`<div class="dlg-vid"><video src="${v.src}" poster="${v.poster}" controls playsinline autoplay preload="auto" aria-label="${esc(v.title)}"></video></div>
-      <div class="dlg-body"><p class="eyebrow">3D before you build</p><h2 id="dlg-title">${esc(v.title)}</h2><p>${esc(v.text)}</p><p class="p3-disclose">${esc(DISCLOSE_3D)}</p>
+      <div class="dlg-body"><p class="eyebrow">3D before you build</p><h2 id="dlg-title">${esc(v.title)}</h2><p>${esc(v.text)}</p>${disclose3d()}
         <div style="display:flex;gap:.6rem;flex-wrap:wrap;align-items:center"><a class="btn btn-primary" href="tel:+12096464046">Call to book your free 3D design</a><span class="phone-line" style="font-weight:700">${PHONE} <button class="copy-btn" type="button" data-copy="${PHONE}">Copy</button></span></div>
         <p class="note">Free 3D design for water features, pavers and landscaping, big or small projects. CSLB #1150882</p></div>`, 'video-mode');
   }
