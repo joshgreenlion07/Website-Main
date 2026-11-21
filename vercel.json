@@ -18,6 +18,26 @@
       "permanent": true
     },
     {
+      "source": "/water-features/index.html",
+      "destination": "/water-features",
+      "permanent": true
+    },
+    {
+      "source": "/water-features/tracy/index.html",
+      "destination": "/water-features/tracy",
+      "permanent": true
+    },
+    {
+      "source": "/water-features/modesto/index.html",
+      "destination": "/water-features/modesto",
+      "permanent": true
+    },
+    {
+      "source": "/water-features/turlock/index.html",
+      "destination": "/water-features/turlock",
+      "permanent": true
+    },
+    {
       "source": "/about.html",
       "destination": "/",
       "permanent": true
@@ -39,7 +59,7 @@
     },
     {
       "source": "/waterscapes.html",
-      "destination": "/services#svc-water",
+      "destination": "/water-features",
       "permanent": true
     },
     {
@@ -149,7 +169,7 @@
     },
     {
       "source": "/inspirational-waterscapes",
-      "destination": "/gallery#water",
+      "destination": "/water-features",
       "permanent": true
     },
     {
@@ -289,12 +309,12 @@
     },
     {
       "source": "/blog/creating-a-home-oasis-the-benefits-of-custom-waterscapes-in-your-backyard",
-      "destination": "/services#svc-water",
+      "destination": "/water-features",
       "permanent": true
     },
     {
       "source": "/blog/bringing-tranquility-home-custom-koi-ponds-amp-water-features-in-the-central-valley",
-      "destination": "/services#svc-water",
+      "destination": "/water-features",
       "permanent": true
     },
     {
